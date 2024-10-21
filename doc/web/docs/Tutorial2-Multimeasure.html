@@ -1,0 +1,659 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting startet with the Aspect Device Engine Python API 2 &#8212; The aSpect Device Engine Python API</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Tutorial2-Multimeasure';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting startet with the Aspect Device Engine Python API 3" href="Tutorial3-Multiside_HighPerform.html" />
+    <link rel="prev" title="Getting startet with the Aspect Device Engine Python API" href="Tutorial1-Basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/aspectlogo.png" class="logo__image only-light" alt="The aSpect Device Engine Python API - Home"/>
+    <script>document.write(`<img src="../_static/aspectlogo.png" class="logo__image only-dark" alt="The aSpect Device Engine Python API - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorial1-Basics.html">Getting startet with the Aspect Device Engine Python API</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting startet with the Aspect Device Engine Python API 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">Getting startet with the Aspect Device Engine Python API 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">Getting startet with the Aspect Device Engine Python API 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial5-IV_Measurements.html">Getting startet with the Aspect Device Engine Python API 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial6-ListSweeps.html">Getting startet with the Aspect Device Engine Python API 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial7-Triggering.html">Getting startet with the Aspect Device Engine Python API 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial8-ParameterTables.html">Getting startet with the Aspect Device Engine Python API 8</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Tutorial2-Multimeasure.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting startet with the Aspect Device Engine Python API 2</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-measurements">Multiple Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">Repeated measurements</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-startet-with-the-aspect-device-engine-python-api-2">
+<h1>Getting startet with the Aspect Device Engine Python API 2<a class="headerlink" href="#getting-startet-with-the-aspect-device-engine-python-api-2" title="Link to this heading">#</a></h1>
+<section id="multiple-measurements">
+<h2>Multiple Measurements<a class="headerlink" href="#multiple-measurements" title="Link to this heading">#</a></h2>
+<p>This is the second introductory overview of programming the Aspect Device Engine Python API.<br />
+This document is available as pdf and interactive jupyter notebook.
+The introduction includes the following objectives:</p>
+<ul class="simple">
+<li><p>Get familiar with multiple measurements at multiple channels</p></li>
+</ul>
+<hr class="docutils" />
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aspectdeviceengine.enginecore</span> <span class="kn">import</span> <span class="n">IdSmuService</span><span class="p">,</span> <span class="n">IdSmuServiceRunner</span><span class="p">,</span> <span class="n">IdSmuBoardModel</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">srunner</span> <span class="o">=</span> <span class="n">IdSmuServiceRunner</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbX1</span> <span class="p">:</span> <span class="n">IdSmuBoardModel</span> <span class="o">=</span> <span class="n">srunner</span><span class="o">.</span><span class="n">get_idsmu_service</span><span class="p">()</span><span class="o">.</span><span class="n">get_first_board</span><span class="p">()</span>
+
+<span class="n">channel1</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;M1.S1.C1&quot;</span><span class="p">]</span>
+<span class="n">channel2</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;M1.S1.C2&quot;</span><span class="p">]</span>
+<span class="n">channel3</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;M1.S1.C3&quot;</span><span class="p">]</span>
+<span class="n">channel4</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;M1.S1.C4&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">channel1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;aspectdeviceengine.enginecore.AD5522ChannelModel object at 0x00000290455AB8B0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="repeated-measurements">
+<h2>Repeated measurements<a class="headerlink" href="#repeated-measurements" title="Link to this heading">#</a></h2>
+<p>While measurements can be repeated in the software, e.g. in a loop, as shown in the previous sections, the measurements can also be repeated directly on the hardware.<br />
+This has the advantage that the code is much more compact and that the measurements run much faster.<br />
+The <strong>measure_voltages()</strong> method takes one parameter: the number of repetitions for the measurement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mf">1.14</span>
+<span class="n">number_of_measurements</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">voltages_ch1</span> <span class="o">=</span> <span class="n">channel1</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="n">number_of_measurements</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">voltages_ch1</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.138671875, 1.138671875, 1.138336181640625, 1.138336181640625, 1.138336181640625, 1.138336181640625, 1.137664794921875, 1.138336181640625, 1.137664794921875]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Repeat executing</strong> the next cell (Ctrl+Enter) and you will see how the below plot updates.<br />
+The plot stays close to 1.4V.
+Only the usual very small fluctuations due to noise can be seen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_measurements</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">voltages_ch1</span> <span class="o">=</span> <span class="n">channel1</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="n">number_of_measurements</span><span class="p">)</span>
+
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">number_of_measurements</span><span class="p">,</span> <span class="n">number_of_measurements</span><span class="p">)</span>
+<span class="c1"># Create traces</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">voltages_ch1</span><span class="p">,</span>  <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>  <span class="n">name</span><span class="o">=</span><span class="s1">&#39;voltages_ch1&#39;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Single channel measurement, </span><span class="se">\</span>
+<span class="s2">        std.dev: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">voltages_ch1</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">, mean: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">voltages_ch1</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>  \
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span>  <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;xanchor&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>  <span class="s1">&#39;yanchor&#39;</span><span class="p">:</span> <span class="s1">&#39;top&#39;</span><span class="p">},</span> \
+        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Measurement repetition number&#39;</span><span class="p">,</span>  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">,</span> \
+        <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">fig</span>
+<span class="c1">#uncomment in pure python script:</span>
+<span class="c1">#fig.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="40c95727-4ec8-4c5b-a87a-a9061449e1e4" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("40c95727-4ec8-4c5b-a87a-a9061449e1e4")) {                    Plotly.newPlot(                        "40c95727-4ec8-4c5b-a87a-a9061449e1e4",                        [{"mode":"lines+markers","name":"voltages_ch1","x":[0.0,1.0204081632653061,2.0408163265306123,3.0612244897959187,4.081632653061225,5.1020408163265305,6.122448979591837,7.142857142857143,8.16326530612245,9.183673469387756,10.204081632653061,11.224489795918368,12.244897959183675,13.26530612244898,14.285714285714286,15.306122448979592,16.3265306122449,17.346938775510203,18.367346938775512,19.387755102040817,20.408163265306122,21.42857142857143,22.448979591836736,23.46938775510204,24.48979591836735,25.510204081632654,26.53061224489796,27.551020408163264,28.571428571428573,29.591836734693878,30.612244897959183,31.63265306122449,32.6530612244898,33.673469387755105,34.69387755102041,35.714285714285715,36.734693877551024,37.755102040816325,38.775510204081634,39.79591836734694,40.816326530612244,41.83673469387755,42.85714285714286,43.87755102040816,44.89795918367347,45.91836734693878,46.93877551020408,47.95918367346939,48.9795918367347,50.0],"y":[1.138671875,1.139007568359375,1.138671875,1.138336181640625,1.138336181640625,1.138336181640625,1.138671875,1.138336181640625,1.138336181640625,1.138336181640625,1.137664794921875,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.137664794921875,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.137664794921875,1.137664794921875,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138671875,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.138336181640625,1.137664794921875,1.138336181640625,1.138336181640625],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Single channel measurement,         std.dev: 0.000250, mean: 1.138309","y":0.9,"x":0.5,"xanchor":"center","yanchor":"top"},"margin":{"l":20,"r":20,"t":55,"b":20},"xaxis":{"title":{"text":"Measurement repetition number"}},"yaxis":{"title":{"text":"Voltage [V]"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('40c95727-4ec8-4c5b-a87a-a9061449e1e4');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>Now we activate the other channels with an offset of one volt each.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel2</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">channel2</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mf">2.14</span>
+<span class="n">channel3</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">channel3</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">channel4</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">channel4</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mf">4.14</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The measurements for each channel are run sequentally and the results are displayed in a plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voltages_ch1</span> <span class="o">=</span> <span class="n">channel1</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">voltages_ch2</span> <span class="o">=</span> <span class="n">channel2</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">voltages_ch3</span> <span class="o">=</span> <span class="n">channel3</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">voltages_ch4</span> <span class="o">=</span> <span class="n">channel4</span><span class="o">.</span><span class="n">measure_voltages</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+
+<span class="n">x_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="c1"># Create traces</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">voltages_ch1</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;voltages_ch1&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">voltages_ch2</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;voltages_ch2&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">voltages_ch3</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;voltages_ch3&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">voltages_ch4</span><span class="p">,</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;voltages_ch4&#39;</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s2">&quot;4 channel measurement&quot;</span><span class="p">,</span>  <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mf">0.9</span><span class="p">,</span>  <span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;xanchor&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>  <span class="s1">&#39;yanchor&#39;</span><span class="p">:</span> <span class="s1">&#39;top&#39;</span><span class="p">},</span>
+                   <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Measurement repetition number&#39;</span><span class="p">,</span>  <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">20</span><span class="p">))</span>
+<span class="n">fig</span>
+<span class="c1">#uncomment in pure python script:</span>
+<span class="c1">#fig.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>                            <div id="3807d597-d32e-4e39-9c1e-112d10faab9a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("3807d597-d32e-4e39-9c1e-112d10faab9a")) {                    Plotly.newPlot(                        "3807d597-d32e-4e39-9c1e-112d10faab9a",                        [{"mode":"lines+markers","name":"voltages_ch1","x":[0.0,1.0204081632653061,2.0408163265306123,3.0612244897959187,4.081632653061225,5.1020408163265305,6.122448979591837,7.142857142857143,8.16326530612245,9.183673469387756,10.204081632653061,11.224489795918368,12.244897959183675,13.26530612244898,14.285714285714286,15.306122448979592,16.3265306122449,17.346938775510203,18.367346938775512,19.387755102040817,20.408163265306122,21.42857142857143,22.448979591836736,23.46938775510204,24.48979591836735,25.510204081632654,26.53061224489796,27.551020408163264,28.571428571428573,29.591836734693878,30.612244897959183,31.63265306122449,32.6530612244898,33.673469387755105,34.69387755102041,35.714285714285715,36.734693877551024,37.755102040816325,38.775510204081634,39.79591836734694,40.816326530612244,41.83673469387755,42.85714285714286,43.87755102040816,44.89795918367347,45.91836734693878,46.93877551020408,47.95918367346939,48.9795918367347,50.0],"y":[1.140350341796875,1.140350341796875,1.139678955078125,1.139678955078125,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139007568359375,1.139678955078125,1.139007568359375,1.139678955078125,1.139678955078125,1.139678955078125,1.139007568359375,1.139007568359375,1.139007568359375,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139007568359375,1.139007568359375,1.139678955078125,1.139678955078125,1.139007568359375,1.139678955078125,1.139007568359375,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139678955078125,1.139007568359375,1.139678955078125,1.139678955078125,1.139678955078125,1.1400146484375,1.139678955078125,1.139678955078125,1.139678955078125,1.139007568359375],"type":"scatter"},{"mode":"lines+markers","name":"voltages_ch2","x":[0.0,1.0204081632653061,2.0408163265306123,3.0612244897959187,4.081632653061225,5.1020408163265305,6.122448979591837,7.142857142857143,8.16326530612245,9.183673469387756,10.204081632653061,11.224489795918368,12.244897959183675,13.26530612244898,14.285714285714286,15.306122448979592,16.3265306122449,17.346938775510203,18.367346938775512,19.387755102040817,20.408163265306122,21.42857142857143,22.448979591836736,23.46938775510204,24.48979591836735,25.510204081632654,26.53061224489796,27.551020408163264,28.571428571428573,29.591836734693878,30.612244897959183,31.63265306122449,32.6530612244898,33.673469387755105,34.69387755102041,35.714285714285715,36.734693877551024,37.755102040816325,38.775510204081634,39.79591836734694,40.816326530612244,41.83673469387755,42.85714285714286,43.87755102040816,44.89795918367347,45.91836734693878,46.93877551020408,47.95918367346939,48.9795918367347,50.0],"y":[2.140380859375,2.140716552734375,2.140380859375,2.140045166015625,2.13970947265625,2.140045166015625,2.13970947265625,2.13970947265625,2.13970947265625,2.140045166015625,2.140045166015625,2.13970947265625,2.140045166015625,2.140045166015625,2.13970947265625,2.140045166015625,2.140045166015625,2.140045166015625,2.13970947265625,2.13970947265625,2.140045166015625,2.140045166015625,2.140045166015625,2.140045166015625,2.140045166015625,2.140045166015625,2.13970947265625,2.13970947265625,2.140045166015625,2.140045166015625,2.140045166015625,2.13970947265625,2.13970947265625,2.13970947265625,2.140045166015625,2.140045166015625,2.140045166015625,2.140045166015625,2.140045166015625,2.13970947265625,2.140045166015625,2.13970947265625,2.140045166015625,2.13970947265625,2.140045166015625,2.140045166015625,2.13970947265625,2.140380859375,2.13970947265625,2.13970947265625],"type":"scatter"},{"mode":"lines+markers","name":"voltages_ch3","x":[0.0,1.0204081632653061,2.0408163265306123,3.0612244897959187,4.081632653061225,5.1020408163265305,6.122448979591837,7.142857142857143,8.16326530612245,9.183673469387756,10.204081632653061,11.224489795918368,12.244897959183675,13.26530612244898,14.285714285714286,15.306122448979592,16.3265306122449,17.346938775510203,18.367346938775512,19.387755102040817,20.408163265306122,21.42857142857143,22.448979591836736,23.46938775510204,24.48979591836735,25.510204081632654,26.53061224489796,27.551020408163264,28.571428571428573,29.591836734693878,30.612244897959183,31.63265306122449,32.6530612244898,33.673469387755105,34.69387755102041,35.714285714285715,36.734693877551024,37.755102040816325,38.775510204081634,39.79591836734694,40.816326530612244,41.83673469387755,42.85714285714286,43.87755102040816,44.89795918367347,45.91836734693878,46.93877551020408,47.95918367346939,48.9795918367347,50.0],"y":[3.14007568359375,3.14007568359375,3.139739990234375,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139404296875,3.139068603515625,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139404296875,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139739990234375,3.139739990234375,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139739990234375,3.139404296875,3.139404296875,3.139404296875,3.139404296875],"type":"scatter"},{"mode":"lines+markers","name":"voltages_ch4","x":[0.0,1.0204081632653061,2.0408163265306123,3.0612244897959187,4.081632653061225,5.1020408163265305,6.122448979591837,7.142857142857143,8.16326530612245,9.183673469387756,10.204081632653061,11.224489795918368,12.244897959183675,13.26530612244898,14.285714285714286,15.306122448979592,16.3265306122449,17.346938775510203,18.367346938775512,19.387755102040817,20.408163265306122,21.42857142857143,22.448979591836736,23.46938775510204,24.48979591836735,25.510204081632654,26.53061224489796,27.551020408163264,28.571428571428573,29.591836734693878,30.612244897959183,31.63265306122449,32.6530612244898,33.673469387755105,34.69387755102041,35.714285714285715,36.734693877551024,37.755102040816325,38.775510204081634,39.79591836734694,40.816326530612244,41.83673469387755,42.85714285714286,43.87755102040816,44.89795918367347,45.91836734693878,46.93877551020408,47.95918367346939,48.9795918367347,50.0],"y":[4.14044189453125,4.14044189453125,4.140106201171875,4.1397705078125,4.139434814453125,4.139434814453125,4.1397705078125,4.140106201171875,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.139434814453125,4.139434814453125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.139434814453125,4.1397705078125,4.1397705078125,4.139434814453125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.139434814453125,4.1397705078125,4.1397705078125,4.139434814453125,4.139434814453125,4.139434814453125,4.1397705078125,4.1397705078125,4.139434814453125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.1397705078125,4.139434814453125,4.1397705078125,4.1397705078125],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"4 channel measurement","y":0.9,"x":0.5,"xanchor":"center","yanchor":"top"},"margin":{"l":20,"r":20,"t":55,"b":20},"xaxis":{"title":{"text":"Measurement repetition number"}},"yaxis":{"title":{"text":"Voltage [V]"}}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('3807d597-d32e-4e39-9c1e-112d10faab9a');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div></div></div>
+</div>
+<p>Do not forget to shut down the services before proceeding:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">srunner</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Tutorial1-Basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting startet with the Aspect Device Engine Python API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorial3-Multiside_HighPerform.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting startet with the Aspect Device Engine Python API 3</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-measurements">Multiple Measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">Repeated measurements</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By aSpect Systems
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

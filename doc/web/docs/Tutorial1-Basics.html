@@ -1,0 +1,881 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting startet with the Aspect Device Engine Python API &#8212; The aSpect Device Engine Python API</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Tutorial1-Basics';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting startet with the Aspect Device Engine Python API 2" href="Tutorial2-Multimeasure.html" />
+    <link rel="prev" title="The Aspect Device Engine API" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/aspectlogo.png" class="logo__image only-light" alt="The aSpect Device Engine Python API - Home"/>
+    <script>document.write(`<img src="../_static/aspectlogo.png" class="logo__image only-dark" alt="The aSpect Device Engine Python API - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting startet with the Aspect Device Engine Python API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial2-Multimeasure.html">Getting startet with the Aspect Device Engine Python API 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">Getting startet with the Aspect Device Engine Python API 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">Getting startet with the Aspect Device Engine Python API 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial5-IV_Measurements.html">Getting startet with the Aspect Device Engine Python API 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial6-ListSweeps.html">Getting startet with the Aspect Device Engine Python API 6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial7-Triggering.html">Getting startet with the Aspect Device Engine Python API 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial8-ParameterTables.html">Getting startet with the Aspect Device Engine Python API 8</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Tutorial1-Basics.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Getting startet with the Aspect Device Engine Python API</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">Python imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">IdSmuServiceRunner</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">IdSmuService</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">The IdSmuBoardModel</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">Programming the hardware with the API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">idSmu Modules/Devices and Channels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">IdSmuDeviceModel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">Alias names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">The channel models</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">Parameterization and measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">Measuring voltage and current</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">Setting voltage and current</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">Bonus: Getting the maximum output voltage and output current ratings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="getting-startet-with-the-aspect-device-engine-python-api">
+<h1>Getting startet with the Aspect Device Engine Python API<a class="headerlink" href="#getting-startet-with-the-aspect-device-engine-python-api" title="Link to this heading">#</a></h1>
+<section id="basics">
+<h2>Basics<a class="headerlink" href="#basics" title="Link to this heading">#</a></h2>
+<p>This is the introductory overview of programming the Aspect Device Engine Python API.<br />
+This document is available as pdf and interactive jupyter notebook.
+The introduction includes the following objectives:</p>
+<ul class="simple">
+<li><p>The few steps to initializing software and hardware</p></li>
+<li><p>How to retreive information about the hardware</p></li>
+<li><p>Providing a basic understanding of the structure of the API</p></li>
+<li><p>The programming of essential channel parameters</p></li>
+<li><p>Setting a voltage and measuring voltage and current</p></li>
+</ul>
+<p>The following spoiler shows a python code snippet and few lines of code that are necessary with the API to generate and measure a voltage:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aspectdeviceengine.enginecore</span> <span class="kn">import</span> <span class="n">IdSmuServiceRunner</span>
+<span class="kn">from</span> <span class="nn">aspectdeviceengine.enginecore</span> <span class="kn">import</span> <span class="n">IdSmuService</span><span class="p">,</span> <span class="n">IdSmuBoardModel</span>
+
+<span class="c1"># 3 lines of code for the setup</span>
+<span class="n">srunner</span> <span class="o">=</span> <span class="n">IdSmuServiceRunner</span><span class="p">()</span>
+<span class="n">mbX1</span> <span class="p">:</span> <span class="n">IdSmuBoardModel</span> <span class="o">=</span> <span class="n">srunner</span><span class="o">.</span><span class="n">get_idsmu_service</span><span class="p">()</span><span class="o">.</span><span class="n">get_first_board</span><span class="p">()</span>
+<span class="n">channel1</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># 3 lines of code for configuration and measurement</span>
+<span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span><span class="p">)</span>  <span class="c1"># output : ~2.0</span>
+</pre></div>
+</div>
+<p>At the end of this document, this code and some of the background to it should be understandable.</p>
+<hr class="docutils" />
+<section id="python-imports">
+<h3>Python imports<a class="headerlink" href="#python-imports" title="Link to this heading">#</a></h3>
+<p>There are only a few python imports needed for this introduction. Everthing is imported from the <em>aspectdeviceengine.engincore</em> module.
+Actually, only the IdSmuServiceRunner would be needed since this is the only class that will be instantiated. The other classes are only imported for type hinting. The objects of these types are intantiated by the API services.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aspectdeviceengine.enginecore</span> <span class="kn">import</span> <span class="n">IdSmuService</span><span class="p">,</span> <span class="n">IdSmuServiceRunner</span><span class="p">,</span> <span class="n">IdSmuBoardModel</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="starting-the-services-and-hardware-initialization">
+<h3>Starting the services and hardware initialization<a class="headerlink" href="#starting-the-services-and-hardware-initialization" title="Link to this heading">#</a></h3>
+<section id="idsmuservicerunner">
+<h4>IdSmuServiceRunner<a class="headerlink" href="#idsmuservicerunner" title="Link to this heading">#</a></h4>
+<p>The <em>IdSmuServiceRunner</em> holds the references to the background services.
+If it goes out of scope, all services are shut down (cleanup processes).
+The lifetime should therefore be guranteed until the end of the session:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">srunner</span> <span class="o">=</span> <span class="n">IdSmuServiceRunner</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="idsmuservice">
+<h4>IdSmuService<a class="headerlink" href="#idsmuservice" title="Link to this heading">#</a></h4>
+<p>idSmu devices are detected by the <strong>IdSmuService</strong>. If the <em>get_first_board()</em>
+method is called prior to the detection method, the detection and initialization
+is performed automatically. This is useful for situations where
+no specific configuration needs to be done before initialization.</p>
+<p><strong>Important note:</strong> At the end of a session (be it a jupyter notebook or a python script) the services must be shut down. In the case of the termination of a python script, this happens automatically. When moving from one notebook tutorial to the next, either the kernel must be terminated or the shutdown() method must be executed manually (see last cell in the notebook).</p>
+</section>
+<section id="the-idsmuboardmodel">
+<h4>The IdSmuBoardModel<a class="headerlink" href="#the-idsmuboardmodel" title="Link to this heading">#</a></h4>
+<p>The IdSmuBoardModel is the host and (multiside-)controller for idSmu devices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbX1</span> <span class="p">:</span> <span class="n">IdSmuBoardModel</span> <span class="o">=</span> <span class="n">srunner</span><span class="o">.</span><span class="n">get_idsmu_service</span><span class="p">()</span><span class="o">.</span><span class="n">get_first_board</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this single line of code the Hardware is detected and initialized!<br />
+Let’s print some basic information about the detected devices for this board.<br />
+The most relevant information is the <strong>DeviceId</strong> and the device type.
+The DeviceId is used as resource identifier/ locator for the different
+parts of the hardware. The format is \Mx.Sy.Cz, where x is the mainboard address,
+y is the device/slot number and z is the channel number.<br />
+In the case of the API, the terms <em>Resource-Id</em> and <em>Address</em> are sysnonyms for the same thing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mbX1</span><span class="o">.</span><span class="n">device_information</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----------+------------+-------+----------+-------------+
+| DeviceId | IdSmu-Type | Name  | Firmware | Initialized |
++----------+------------+-------+----------+-------------+
+| M1.S1    | IdSmu2     | M1.S1 | 0x08191f | true        |
++----------+------------+-------+----------+-------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="programming-the-hardware-with-the-api">
+<h3>Programming the hardware with the API<a class="headerlink" href="#programming-the-hardware-with-the-api" title="Link to this heading">#</a></h3>
+<section id="idsmu-modules-devices-and-channels">
+<h4>idSmu Modules/Devices and Channels<a class="headerlink" href="#idsmu-modules-devices-and-channels" title="Link to this heading">#</a></h4>
+<p>With this system of hierarchical resource localization, each resource is uniquely identifiable,
+even in a multi-board setup.<br />
+As we can see (in a single idSmu board setup), there is
+exactly one device with the address “M1.S1”.<br />
+An idSmu device (sometimes called module) can contain one or more channels. We can obtain more information about these channels,
+for example their IDs/addresses:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">idSmu2</span> <span class="ow">in</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="o">.</span><span class="n">as_list</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;idSmu2 ID:    </span><span class="si">{</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">hardware_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;idSmu2 name:  </span><span class="si">{</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;channel IDs:  </span><span class="si">{</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">channel_ids</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>idSmu2 ID:    M1.S1
+idSmu2 name:  M1.S1
+channel IDs:  [&#39;M1.S1.C1&#39;, &#39;M1.S1.C2&#39;, &#39;M1.S1.C3&#39;, &#39;M1.S1.C4&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="idsmudevicemodel">
+<h4>IdSmuDeviceModel<a class="headerlink" href="#idsmudevicemodel" title="Link to this heading">#</a></h4>
+<p>The idSmuModules classes are proxy classes that implement the [ ] operator for quick access to a device/module of type IdSmuDeviceModel and the as_list() method to get all devices of the same type on the board. There are implementations for the all types of idSmu.</p>
+<p>To access a module we can simply use <code class="docutils literal notranslate"><span class="pre">idSmu2Modules['address</span> <span class="pre">or</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">module']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idSmu2</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The module&#39;s id is </span><span class="si">{</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">hardware_id</span><span class="si">}</span><span class="s2"> and the name is </span><span class="si">{</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The module&#39;s id is M1.S1 and the name is M1.S1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="alias-names">
+<h4>Alias names<a class="headerlink" href="#alias-names" title="Link to this heading">#</a></h4>
+<p>Devices can be renamed, either programmatically or by so-called parameter settings.
+Parameter settings are applied during initialization and the changed name can thus be used immediately. (programming via parameter settings is an advanced topic and will not be dealt with here).<br />
+The advantage of renaming resources is that you can use an alias name for addressing
+instead of the rather abstract resource IDs / addresses:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idSmu2</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;MyFavoriteModule&#39;</span>
+<span class="c1"># now we can reference the module with the new name</span>
+<span class="n">my_fav_module</span> <span class="o">=</span> <span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;MyFavoriteModule&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The module&#39;s id is still </span><span class="si">{</span><span class="n">my_fav_module</span><span class="o">.</span><span class="n">hardware_id</span><span class="si">}</span><span class="s2"> and the new name is </span><span class="si">{</span><span class="n">my_fav_module</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The module&#39;s id is still M1.S1 and the new name is MyFavoriteModule
+</pre></div>
+</div>
+</div>
+</div>
+<p>The board’s device information now lists the new name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mbX1</span><span class="o">.</span><span class="n">device_information</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+----------+------------+------------------+----------+-------------+
+| DeviceId | IdSmu-Type | Name             | Firmware | Initialized |
++----------+------------+------------------+----------+-------------+
+| M1.S1    | IdSmu2     | MyFavoriteModule | 0x08191f | true        |
++----------+------------+------------------+----------+-------------+
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="descending-further-into-the-model-hierarchy">
+<h3>Descending further into the model hierarchy<a class="headerlink" href="#descending-further-into-the-model-hierarchy" title="Link to this heading">#</a></h3>
+<p>The idSmu-Hardware is not just a source measurement unit, but combines various hardware components.
+For example, digital signals can be generated or a RAM memory can be used, depending on the hardware/software support.
+The software therefore models the hardware in dedicated units. One of the most important elements of the IdSmuDeviceModel
+mentioned above is the unit with which currents and voltages can be generated and measured.
+These units are called SMU or DPS, depending on the device type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu object at 0x000002056E17D9B0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-channel-models">
+<h4>The channel models<a class="headerlink" href="#the-channel-models" title="Link to this heading">#</a></h4>
+<p>The smu/dps subcomponents are again proxy objects and contain a Channels object.<br />
+This Channels object implements the [ ] operator for fast access to the channels of the source measurement unit. There is also a as_list() method again to itearate over the channels.
+The objects returned by the channels object are of type AnalogChannelModel.
+This class contains a large part of the methods and properties
+that you have to deal with in your daily work with the API.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">channel</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">as_list</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Channel number </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> with name </span><span class="si">{</span><span class="n">channel</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+          <span class="sa">f</span><span class="s2">&quot; and identifier </span><span class="si">{</span><span class="n">channel</span><span class="o">.</span><span class="n">hardware_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">channel</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;MyChannel</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Channel number 1 with name M1.S1.C1 and identifier M1.S1.C1
+Channel number 2 with name M1.S1.C2 and identifier M1.S1.C2
+Channel number 3 with name M1.S1.C3 and identifier M1.S1.C3
+Channel number 4 with name M1.S1.C4 and identifier M1.S1.C4
+</pre></div>
+</div>
+</div>
+</div>
+<p>After renaming a channel, there are 3 ways to address it:</p>
+<ul class="simple">
+<li><p>through the channel number (starting from 1)</p></li>
+<li><p>through the unique channel identifier</p></li>
+<li><p>through the channel name</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hardware_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;M1.S1.C1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hardware_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;MyChannel1&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hardware_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>M1.S1.C1
+M1.S1.C1
+M1.S1.C1
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><strong>Importante Note</strong>: Attempting to assign the same name to two different channels leads to an exception. Channel names must be unique.
+The reason is that the engine accepts names as resource identifiers for many operations. If the user were given the option to overwrite this name, bugs that are difficult to identify would be possible:</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;MyChannel1&quot;</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Exception: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception: The alias name MyChannel1 is already associated with the id M1.S1.C1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="parameterization-and-measurements">
+<h3>Parameterization and measurements<a class="headerlink" href="#parameterization-and-measurements" title="Link to this heading">#</a></h3>
+<p>Now we have a reference to the channel object and can finally parameterize it and take measurements.
+A channel must be active so that a voltage (or a current) can be output or meaningful measurements can be made.<br />
+Let’s check if the channel is enabled, and if it is not, enable it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel1</span> <span class="o">=</span> <span class="n">idSmu2</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="s2">&quot;MyChannel1&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Channel enabled? </span><span class="si">{</span><span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span><span class="p">:</span>
+    <span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Channel enabled? </span><span class="si">{</span><span class="n">channel1</span><span class="o">.</span><span class="n">enabled</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Channel enabled? False
+Channel enabled? True
+</pre></div>
+</div>
+</div>
+</div>
+<section id="measuring-voltage-and-current">
+<h4>Measuring voltage and current<a class="headerlink" href="#measuring-voltage-and-current" title="Link to this heading">#</a></h4>
+<p>The quickest and easiest way to measure a voltage or a current are the properties <code class="docutils literal notranslate"><span class="pre">voltage</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Measured voltage: </span><span class="si">{</span><span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Measured current: </span><span class="si">{</span><span class="n">channel1</span><span class="o">.</span><span class="n">current</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Measured voltage: 0.000000
+Measured current: 0.000002
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-voltage-and-current">
+<h4>Setting voltage and current<a class="headerlink" href="#setting-voltage-and-current" title="Link to this heading">#</a></h4>
+<p>The quickest and easiest way to set a voltage or a current are the setters <code class="docutils literal notranslate"><span class="pre">voltage</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Measured voltage: </span><span class="si">{</span><span class="n">channel1</span><span class="o">.</span><span class="n">voltage</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Setting a current is only usefull if there is a load at the outputs</span>
+<span class="c1"># wheras voltages can be measured on an open output</span>
+<span class="c1"># channel1.current = 1E-3</span>
+<span class="c1"># print(f&#39;Measured current: {channel1.current:6f}&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Measured voltage: 3.141083
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bonus-getting-the-maximum-output-voltage-and-output-current-ratings">
+<h4>Bonus: Getting the maximum output voltage and output current ratings<a class="headerlink" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vMin</span><span class="p">,</span> <span class="n">vMax</span><span class="p">,</span> <span class="n">iMin</span><span class="p">,</span> <span class="n">iMax</span> <span class="o">=</span> <span class="n">channel1</span><span class="o">.</span><span class="n">output_ranges</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output voltage range: [</span><span class="si">{</span><span class="n">vMin</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">vMax</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">] V&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Output current range: [</span><span class="si">{</span><span class="n">iMin</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">iMax</span><span class="si">:</span><span class="s1">6f</span><span class="si">}</span><span class="s1">] A&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output voltage range: [-11.000000, 10.999664] V
+Output current range: [-0.075000, 0.074998] A
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">srunner</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Aspect Device Engine API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorial2-Multimeasure.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting startet with the Aspect Device Engine Python API 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics">Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">Python imports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">IdSmuServiceRunner</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">IdSmuService</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">The IdSmuBoardModel</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">Programming the hardware with the API</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">idSmu Modules/Devices and Channels</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">IdSmuDeviceModel</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">Alias names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">The channel models</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">Parameterization and measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">Measuring voltage and current</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">Setting voltage and current</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">Bonus: Getting the maximum output voltage and output current ratings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By aSpect Systems
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

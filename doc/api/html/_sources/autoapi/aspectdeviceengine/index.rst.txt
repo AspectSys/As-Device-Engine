@@ -1,0 +1,20 @@
+
+:py:mod:`aspectdeviceengine`
+============================
+
+.. py:module:: aspectdeviceengine
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   enginecore/index.rst
+
+
+Package Contents
+----------------
+
+

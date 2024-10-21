@@ -1,0 +1,15 @@
+[M1_test];;;;;;;;;;;;
+#SMU-Channel;;;;;;;;;;;;
+SettingId;HardwareId;Name;Group;Type;OutputForceValue;ForceMode;EnableOutput;CurrentRange;MeasurementMode;EnableClamps;ClampLowValue;ClampHighValue
+0;M1.S1.C1;M1.S1.C1;All;SMU-Channel;1;FV;1;70mA;HighZ;1;-0,07;0,07
+0;M1.S1.C2;M1.S1.C2;All;SMU-Channel;1;FV;1;70mA;HighZ;1;-0,07;0,07
+0;M1.S1.C3;M1.S1.C3;All;SMU-Channel;1;FV;0;70mA;HighZ;1;-0,07;0,07
+0;M1.S1.C4;M1.S1.C4;All;SMU-Channel;1;FV;0;70mA;HighZ;1;-0,07;0,07
+[Types];;;;;;;;;;;;
+int;string;string;string;string;float;[FV,FI,HighZ_Voltage,HighZ_Current];bool;[5uA,20uA,200uA,2mA,70mA];[ISense,VSense,TSense,HighZ];bool;float;float
+;;;;;;;;;;;;
+#SMU-Device;;;;;;;;;;;;
+SettingId;HardwareId;Name;Group;Type;INT10K;ExternalPower;;;;;;
+0;M1.S1;M1.S1;All;SMU-Device;1;0;;;;;;
+[Types];;;;;;;;;;;;
+int;string;string;string;string;bool;bool;;;;;;
