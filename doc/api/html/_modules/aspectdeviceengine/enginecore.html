@@ -334,7 +334,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.autorange">[docs]</a>
     <span class="k">def</span> <span class="nf">autorange</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the state of the channels automatic current range functionality</span>
+<span class="sd">                 Property that gets/sets the state of the channels automatic current range functionality</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -351,11 +351,31 @@
     <span class="k">def</span> <span class="nf">autorange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="o">...</span>
     <span class="nd">@property</span>
+<div class="viewcode-block" id="AD5522ChannelModel.clamp_enabled">
+<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_enabled">[docs]</a>
+    <span class="k">def</span> <span class="nf">clamp_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Property that gets/sets the channel clamp enable state</span>
+<span class="sd">        </span>
+<span class="sd">                 Parameters</span>
+<span class="sd">                 ----------</span>
+<span class="sd">                 clamp_enabled : bool</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 bool</span>
+<span class="sd">                      The clamp enable state</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+    <span class="nd">@clamp_enabled</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">clamp_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="o">...</span>
+    <span class="nd">@property</span>
 <div class="viewcode-block" id="AD5522ChannelModel.clamp_high_value">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_high_value">[docs]</a>
     <span class="k">def</span> <span class="nf">clamp_high_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel clamp high value</span>
+<span class="sd">                 Property that gets/sets the channel clamp high value</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -376,7 +396,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_low_value">[docs]</a>
     <span class="k">def</span> <span class="nf">clamp_low_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel clamp low value</span>
+<span class="sd">                 Property that gets/sets the channel clamp low value</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -397,7 +417,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.current">[docs]</a>
     <span class="k">def</span> <span class="nf">current</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that measures/sets the channel output current</span>
+<span class="sd">                 Property that measures/sets the channel output current</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -418,7 +438,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.current_range">[docs]</a>
     <span class="k">def</span> <span class="nf">current_range</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SmuCurrentRange</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel current reange</span>
+<span class="sd">                 Property that gets/sets the channel current reange</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -439,7 +459,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.enabled">[docs]</a>
     <span class="k">def</span> <span class="nf">enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel enabled state</span>
+<span class="sd">                 Property that gets/sets the channel enabled state</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -473,7 +493,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.name">[docs]</a>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel name</span>
+<span class="sd">                 Property that gets/sets the channel name</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -507,7 +527,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.voltage">[docs]</a>
     <span class="k">def</span> <span class="nf">voltage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that measures/sets the channel output voltage</span>
+<span class="sd">                 Property that measures/sets the channel output voltage</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -641,7 +661,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.autorange">[docs]</a>
     <span class="k">def</span> <span class="nf">autorange</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the state of the channels automatic current range functionality</span>
+<span class="sd">                 Property that gets/sets the state of the channels automatic current range functionality</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -658,32 +678,31 @@
     <span class="k">def</span> <span class="nf">autorange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="o">...</span>
     <span class="nd">@property</span>
-<div class="viewcode-block" id="AD5560ChannelModel.clamp_high_value">
-<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_high_value">[docs]</a>
-    <span class="k">def</span> <span class="nf">clamp_high_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<div class="viewcode-block" id="AD5560ChannelModel.clamp_enabled">
+<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_enabled">[docs]</a>
+    <span class="k">def</span> <span class="nf">clamp_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel clamp high value</span>
+<span class="sd">                 Property that gets/sets the channel clamp enable state</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
-<span class="sd">                 clamp_high_value : float</span>
-<span class="sd">                      The clamp value in the unit of ampere [A]</span>
+<span class="sd">                 clamp_enabled : bool</span>
 <span class="sd">        </span>
 <span class="sd">                 Returns</span>
 <span class="sd">                 -------</span>
-<span class="sd">                 float</span>
-<span class="sd">                      The clamp value in the unit of ampere [A]</span>
+<span class="sd">                 bool</span>
+<span class="sd">                      The clamp enable state</span>
 <span class="sd">        &quot;&quot;&quot;</span></div>
 
-    <span class="nd">@clamp_high_value</span><span class="o">.</span><span class="n">setter</span>
-    <span class="k">def</span> <span class="nf">clamp_high_value</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="nd">@clamp_enabled</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">clamp_enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="o">...</span>
     <span class="nd">@property</span>
 <div class="viewcode-block" id="AD5560ChannelModel.clamp_low_value">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_low_value">[docs]</a>
     <span class="k">def</span> <span class="nf">clamp_low_value</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel clamp low value</span>
+<span class="sd">                 Property that gets/sets the channel clamp low value</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -717,7 +736,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.current_range">[docs]</a>
     <span class="k">def</span> <span class="nf">current_range</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DpsCurrentRange</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel current reange</span>
+<span class="sd">                 Property that gets/sets the channel current reange</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -738,7 +757,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.enabled">[docs]</a>
     <span class="k">def</span> <span class="nf">enabled</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel enabled state</span>
+<span class="sd">                 Property that gets/sets the channel enabled state</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -772,7 +791,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.name">[docs]</a>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the channel name</span>
+<span class="sd">                 Property that gets/sets the channel name</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -806,7 +825,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.voltage">[docs]</a>
     <span class="k">def</span> <span class="nf">voltage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that measures/sets the channel output voltage</span>
+<span class="sd">                 Property that measures/sets the channel output voltage</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -844,6 +863,11 @@
 <div class="viewcode-block" id="ChannelResult">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult">[docs]</a>
 <span class="k">class</span> <span class="nc">ChannelResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             The result of a ReadAdcCommandIdSmu</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -851,7 +875,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult.get_values">[docs]</a>
     <span class="k">def</span> <span class="nf">get_values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Gets the measured values for a channel</span>
+<span class="sd">                 Returns the measurement values for a channel</span>
 <span class="sd">        </span>
 <span class="sd">                 Returns</span>
 <span class="sd">                 -------</span>
@@ -863,29 +887,60 @@
 <div class="viewcode-block" id="ChannelResult.values">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult.values">[docs]</a>
     <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">float64</span><span class="p">]:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Returns the measurement values for a channel</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 ndarray</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
 </div>
 
 <div class="viewcode-block" id="CommandReply">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply">[docs]</a>
 <span class="k">class</span> <span class="nc">CommandReply</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             The aspect device engine is a command driven framework. </span>
+<span class="sd">             This is the base class of all command replies (and results).</span>
+<span class="sd">             The reply can be an error or a result.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
 <div class="viewcode-block" id="CommandReply.is_error">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.is_error">[docs]</a>
     <span class="k">def</span> <span class="nf">is_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Indicates whether the response is a command error</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 bool</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
 
 <div class="viewcode-block" id="CommandReply.is_result">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.is_result">[docs]</a>
     <span class="k">def</span> <span class="nf">is_result</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Indicates whether the response is an command result</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 bool</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
 
 <div class="viewcode-block" id="CommandReply.to_json">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.to_json">[docs]</a>
     <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="o">...</span></div>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Returns the reply as a JSON string</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 str</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
 </div>
 
 <div class="viewcode-block" id="CommandReplyFuture">
@@ -1261,6 +1316,11 @@
 <div class="viewcode-block" id="DeviceResult">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceResult">[docs]</a>
 <span class="k">class</span> <span class="nc">DeviceResult</span><span class="p">(</span><span class="n">CommandReply</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             The result of a device detection command.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -1463,6 +1523,11 @@
 <div class="viewcode-block" id="FirmwareVersion">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FirmwareVersion">[docs]</a>
 <span class="k">class</span> <span class="nc">FirmwareVersion</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Firmware version of a device detected by the engine.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -1563,6 +1628,12 @@
 <div class="viewcode-block" id="IdSmu1DeviceModel">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel">[docs]</a>
 <span class="k">class</span> <span class="nc">IdSmu1DeviceModel</span><span class="p">(</span><span class="n">IdSmuDeviceModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             IdSmuDeviceModel class that contains idSmu1 specific methods and properties.</span>
+<span class="sd">    </span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="IdSmu1DeviceModel.Dps">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps">[docs]</a>
     <span class="k">class</span> <span class="nc">Dps</span><span class="p">:</span>
@@ -1633,6 +1704,11 @@
 <div class="viewcode-block" id="IdSmu2DeviceModel">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel">[docs]</a>
 <span class="k">class</span> <span class="nc">IdSmu2DeviceModel</span><span class="p">(</span><span class="n">IdSmuDeviceModel</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             IdSmuDeviceModel class that contains idSmu2 specific methods and properties.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="IdSmu2DeviceModel.Smu">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu">[docs]</a>
     <span class="k">class</span> <span class="nc">Smu</span><span class="p">:</span>
@@ -1697,9 +1773,19 @@
 <div class="viewcode-block" id="IdSmuBoardModel">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel">[docs]</a>
 <span class="k">class</span> <span class="nc">IdSmuBoardModel</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Container and controller vor idSmu modules and channels</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="IdSmuBoardModel.IdSmu1Modules">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu1Modules">[docs]</a>
     <span class="k">class</span> <span class="nc">IdSmu1Modules</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">                 This class represents all idSmu1 (DPS) modules on the board</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nd">@staticmethod</span>
         <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="o">...</span>
@@ -1714,6 +1800,11 @@
 <div class="viewcode-block" id="IdSmuBoardModel.IdSmu2Modules">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules">[docs]</a>
     <span class="k">class</span> <span class="nc">IdSmu2Modules</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        </span>
+<span class="sd">                 This class represents all idSmu2 (SMU) modules on the board</span>
+<span class="sd">            </span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nd">@staticmethod</span>
         <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="o">...</span>
@@ -1722,7 +1813,14 @@
 <div class="viewcode-block" id="IdSmuBoardModel.IdSmu2Modules.as_list">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules.as_list">[docs]</a>
         <span class="k">def</span> <span class="nf">as_list</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">IdSmu2DeviceModel</span><span class="p">]:</span>
-            <span class="o">...</span></div>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                     Returns the force values that are used by the function_generator method</span>
+<span class="sd">            </span>
+<span class="sd">                     Returns</span>
+<span class="sd">                     -------</span>
+<span class="sd">                     List[IdSmu2DeviceModel]</span>
+<span class="sd">                          A list of IdSmu2DeviceModel objects</span>
+<span class="sd">            &quot;&quot;&quot;</span></div>
 </div>
 
     <span class="nd">@staticmethod</span>
@@ -1868,6 +1966,22 @@
 <span class="sd">                 -------</span>
 <span class="sd">                 float</span>
 <span class="sd">                      The analog clamp low value</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="IdSmuBoardModel.get_current_range">
+<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_current_range">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_current_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">channel_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CurrentRange</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                 Returns the current range of a channel</span>
+<span class="sd">        </span>
+<span class="sd">                 Parameters</span>
+<span class="sd">                 ----------</span>
+<span class="sd">                 channel_name : str</span>
+<span class="sd">                      Names or Id of the channel for which the current range should be returned</span>
+<span class="sd">        </span>
+<span class="sd">                 Returns</span>
+<span class="sd">                 -------</span>
+<span class="sd">                 CurrentRange</span>
 <span class="sd">        &quot;&quot;&quot;</span></div>
 
 <div class="viewcode-block" id="IdSmuBoardModel.get_device_model">
@@ -2442,9 +2556,9 @@
 <span class="sd">                      If set, the immediate mode is enabled</span>
 <span class="sd">        &quot;&quot;&quot;</span></div>
 
-<div class="viewcode-block" id="IdSmuBoardModel.set_measurement_mode">
-<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_mode">[docs]</a>
-    <span class="k">def</span> <span class="nf">set_measurement_mode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_mode</span><span class="p">:</span> <span class="n">MeasurementMode</span><span class="p">,</span> <span class="n">channel_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<div class="viewcode-block" id="IdSmuBoardModel.set_measurement_modes">
+<a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_modes">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_measurement_modes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measurement_mode</span><span class="p">:</span> <span class="n">MeasurementMode</span><span class="p">,</span> <span class="n">channel_names</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">                 Sets the measurement mode of a channel</span>
 <span class="sd">        </span>
@@ -2698,7 +2812,7 @@
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.name">[docs]</a>
     <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">                 Property/Setter that gets/sets the device name</span>
+<span class="sd">                 Property that gets/sets the device name</span>
 <span class="sd">        </span>
 <span class="sd">                 Parameters</span>
 <span class="sd">                 ----------</span>
@@ -2718,6 +2832,12 @@
 <div class="viewcode-block" id="IdSmuService">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService">[docs]</a>
 <span class="k">class</span> <span class="nc">IdSmuService</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Service class that detects and manages idSmu hardware.</span>
+<span class="sd">    </span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -2955,6 +3075,11 @@
 <div class="viewcode-block" id="IdSmuServiceRunner">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuServiceRunner">[docs]</a>
 <span class="k">class</span> <span class="nc">IdSmuServiceRunner</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Simplifies the starting of idSmu services and controls their lifetime.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -2995,7 +3120,7 @@
 <span class="sd">                 filtered : bool</span>
 <span class="sd">                      If this flag is set, the parameters are taken from the filtered version of the table</span>
 <span class="sd">        </span>
-<span class="sd">                 board_address : str</span>
+<span class="sd">                 table_group_name : str</span>
 <span class="sd">                      Optional table group name if only a group should be applied</span>
 <span class="sd">        </span>
 <span class="sd">                 Returns</span>
@@ -3207,7 +3332,7 @@
 <span class="sd">                 Returns</span>
 <span class="sd">                 -------</span>
 <span class="sd">                 IdqTable</span>
-<span class="sd">                      A DoubleList object</span>
+<span class="sd">                      A IdqTable object</span>
 <span class="sd">        &quot;&quot;&quot;</span></div>
 
 <div class="viewcode-block" id="IdSmuSettingsService.get_parameter_settings_names">
@@ -3293,7 +3418,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="IdSmuSettingsService.print_settings">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.print_settings">[docs]</a>
-    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setting_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filtered</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">column_information</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">print_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setting_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">filtered</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">column_information</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">max_columns</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">                 Prints the setting / board to the console</span>
 <span class="sd">        </span>
@@ -4098,6 +4223,11 @@
 <div class="viewcode-block" id="ListSweep">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep">[docs]</a>
 <span class="k">class</span> <span class="nc">ListSweep</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Class to perform a List Sweep on a idSmu module</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -4217,6 +4347,11 @@
 <div class="viewcode-block" id="ListSweepChannelConfiguration">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration">[docs]</a>
 <span class="k">class</span> <span class="nc">ListSweepChannelConfiguration</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             Instances of this class are needed to configure a List Sweep</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -4629,6 +4764,11 @@
 <div class="viewcode-block" id="SequencingCommandResult">
 <a class="viewcode-back" href="../../autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SequencingCommandResult">[docs]</a>
 <span class="k">class</span> <span class="nc">SequencingCommandResult</span><span class="p">(</span><span class="n">Result</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    </span>
+<span class="sd">             The result of a sequencing command.</span>
+<span class="sd">        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">_pybind11_conduit_v1_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="o">...</span>
@@ -5000,7 +5140,7 @@
 <span class="sd">             int</span>
 <span class="sd">    &quot;&quot;&quot;</span></div>
 
-<span class="n">__version__</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;0.9.542&#39;</span>
+<span class="n">__version__</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;0.9.556&#39;</span>
 </pre></div>
         </article>
       </div>

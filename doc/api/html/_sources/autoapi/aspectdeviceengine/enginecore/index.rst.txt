@@ -25,9 +25,9 @@ Classes
    * - :py:obj:`At <aspectdeviceengine.enginecore.At>`
      - \-
    * - :py:obj:`ChannelResult <aspectdeviceengine.enginecore.ChannelResult>`
-     - \-
+     - The result of a ReadAdcCommandIdSmu
    * - :py:obj:`CommandReply <aspectdeviceengine.enginecore.CommandReply>`
-     - \-
+     - The aspect device engine is a command driven framework.
    * - :py:obj:`CommandReplyFuture <aspectdeviceengine.enginecore.CommandReplyFuture>`
      - \-
    * - :py:obj:`CommandReplyList <aspectdeviceengine.enginecore.CommandReplyList>`
@@ -41,29 +41,29 @@ Classes
    * - :py:obj:`DeviceModel <aspectdeviceengine.enginecore.DeviceModel>`
      - \-
    * - :py:obj:`DeviceResult <aspectdeviceengine.enginecore.DeviceResult>`
-     - \-
+     - The result of a device detection command.
    * - :py:obj:`DoubleList <aspectdeviceengine.enginecore.DoubleList>`
      - List of doubles.
    * - :py:obj:`DpsCurrentRange <aspectdeviceengine.enginecore.DpsCurrentRange>`
      - Members:
    * - :py:obj:`FirmwareVersion <aspectdeviceengine.enginecore.FirmwareVersion>`
-     - \-
+     - Firmware version of a device detected by the engine.
    * - :py:obj:`FunctionGeneratorResult <aspectdeviceengine.enginecore.FunctionGeneratorResult>`
      - \-
    * - :py:obj:`FunctionGeneratorType <aspectdeviceengine.enginecore.FunctionGeneratorType>`
      - Members:
    * - :py:obj:`IdSmu1DeviceModel <aspectdeviceengine.enginecore.IdSmu1DeviceModel>`
-     - \-
+     - IdSmuDeviceModel class that contains idSmu1 specific methods and properties.
    * - :py:obj:`IdSmu2DeviceModel <aspectdeviceengine.enginecore.IdSmu2DeviceModel>`
-     - \-
+     - IdSmuDeviceModel class that contains idSmu2 specific methods and properties.
    * - :py:obj:`IdSmuBoardModel <aspectdeviceengine.enginecore.IdSmuBoardModel>`
-     - \-
+     - Container and controller vor idSmu modules and channels
    * - :py:obj:`IdSmuDeviceModel <aspectdeviceengine.enginecore.IdSmuDeviceModel>`
      - \-
    * - :py:obj:`IdSmuService <aspectdeviceengine.enginecore.IdSmuService>`
-     - \-
+     - Service class that detects and manages idSmu hardware.
    * - :py:obj:`IdSmuServiceRunner <aspectdeviceengine.enginecore.IdSmuServiceRunner>`
-     - \-
+     - Simplifies the starting of idSmu services and controls their lifetime.
    * - :py:obj:`IdSmuSettingsService <aspectdeviceengine.enginecore.IdSmuSettingsService>`
      - \-
    * - :py:obj:`IdqTable <aspectdeviceengine.enginecore.IdqTable>`
@@ -79,9 +79,9 @@ Classes
    * - :py:obj:`Iloc <aspectdeviceengine.enginecore.Iloc>`
      - \-
    * - :py:obj:`ListSweep <aspectdeviceengine.enginecore.ListSweep>`
-     - \-
+     - Class to perform a List Sweep on a idSmu module
    * - :py:obj:`ListSweepChannelConfiguration <aspectdeviceengine.enginecore.ListSweepChannelConfiguration>`
-     - \-
+     - Instances of this class are needed to configure a List Sweep
    * - :py:obj:`MapOfStringVectors <aspectdeviceengine.enginecore.MapOfStringVectors>`
      - Map of string vectors
    * - :py:obj:`MeasurementMode <aspectdeviceengine.enginecore.MeasurementMode>`
@@ -93,11 +93,11 @@ Classes
    * - :py:obj:`ReadWriteFpgaIdSmuResult <aspectdeviceengine.enginecore.ReadWriteFpgaIdSmuResult>`
      - \-
    * - :py:obj:`Result <aspectdeviceengine.enginecore.Result>`
-     - \-
+     - The aspect device engine is a command driven framework.
    * - :py:obj:`RowFilter <aspectdeviceengine.enginecore.RowFilter>`
      - \-
    * - :py:obj:`SequencingCommandResult <aspectdeviceengine.enginecore.SequencingCommandResult>`
-     - \-
+     - The result of a sequencing command.
    * - :py:obj:`SmuCurrentRange <aspectdeviceengine.enginecore.SmuCurrentRange>`
      - Members:
    * - :py:obj:`StringList <aspectdeviceengine.enginecore.StringList>`
@@ -129,7 +129,7 @@ Functions
    ..    ..    ..    .. .. py:property:: autorange
       :type: bool
 
-      Property/Setter that gets/sets the state of the channels automatic current range functionality
+      Property that gets/sets the state of the channels automatic current range functionality
 
       :param enable: If set to true, the autoranging is enabled
       :type enable: bool
@@ -137,10 +137,21 @@ Functions
       :returns: The state of the auto range enabled state
       :rtype: bool
 
+   ..    .. .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
    ..    .. .. py:property:: clamp_high_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp high value
+      Property that gets/sets the channel clamp high value
 
       :param clamp_high_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
       :type clamp_high_value: float
@@ -151,7 +162,7 @@ Functions
    ..    .. .. py:property:: clamp_low_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp low value
+      Property that gets/sets the channel clamp low value
 
       :param clamp_low_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
       :type clamp_low_value: float
@@ -162,7 +173,7 @@ Functions
    ..    .. .. py:property:: current
       :type: float
 
-      Property/Setter that measures/sets the channel output current
+      Property that measures/sets the channel output current
 
       :param current: The current in the unit of ampere [A]
       :type current: float
@@ -173,7 +184,7 @@ Functions
    ..    .. .. py:property:: current_range
       :type: SmuCurrentRange
 
-      Property/Setter that gets/sets the channel current reange
+      Property that gets/sets the channel current reange
 
       :param current_range: The current range
       :type current_range: SmuCurrentRange
@@ -184,7 +195,7 @@ Functions
    ..    .. .. py:property:: enabled
       :type: bool
 
-      Property/Setter that gets/sets the channel enabled state
+      Property that gets/sets the channel enabled state
 
       :param enabled: True to enable the channel, false to disable the channel
       :type enabled: bool
@@ -203,7 +214,7 @@ Functions
    ..    .. .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the channel name
+      Property that gets/sets the channel name
 
       :param name: True to enable the channel, false to disable the channel
 
@@ -221,7 +232,7 @@ Functions
    ..    .. .. py:property:: voltage
       :type: float
 
-      Property/Setter that measures/sets the channel output voltage
+      Property that measures/sets the channel output voltage
 
       :param voltage: The voltage in unit of volt [V]
       :type voltage: float
@@ -242,25 +253,27 @@ Functions
       :class: summarytable
 
       * - :py:obj:`autorange <aspectdeviceengine.enginecore.AD5522ChannelModel.autorange>`
-        - Property/Setter that gets/sets the state of the channels automatic current range functionality
+        - Property that gets/sets the state of the channels automatic current range functionality
+      * - :py:obj:`clamp_enabled <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_enabled>`
+        - Property that gets/sets the channel clamp enable state
       * - :py:obj:`clamp_high_value <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_high_value>`
-        - Property/Setter that gets/sets the channel clamp high value
+        - Property that gets/sets the channel clamp high value
       * - :py:obj:`clamp_low_value <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_low_value>`
-        - Property/Setter that gets/sets the channel clamp low value
+        - Property that gets/sets the channel clamp low value
       * - :py:obj:`current <aspectdeviceengine.enginecore.AD5522ChannelModel.current>`
-        - Property/Setter that measures/sets the channel output current
+        - Property that measures/sets the channel output current
       * - :py:obj:`current_range <aspectdeviceengine.enginecore.AD5522ChannelModel.current_range>`
-        - Property/Setter that gets/sets the channel current reange
+        - Property that gets/sets the channel current reange
       * - :py:obj:`enabled <aspectdeviceengine.enginecore.AD5522ChannelModel.enabled>`
-        - Property/Setter that gets/sets the channel enabled state
+        - Property that gets/sets the channel enabled state
       * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.AD5522ChannelModel.hardware_id>`
         - Property that gets the channel id
       * - :py:obj:`name <aspectdeviceengine.enginecore.AD5522ChannelModel.name>`
-        - Property/Setter that gets/sets the channel name
+        - Property that gets/sets the channel name
       * - :py:obj:`output_ranges <aspectdeviceengine.enginecore.AD5522ChannelModel.output_ranges>`
         - Property that gets the channel min/max output voltage and current
       * - :py:obj:`voltage <aspectdeviceengine.enginecore.AD5522ChannelModel.voltage>`
-        - Property/Setter that measures/sets the channel output voltage
+        - Property that measures/sets the channel output voltage
 
    .. list-table:: Methods
       :header-rows: 0
@@ -292,7 +305,7 @@ Functions
    .. py:property:: autorange
       :type: bool
 
-      Property/Setter that gets/sets the state of the channels automatic current range functionality
+      Property that gets/sets the state of the channels automatic current range functionality
 
       :param enable: If set to true, the autoranging is enabled
       :type enable: bool
@@ -300,10 +313,21 @@ Functions
       :returns: The state of the auto range enabled state
       :rtype: bool
 
+   .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
    .. py:property:: clamp_high_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp high value
+      Property that gets/sets the channel clamp high value
 
       :param clamp_high_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
       :type clamp_high_value: float
@@ -314,7 +338,7 @@ Functions
    .. py:property:: clamp_low_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp low value
+      Property that gets/sets the channel clamp low value
 
       :param clamp_low_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
       :type clamp_low_value: float
@@ -325,7 +349,7 @@ Functions
    .. py:property:: current
       :type: float
 
-      Property/Setter that measures/sets the channel output current
+      Property that measures/sets the channel output current
 
       :param current: The current in the unit of ampere [A]
       :type current: float
@@ -336,7 +360,7 @@ Functions
    .. py:property:: current_range
       :type: SmuCurrentRange
 
-      Property/Setter that gets/sets the channel current reange
+      Property that gets/sets the channel current reange
 
       :param current_range: The current range
       :type current_range: SmuCurrentRange
@@ -347,7 +371,7 @@ Functions
    .. py:property:: enabled
       :type: bool
 
-      Property/Setter that gets/sets the channel enabled state
+      Property that gets/sets the channel enabled state
 
       :param enabled: True to enable the channel, false to disable the channel
       :type enabled: bool
@@ -366,7 +390,7 @@ Functions
    .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the channel name
+      Property that gets/sets the channel name
 
       :param name: True to enable the channel, false to disable the channel
 
@@ -384,7 +408,7 @@ Functions
    .. py:property:: voltage
       :type: float
 
-      Property/Setter that measures/sets the channel output voltage
+      Property that measures/sets the channel output voltage
 
       :param voltage: The voltage in unit of volt [V]
       :type voltage: float
@@ -481,7 +505,7 @@ Functions
    ..    ..    ..    .. .. py:property:: autorange
       :type: bool
 
-      Property/Setter that gets/sets the state of the channels automatic current range functionality
+      Property that gets/sets the state of the channels automatic current range functionality
 
       :param enable: If set to true, the autoranging is enabled
       :type enable: bool
@@ -489,21 +513,21 @@ Functions
       :returns: The state of the auto range enabled state
       :rtype: bool
 
-   ..    .. .. py:property:: clamp_high_value
-      :type: float
+   ..    .. .. py:property:: clamp_enabled
+      :type: bool
 
-      Property/Setter that gets/sets the channel clamp high value
+      Property that gets/sets the channel clamp enable state
 
-      :param clamp_high_value: The clamp value in the unit of ampere [A]
-      :type clamp_high_value: float
+      :param clamp_enabled:
+      :type clamp_enabled: bool
 
-      :returns: The clamp value in the unit of ampere [A]
-      :rtype: float
+      :returns: The clamp enable state
+      :rtype: bool
 
    ..    .. .. py:property:: clamp_low_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp low value
+      Property that gets/sets the channel clamp low value
 
       :param clamp_low_value: The clamp value in the unit of ampere [A]
       :type clamp_low_value: float
@@ -522,7 +546,7 @@ Functions
    ..    .. .. py:property:: current_range
       :type: DpsCurrentRange
 
-      Property/Setter that gets/sets the channel current reange
+      Property that gets/sets the channel current reange
 
       :param current_range: The current range
       :type current_range: DpsCurrentRange
@@ -533,7 +557,7 @@ Functions
    ..    .. .. py:property:: enabled
       :type: bool
 
-      Property/Setter that gets/sets the channel enabled state
+      Property that gets/sets the channel enabled state
 
       :param enabled: True to enable the channel, false to disable the channel
       :type enabled: bool
@@ -552,7 +576,7 @@ Functions
    ..    .. .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the channel name
+      Property that gets/sets the channel name
 
       :param name: The name of the channel
 
@@ -570,7 +594,7 @@ Functions
    ..    .. .. py:property:: voltage
       :type: float
 
-      Property/Setter that measures/sets the channel output voltage
+      Property that measures/sets the channel output voltage
 
       :param voltage: The voltage in unit of volt [V]
       :type voltage: float
@@ -591,25 +615,25 @@ Functions
       :class: summarytable
 
       * - :py:obj:`autorange <aspectdeviceengine.enginecore.AD5560ChannelModel.autorange>`
-        - Property/Setter that gets/sets the state of the channels automatic current range functionality
-      * - :py:obj:`clamp_high_value <aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_high_value>`
-        - Property/Setter that gets/sets the channel clamp high value
+        - Property that gets/sets the state of the channels automatic current range functionality
+      * - :py:obj:`clamp_enabled <aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_enabled>`
+        - Property that gets/sets the channel clamp enable state
       * - :py:obj:`clamp_low_value <aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_low_value>`
-        - Property/Setter that gets/sets the channel clamp low value
+        - Property that gets/sets the channel clamp low value
       * - :py:obj:`current <aspectdeviceengine.enginecore.AD5560ChannelModel.current>`
         - Property that returns the measured current at the channel output (sample count is 16)
       * - :py:obj:`current_range <aspectdeviceengine.enginecore.AD5560ChannelModel.current_range>`
-        - Property/Setter that gets/sets the channel current reange
+        - Property that gets/sets the channel current reange
       * - :py:obj:`enabled <aspectdeviceengine.enginecore.AD5560ChannelModel.enabled>`
-        - Property/Setter that gets/sets the channel enabled state
+        - Property that gets/sets the channel enabled state
       * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.AD5560ChannelModel.hardware_id>`
         - Property that gets the channel id
       * - :py:obj:`name <aspectdeviceengine.enginecore.AD5560ChannelModel.name>`
-        - Property/Setter that gets/sets the channel name
+        - Property that gets/sets the channel name
       * - :py:obj:`output_ranges <aspectdeviceengine.enginecore.AD5560ChannelModel.output_ranges>`
         - Property that gets the channel min/max output voltage and current
       * - :py:obj:`voltage <aspectdeviceengine.enginecore.AD5560ChannelModel.voltage>`
-        - Property/Setter that measures/sets the channel output voltage
+        - Property that measures/sets the channel output voltage
 
    .. list-table:: Methods
       :header-rows: 0
@@ -639,7 +663,7 @@ Functions
    .. py:property:: autorange
       :type: bool
 
-      Property/Setter that gets/sets the state of the channels automatic current range functionality
+      Property that gets/sets the state of the channels automatic current range functionality
 
       :param enable: If set to true, the autoranging is enabled
       :type enable: bool
@@ -647,21 +671,21 @@ Functions
       :returns: The state of the auto range enabled state
       :rtype: bool
 
-   .. py:property:: clamp_high_value
-      :type: float
+   .. py:property:: clamp_enabled
+      :type: bool
 
-      Property/Setter that gets/sets the channel clamp high value
+      Property that gets/sets the channel clamp enable state
 
-      :param clamp_high_value: The clamp value in the unit of ampere [A]
-      :type clamp_high_value: float
+      :param clamp_enabled:
+      :type clamp_enabled: bool
 
-      :returns: The clamp value in the unit of ampere [A]
-      :rtype: float
+      :returns: The clamp enable state
+      :rtype: bool
 
    .. py:property:: clamp_low_value
       :type: float
 
-      Property/Setter that gets/sets the channel clamp low value
+      Property that gets/sets the channel clamp low value
 
       :param clamp_low_value: The clamp value in the unit of ampere [A]
       :type clamp_low_value: float
@@ -680,7 +704,7 @@ Functions
    .. py:property:: current_range
       :type: DpsCurrentRange
 
-      Property/Setter that gets/sets the channel current reange
+      Property that gets/sets the channel current reange
 
       :param current_range: The current range
       :type current_range: DpsCurrentRange
@@ -691,7 +715,7 @@ Functions
    .. py:property:: enabled
       :type: bool
 
-      Property/Setter that gets/sets the channel enabled state
+      Property that gets/sets the channel enabled state
 
       :param enabled: True to enable the channel, false to disable the channel
       :type enabled: bool
@@ -710,7 +734,7 @@ Functions
    .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the channel name
+      Property that gets/sets the channel name
 
       :param name: The name of the channel
 
@@ -728,7 +752,7 @@ Functions
    .. py:property:: voltage
       :type: float
 
-      Property/Setter that measures/sets the channel output voltage
+      Property that measures/sets the channel output voltage
 
       :param voltage: The voltage in unit of volt [V]
       :type voltage: float
@@ -836,9 +860,15 @@ Functions
 .. py:class:: ChannelResult
 
 
+   The result of a ReadAdcCommandIdSmu
+
+
    ..    ..    ..    .. .. py:property:: values
       :type: numpy.ndarray[numpy.float64]
 
+      Returns the measurement values for a channel
+
+      :rtype: ndarray
 
    ..    
    .. 
@@ -853,7 +883,7 @@ Functions
       :class: summarytable
 
       * - :py:obj:`values <aspectdeviceengine.enginecore.ChannelResult.values>`
-        - \-
+        - Returns the measurement values for a channel
 
    .. list-table:: Methods
       :header-rows: 0
@@ -861,7 +891,7 @@ Functions
       :class: summarytable
 
       * - :py:obj:`get_values <aspectdeviceengine.enginecore.ChannelResult.get_values>`\ ()
-        - Gets the measured values for a channel
+        - Returns the measurement values for a channel
 
 
    .. rubric:: Members
@@ -869,11 +899,14 @@ Functions
    .. py:property:: values
       :type: numpy.ndarray[numpy.float64]
 
+      Returns the measurement values for a channel
+
+      :rtype: ndarray
 
 
    .. py:method:: get_values() -> list[float]
 
-      Gets the measured values for a channel
+      Returns the measurement values for a channel
 
       :returns: A DoubleList object
       :rtype: DoubleList
@@ -882,6 +915,11 @@ Functions
 
 
 .. py:class:: CommandReply
+
+
+   The aspect device engine is a command driven framework.
+   This is the base class of all command replies (and results).
+   The reply can be an error or a result.
 
 
    ..    ..    ..    
@@ -897,11 +935,11 @@ Functions
       :class: summarytable
 
       * - :py:obj:`is_error <aspectdeviceengine.enginecore.CommandReply.is_error>`\ ()
-        - \-
+        - Indicates whether the response is a command error
       * - :py:obj:`is_result <aspectdeviceengine.enginecore.CommandReply.is_result>`\ ()
-        - \-
+        - Indicates whether the response is an command result
       * - :py:obj:`to_json <aspectdeviceengine.enginecore.CommandReply.to_json>`\ ()
-        - \-
+        - Returns the reply as a JSON string
 
 
    .. rubric:: Members
@@ -909,11 +947,23 @@ Functions
 
    .. py:method:: is_error() -> bool
 
+      Indicates whether the response is a command error
+
+      :rtype: bool
+
 
    .. py:method:: is_result() -> bool
 
+      Indicates whether the response is an command result
+
+      :rtype: bool
+
 
    .. py:method:: to_json() -> str
+
+      Returns the reply as a JSON string
+
+      :rtype: str
 
 
 
@@ -1200,6 +1250,9 @@ Functions
 
    Bases: :py:obj:`CommandReply`
 
+   The result of a device detection command.
+
+
    ..    ..    ..    
    .. 
 
@@ -1344,6 +1397,9 @@ Functions
 
 
 .. py:class:: FirmwareVersion
+
+
+   Firmware version of a device detected by the engine.
 
 
    ..    ..    ..    
@@ -1535,6 +1591,10 @@ Functions
 
    Bases: :py:obj:`IdSmuDeviceModel`
 
+   IdSmuDeviceModel class that contains idSmu1 specific methods and properties.
+
+
+
    
    .. py:class:: Dps
 
@@ -1628,6 +1688,9 @@ Functions
 
    Bases: :py:obj:`IdSmuDeviceModel`
 
+   IdSmuDeviceModel class that contains idSmu2 specific methods and properties.
+
+
    
    .. py:class:: Smu
 
@@ -1715,8 +1778,14 @@ Functions
 .. py:class:: IdSmuBoardModel
 
 
+   Container and controller vor idSmu modules and channels
+
+
    
    .. py:class:: IdSmu1Modules
+
+
+      This class represents all idSmu1 (DPS) modules on the board
 
 
       ..    ..    ..    
@@ -1746,6 +1815,9 @@ Functions
    .. py:class:: IdSmu2Modules
 
 
+      This class represents all idSmu2 (SMU) modules on the board
+
+
       ..    ..    ..    
       .. 
 
@@ -1759,13 +1831,18 @@ Functions
          :class: summarytable
 
          * - :py:obj:`as_list <aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules.as_list>`\ ()
-           - \-
+           - Returns the force values that are used by the function_generator method
 
 
       .. rubric:: Members
 
 
       .. py:method:: as_list() -> list[IdSmu2DeviceModel]
+
+         Returns the force values that are used by the function_generator method
+
+         :returns: A list of IdSmu2DeviceModel objects
+         :rtype: List[IdSmu2DeviceModel]
 
 
 
@@ -1824,6 +1901,8 @@ Functions
         - Returns the analog clamp high value of the channel with the given id
       * - :py:obj:`get_clamp_low_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_low_value>`\ (channel_id)
         - Returns the analog clamp low value of the channel with the given id
+      * - :py:obj:`get_current_range <aspectdeviceengine.enginecore.IdSmuBoardModel.get_current_range>`\ (channel_name)
+        - Returns the current range of a channel
       * - :py:obj:`get_device_model <aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_model>`\ (device_id)
         - Returns the IdSmuDeviceModel the given id
       * - :py:obj:`get_device_power_options <aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_power_options>`\ (device_id)
@@ -1896,7 +1975,7 @@ Functions
         - Enables or disables channel(s) clamp
       * - :py:obj:`set_immediate_mode <aspectdeviceengine.enginecore.IdSmuBoardModel.set_immediate_mode>`\ (enabled)
         - Enables or disables the immediate mode. If enabled, all methods that alter the device state are immediately written to the hardware
-      * - :py:obj:`set_measurement_mode <aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_mode>`\ (measurement_mode, channel_names)
+      * - :py:obj:`set_measurement_modes <aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_modes>`\ (measurement_mode, channel_names)
         - Sets the measurement mode of a channel
       * - :py:obj:`set_output_force_values <aspectdeviceengine.enginecore.IdSmuBoardModel.set_output_force_values>`\ (output_force_value, channel_names)
         - Sets the output force value for channels
@@ -2024,6 +2103,16 @@ Functions
                          :returns: The analog clamp low value
                          :rtype: float
       :type channel_id: str
+
+
+   .. py:method:: get_current_range(channel_name: str) -> CurrentRange
+
+      Returns the current range of a channel
+
+      :param channel_name: Names or Id of the channel for which the current range should be returned
+      :type channel_name: str
+
+      :rtype: CurrentRange
 
 
    .. py:method:: get_device_model(device_id: str) -> IdSmuDeviceModel
@@ -2399,7 +2488,7 @@ Functions
       :type enable: bool
 
 
-   .. py:method:: set_measurement_mode(measurement_mode: MeasurementMode, channel_names: list[str]) -> None
+   .. py:method:: set_measurement_modes(measurement_mode: MeasurementMode, channel_names: list[str]) -> None
 
       Sets the measurement mode of a channel
 
@@ -2504,7 +2593,7 @@ Functions
    ..    .. .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the device name
+      Property that gets/sets the device name
 
       :param name: The device name
 
@@ -2528,7 +2617,7 @@ Functions
       * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.IdSmuDeviceModel.hardware_id>`
         - Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
       * - :py:obj:`name <aspectdeviceengine.enginecore.IdSmuDeviceModel.name>`
-        - Property/Setter that gets/sets the device name
+        - Property that gets/sets the device name
 
    .. list-table:: Methods
       :header-rows: 0
@@ -2565,7 +2654,7 @@ Functions
    .. py:property:: name
       :type: str
 
-      Property/Setter that gets/sets the device name
+      Property that gets/sets the device name
 
       :param name: The device name
 
@@ -2626,6 +2715,10 @@ Functions
 
 
 .. py:class:: IdSmuService
+
+
+   Service class that detects and manages idSmu hardware.
+
 
 
    ..    ..    ..    
@@ -2819,6 +2912,9 @@ Functions
 .. py:class:: IdSmuServiceRunner(log_level: int = 0, worker_thread_count: int = 4)
 
 
+   Simplifies the starting of idSmu services and controls their lifetime.
+
+
    ..    ..    ..    
    .. 
 
@@ -2891,7 +2987,7 @@ Functions
         - Imports settings from CSV
       * - :py:obj:`import_settings_from_xlsx <aspectdeviceengine.enginecore.IdSmuSettingsService.import_settings_from_xlsx>`\ (file_path)
         - Enables or disables channel(s)
-      * - :py:obj:`print_settings <aspectdeviceengine.enginecore.IdSmuSettingsService.print_settings>`\ (setting_name, filtered, column_information)
+      * - :py:obj:`print_settings <aspectdeviceengine.enginecore.IdSmuSettingsService.print_settings>`\ (setting_name, filtered, column_information, max_columns)
         - Prints the setting / board to the console
       * - :py:obj:`refresh_table <aspectdeviceengine.enginecore.IdSmuSettingsService.refresh_table>`\ (table_name)
         - Refreshes a table. If the table represents a board state this table is updated.
@@ -3042,7 +3138,7 @@ Functions
       :param group_by: The column used to group the parameter tables
       :type group_by: bool
 
-      :returns: A DoubleList object
+      :returns: A IdqTable object
       :rtype: IdqTable
 
 
@@ -3092,7 +3188,7 @@ Functions
       :rtype: str
 
 
-   .. py:method:: print_settings(setting_name: str, filtered: bool, column_information: bool) -> None
+   .. py:method:: print_settings(setting_name: str, filtered: bool = False, column_information: bool = False, max_columns: int = -1) -> str
 
       Prints the setting / board to the console
 
@@ -3777,6 +3873,9 @@ Functions
 .. py:class:: ListSweep(arg0: str, arg1: IdSmuBoardModel)
 
 
+   Class to perform a List Sweep on a idSmu module
+
+
    ..    ..    ..    .. .. py:property:: size
       :type: int
 
@@ -3908,6 +4007,9 @@ Functions
 
 
 .. py:class:: ListSweepChannelConfiguration
+
+
+   Instances of this class are needed to configure a List Sweep
 
 
    ..    ..    ..    .. .. py:property:: force_values
@@ -4378,6 +4480,11 @@ Functions
 
    Bases: :py:obj:`CommandReply`
 
+   The aspect device engine is a command driven framework.
+   This is the base class of all command replies (and results).
+   The reply can be an error or a result.
+
+
    ..    ..    ..    
    .. 
 
@@ -4449,6 +4556,9 @@ Functions
 
 
    Bases: :py:obj:`Result`
+
+   The result of a sequencing command.
+
 
    ..    ..    ..    
    .. 
