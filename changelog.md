@@ -10,3 +10,4 @@
 - Current range enums now prefixed with "Range_" instead of underscore
 - The parameter names 'channel_Id' were largely renamed to 'channel_name'
 - Updated jupyter notebook, documentation, tutorials to reflect changes
+- Rework of tutorial titles

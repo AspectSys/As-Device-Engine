@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting startet with the Aspect Device Engine Python API 5 &#8212; The aSpect Device Engine Python API</title>
+    <title>Part 5: IV Measurements &#8212; The aSpect Device Engine Python API</title>
   
   
   
@@ -61,8 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting startet with the Aspect Device Engine Python API 6" href="Tutorial6-ListSweeps.html" />
-    <link rel="prev" title="Getting startet with the Aspect Device Engine Python API 4" href="Tutorial4-Ranges_and_Clamps.html" />
+    <link rel="next" title="Part 6: List sweps" href="Tutorial6-ListSweeps.html" />
+    <link rel="prev" title="Part 4: Clamps, Compliance &amp; Current Range" href="Tutorial4-Ranges_and_Clamps.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,14 +173,18 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Tutorial1-Basics.html">Getting startet with the Aspect Device Engine Python API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial2-Multimeasure.html">Getting startet with the Aspect Device Engine Python API 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">Getting startet with the Aspect Device Engine Python API 3</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">Getting startet with the Aspect Device Engine Python API 4</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting startet with the Aspect Device Engine Python API 5</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial6-ListSweeps.html">Getting startet with the Aspect Device Engine Python API 6</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial7-Triggering.html">Getting startet with the Aspect Device Engine Python API 7</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorial8-ParameterTables.html">Getting startet with the Aspect Device Engine Python API 8</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">Part 1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">Part 2: More about channel measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">Part 3: Multiside and high performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">Part 4: Clamps, Compliance &amp; Current Range</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">Part 7: Triggering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">Part 8b: Paramter Tables II</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -319,7 +323,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Getting startet with the Aspect Device Engine Python API 5</h1>
+    <h1>Part 5: IV Measurements</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -329,11 +333,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-software-iv-sweeps-and-autoranging">Simple software IV sweeps and autoranging</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoranging-in-manual-iv-sweeps">Autoranging in manual IV sweeps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-results">Plotting the results</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoranging-in-manual-iv-sweeps">Autoranging in manual IV sweeps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-results">Plotting the results</a></li>
 </ul>
             </nav>
         </div>
@@ -345,10 +346,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="getting-startet-with-the-aspect-device-engine-python-api-5">
-<h1>Getting startet with the Aspect Device Engine Python API 5<a class="headerlink" href="#getting-startet-with-the-aspect-device-engine-python-api-5" title="Link to this heading">#</a></h1>
-<section id="simple-software-iv-sweeps-and-autoranging">
-<h2>Simple software IV sweeps and autoranging<a class="headerlink" href="#simple-software-iv-sweeps-and-autoranging" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="part-5-iv-measurements">
+<h1>Part 5: IV Measurements<a class="headerlink" href="#part-5-iv-measurements" title="Link to this heading">#</a></h1>
 <p>This is the fith introductory overview of programming the Aspect Device Engine Python API.<br />
 This document is available as pdf and interactive jupyter notebook.
 The introduction includes the following objectives:</p>
@@ -384,7 +383,7 @@ For more advanced IV sweeps, see the next chapter ‘List Sweeps’.</p>
 <span class="n">mbX1</span><span class="o">.</span><span class="n">set_voltages</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
 <span class="n">mbX1</span><span class="o">.</span><span class="n">set_enable_channels</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span><span class="n">channel_list</span> <span class="p">)</span>
 <span class="n">mbX1</span><span class="o">.</span><span class="n">set_measurement_modes</span><span class="p">(</span><span class="n">MeasurementMode</span><span class="o">.</span><span class="n">isense</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
-<span class="n">mbX1</span><span class="o">.</span><span class="n">set_current_ranges</span><span class="p">(</span><span class="n">CurrentRange</span><span class="o">.</span><span class="n">_2mA_SMU</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
+<span class="n">mbX1</span><span class="o">.</span><span class="n">set_current_ranges</span><span class="p">(</span><span class="n">CurrentRange</span><span class="o">.</span><span class="n">Range_2mA_SMU</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,21 +417,21 @@ It returns the force values, the measured values and the current range for each 
 </div>
 </div>
 <section id="autoranging-in-manual-iv-sweeps">
-<h3>Autoranging in manual IV sweeps<a class="headerlink" href="#autoranging-in-manual-iv-sweeps" title="Link to this heading">#</a></h3>
+<h2>Autoranging in manual IV sweeps<a class="headerlink" href="#autoranging-in-manual-iv-sweeps" title="Link to this heading">#</a></h2>
 <p>The first step is to perform the sweep with autoranging deactivated.
 The respective current range is then output for each step.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbX1</span><span class="o">.</span><span class="n">set_current_ranges</span><span class="p">(</span><span class="n">CurrentRange</span><span class="o">.</span><span class="n">_200uA_SMU</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbX1</span><span class="o">.</span><span class="n">set_current_ranges</span><span class="p">(</span><span class="n">CurrentRange</span><span class="o">.</span><span class="n">Range_200uA_SMU</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
 <span class="n">mbX1</span><span class="o">.</span><span class="n">enable_autorange</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
 <span class="n">mbX1</span><span class="o">.</span><span class="n">set_voltages</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
-<span class="n">sweep_without_outorange</span> <span class="o">=</span> <span class="n">sw_sweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sweep_without_outorange</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">sweep_without_autorange</span> <span class="o">=</span> <span class="n">sw_sweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sweep_without_autorange</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;]
 </pre></div>
 </div>
 </div>
@@ -443,25 +442,26 @@ The respective current range is then output for each step.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mbX1</span><span class="o">.</span><span class="n">enable_autorange</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">channel_list</span><span class="p">)</span>
 <span class="c1">#Alternatively, autoranging can also be queried or set via the properties/setter of a channel</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mbX1</span><span class="o">.</span><span class="n">idSmu2Modules</span><span class="p">[</span><span class="s1">&#39;M1.S1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">smu</span><span class="o">.</span><span class="n">channels</span><span class="p">[</span><span class="n">channel1_id</span><span class="p">]</span><span class="o">.</span><span class="n">autorange</span><span class="p">)</span>
-<span class="n">sweep_with_outorange</span> <span class="o">=</span> <span class="n">sw_sweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sweep_with_outorange</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">sweep_with_autorange</span> <span class="o">=</span> <span class="n">sw_sweep</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sweep_with_autorange</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-[&#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_5uA&#39;, &#39;_20uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_200uA&#39;, &#39;_2mA&#39;, &#39;_2mA&#39;, &#39;_2mA&#39;, &#39;_2mA&#39;]
+[&#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_5uA&#39;, &#39;Range_20uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_200uA&#39;, &#39;Range_2mA&#39;, &#39;Range_2mA&#39;, &#39;Range_2mA&#39;, &#39;Range_2mA&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="plotting-the-results">
-<h3>Plotting the results<a class="headerlink" href="#plotting-the-results" title="Link to this heading">#</a></h3>
+<h2>Plotting the results<a class="headerlink" href="#plotting-the-results" title="Link to this heading">#</a></h2>
 <p>The following plots show the difference between the sweep with and without autorange.
 With a fixed value of 200uA, the current curve saturates at approximately this value.<br />
 With an autorange set, the better resolution at low currents becomes clear.
-The curve does not saturate and reaches around 500uA. The plots are annotated with the current ranges:</p>
+The curve does not saturate and reaches around 500uA. The plots are annotated with the current ranges:<br />
+<em>(Note: the enum prefixes ‘Range_’ are removed for better readability)</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
@@ -469,12 +469,12 @@ The curve does not saturate and reaches around 500uA. The plots are annotated wi
     <span class="n">fig</span> <span class="o">=</span> <span class="n">make_subplots</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="n">subplot_titles</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;LED current vs voltage&quot;</span><span class="p">,</span> <span class="s2">&quot;LED current vs voltage&quot;</span><span class="p">))</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sweep_without_outorange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">sweep_without_outorange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers+text&#39;</span><span class="p">,</span>
-                        <span class="n">text</span> <span class="o">=</span> <span class="n">sweep_without_outorange</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                        <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Range_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sweep_without_autorange</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span>
                         <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;top center&quot;</span><span class="p">,</span>
                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LED&#39;</span><span class="p">),</span>  <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sweep_with_outorange</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">sweep_with_outorange</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
                         <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers+text&#39;</span><span class="p">,</span>
-                        <span class="n">text</span> <span class="o">=</span> <span class="n">sweep_with_outorange</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                        <span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Range_&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sweep_with_autorange</span><span class="p">[</span><span class="mi">3</span><span class="p">]],</span>
                         <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;top center&quot;</span><span class="p">,</span>
                         <span class="n">name</span><span class="o">=</span><span class="s1">&#39;LED&#39;</span><span class="p">),</span>  <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">update_yaxes</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="p">)],</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -489,9 +489,9 @@ The curve does not saturate and reaches around 500uA. The plots are annotated wi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>                            <div id="f8a45986-f5b7-4f1a-a4a5-221759ea55cd" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("f8a45986-f5b7-4f1a-a4a5-221759ea55cd")) {                    Plotly.newPlot(                        "f8a45986-f5b7-4f1a-a4a5-221759ea55cd",                        [{"mode":"lines+markers+text","name":"LED","text":["_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA","_200uA"],"textposition":"top center","x":[1.0,1.2,1.4,1.5999999999999999,1.7999999999999998,1.9999999999999998,2.1999999999999997,2.3999999999999995,2.5999999999999996,2.8,2.9999999999999996,3.1999999999999993,3.3999999999999995,3.5999999999999996,3.7999999999999994,3.999999999999999],"y":[1.3427734375e-08,2.01416015625e-08,1.20849609375e-07,5.5657958984375004e-06,3.2105712890625e-05,6.98846435546875e-05,0.00011255126953125001,0.0001571917724609375,0.000203309326171875,0.0002373150634765625,0.00024024230957031252,0.000240235595703125,0.00024024230957031252,0.00024026245117187502,0.000240235595703125,0.00024024230957031252],"type":"scatter","xaxis":"x","yaxis":"y"},{"mode":"lines+markers+text","name":"LED","text":["_5uA","_5uA","_5uA","_20uA","_200uA","_200uA","_200uA","_200uA","_2mA","_2mA","_2mA","_2mA","_2mA","_2mA","_2mA","_2mA"],"textposition":"top center","x":[1.0,1.2,1.4,1.5999999999999999,1.7999999999999998,1.9999999999999998,2.1999999999999997,2.3999999999999995,2.5999999999999996,2.8,2.9999999999999996,3.1999999999999993,3.3999999999999995,3.5999999999999996,3.7999999999999994,3.999999999999999],"y":[1.6784667968749999e-09,4.364013671875e-09,1.300811767578125e-07,5.88470458984375e-06,3.29852294921875e-05,7.0911865234375e-05,0.00011324951171875,0.0001578765869140625,0.00020349731445312502,0.00025069580078125,0.00029796142578125,0.00034623413085937505,0.000394775390625,0.00044358520507812503,0.00049266357421875,0.0005420776367187501],"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0]},"yaxis":{"anchor":"x","domain":[0.625,1.0],"type":"log","range":[-9.210340371976182,0.0]},"xaxis2":{"anchor":"y2","domain":[0.0,1.0]},"yaxis2":{"anchor":"x2","domain":[0.0,0.375],"type":"log","range":[-9.210340371976182,0.0]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"LED current vs voltage","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"LED current vs voltage","x":0.5,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"}],"height":600},                        {"responsive": true}                    ).then(function(){
+<div class="output text_html"><div>                            <div id="e30ae47e-a90d-4084-a636-eaf9628ae05f" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e30ae47e-a90d-4084-a636-eaf9628ae05f")) {                    Plotly.newPlot(                        "e30ae47e-a90d-4084-a636-eaf9628ae05f",                        [{"mode":"lines+markers+text","name":"LED","text":["200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA","200uA"],"textposition":"top center","x":[1.0,1.2,1.4,1.5999999999999999,1.7999999999999998,1.9999999999999998,2.1999999999999997,2.3999999999999995,2.5999999999999996,2.8,2.9999999999999996,3.1999999999999993,3.3999999999999995,3.5999999999999996,3.7999999999999994,3.999999999999999],"y":[0.0,-2.01416015625e-08,9.399414062500001e-08,4.659423828125e-06,2.98095703125e-05,6.69842529296875e-05,0.0001091204833984375,0.00015361328125,0.0001996771240234375,0.00023645568847656252,0.0002403094482421875,0.00024033630371093751,0.000240289306640625,0.00024032958984375,0.00024029602050781252,0.00024029602050781252],"type":"scatter","xaxis":"x","yaxis":"y"},{"mode":"lines+markers+text","name":"LED","text":["5uA","5uA","5uA","20uA","200uA","200uA","200uA","200uA","2mA","2mA","2mA","2mA","2mA","2mA","2mA","2mA"],"textposition":"top center","x":[1.0,1.2,1.4,1.5999999999999999,1.7999999999999998,1.9999999999999998,2.1999999999999997,2.3999999999999995,2.5999999999999996,2.8,2.9999999999999996,3.1999999999999993,3.3999999999999995,3.5999999999999996,3.7999999999999994,3.999999999999999],"y":[2.1820068359375e-09,4.0283203125e-09,1.03729248046875e-07,4.9899139404296876e-06,3.0574951171875e-05,6.7783203125e-05,0.0001098321533203125,0.0001542779541015625,0.000199871826171875,0.000246734619140625,0.000294403076171875,0.00034281005859375,0.00039088134765625,0.00043955688476562504,0.0004887695312500001,0.0005381164550781251],"type":"scatter","xaxis":"x2","yaxis":"y2"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0]},"yaxis":{"anchor":"x","domain":[0.625,1.0],"type":"log","range":[-9.210340371976182,0.0]},"xaxis2":{"anchor":"y2","domain":[0.0,1.0]},"yaxis2":{"anchor":"x2","domain":[0.0,0.375],"type":"log","range":[-9.210340371976182,0.0]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"LED current vs voltage","x":0.5,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"LED current vs voltage","x":0.5,"xanchor":"center","xref":"paper","y":0.375,"yanchor":"bottom","yref":"paper"}],"height":600},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('f8a45986-f5b7-4f1a-a4a5-221759ea55cd');
+var gd = document.getElementById('e30ae47e-a90d-4084-a636-eaf9628ae05f');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -522,7 +522,6 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -562,7 +561,7 @@ if (outputEl) {{
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting startet with the Aspect Device Engine Python API 4</p>
+        <p class="prev-next-title">Part 4: Clamps, Compliance &amp; Current Range</p>
       </div>
     </a>
     <a class="right-next"
@@ -570,7 +569,7 @@ if (outputEl) {{
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting startet with the Aspect Device Engine Python API 6</p>
+        <p class="prev-next-title">Part 6: List sweps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -590,11 +589,8 @@ if (outputEl) {{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-software-iv-sweeps-and-autoranging">Simple software IV sweeps and autoranging</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autoranging-in-manual-iv-sweeps">Autoranging in manual IV sweeps</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-results">Plotting the results</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autoranging-in-manual-iv-sweeps">Autoranging in manual IV sweeps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-results">Plotting the results</a></li>
 </ul>
   </nav></div>
 
