@@ -1077,27 +1077,27 @@ Functions
 
    Members:
 
-     _5uA
+     Range_5uA
 
-     _20uA_SMU
+     Range_20uA_SMU
 
-     _200uA_SMU
+     Range_200uA_SMU
 
-     _2mA_SMU
+     Range_2mA_SMU
 
-     _70mA_SMU
+     Range_70mA_SMU
 
-     _25uA_DPS
+     Range_25uA_DPS
 
-     _250uA_DPS
+     Range_250uA_DPS
 
-     _2500uA_DPS
+     Range_2500uA_DPS
 
-     _25mA_DPS
+     Range_25mA_DPS
 
-     _500mA_DPS
+     Range_500mA_DPS
 
-     _1200mA_DPS
+     Range_1200mA_DPS
 
    ..    ..    ..    .. .. py:property:: name
       :type: str
@@ -1108,7 +1108,98 @@ Functions
 
 
    ..    
+   ..    .. .. py:attribute:: Range_1200mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_200uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_20uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2500uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_250uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_500mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_5uA
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_70mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
    .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Range_1200mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_1200mA_DPS>`
+        - \-
+      * - :py:obj:`Range_200uA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_200uA_SMU>`
+        - \-
+      * - :py:obj:`Range_20uA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_20uA_SMU>`
+        - \-
+      * - :py:obj:`Range_2500uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_2500uA_DPS>`
+        - \-
+      * - :py:obj:`Range_250uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_250uA_DPS>`
+        - \-
+      * - :py:obj:`Range_25mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_25mA_DPS>`
+        - \-
+      * - :py:obj:`Range_25uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_25uA_DPS>`
+        - \-
+      * - :py:obj:`Range_2mA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_2mA_SMU>`
+        - \-
+      * - :py:obj:`Range_500mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_500mA_DPS>`
+        - \-
+      * - :py:obj:`Range_5uA <aspectdeviceengine.enginecore.CurrentRange.Range_5uA>`
+        - \-
+      * - :py:obj:`Range_70mA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_70mA_SMU>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.CurrentRange.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.CurrentRange.value>`
+        - \-
 
 
    .. rubric:: Members
@@ -1120,6 +1211,61 @@ Functions
    .. py:property:: value
       :type: int
 
+
+   .. py:attribute:: Range_1200mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_200uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_20uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_2500uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_250uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_25mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_25uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_2mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_500mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_5uA
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_70mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
 
 
 
@@ -1359,17 +1505,17 @@ Functions
 
    Members:
 
-     _25uA
+     Range_25uA
 
-     _250uA
+     Range_250uA
 
-     _2500uA
+     Range_2500uA
 
-     _25mA
+     Range_25mA
 
-     _500mA
+     Range_500mA
 
-     _1200mA
+     Range_1200mA
 
    ..    ..    ..    .. .. py:property:: name
       :type: str
@@ -1380,7 +1526,63 @@ Functions
 
 
    ..    
+   ..    .. .. py:attribute:: Range_1200mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2500uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_250uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_500mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
    .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Range_1200mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_1200mA>`
+        - \-
+      * - :py:obj:`Range_2500uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_2500uA>`
+        - \-
+      * - :py:obj:`Range_250uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_250uA>`
+        - \-
+      * - :py:obj:`Range_25mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_25mA>`
+        - \-
+      * - :py:obj:`Range_25uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_25uA>`
+        - \-
+      * - :py:obj:`Range_500mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_500mA>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.DpsCurrentRange.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.DpsCurrentRange.value>`
+        - \-
 
 
    .. rubric:: Members
@@ -1392,6 +1594,36 @@ Functions
    .. py:property:: value
       :type: int
 
+
+   .. py:attribute:: Range_1200mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_2500uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_250uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_25mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_25uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_500mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
 
 
 
@@ -1897,9 +2129,9 @@ Functions
         - Returns the device ids on the board
       * - :py:obj:`get_channel_name <aspectdeviceengine.enginecore.IdSmuBoardModel.get_channel_name>`\ (channel_id)
         - Returns the name of the channel with the given channel id
-      * - :py:obj:`get_clamp_high_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_high_value>`\ (channel_id)
+      * - :py:obj:`get_clamp_high_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_high_value>`\ (channel_name)
         - Returns the analog clamp high value of the channel with the given id
-      * - :py:obj:`get_clamp_low_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_low_value>`\ (channel_id)
+      * - :py:obj:`get_clamp_low_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_low_value>`\ (channel_name)
         - Returns the analog clamp low value of the channel with the given id
       * - :py:obj:`get_current_range <aspectdeviceengine.enginecore.IdSmuBoardModel.get_current_range>`\ (channel_name)
         - Returns the current range of a channel
@@ -1909,9 +2141,9 @@ Functions
         - Returns the state of the power options for the device with the given id
       * - :py:obj:`get_enable_INT10K <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_INT10K>`\ (device_id)
         - Returns the enabled state of the internal 10K resistor
-      * - :py:obj:`get_enable_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_channel>`\ (channel_id)
+      * - :py:obj:`get_enable_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_channel>`\ (channel_name)
         - Returns the enabled state of the channel with the given id
-      * - :py:obj:`get_enable_clamps <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_clamps>`\ (channel_id)
+      * - :py:obj:`get_enable_clamps <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_clamps>`\ (channel_name)
         - Returns the clamps enabled state of the channel with the given id
       * - :py:obj:`get_function_generator_results <aspectdeviceengine.enginecore.IdSmuBoardModel.get_function_generator_results>`\ (device_id, channel_number)
         - Initialize all installed idSMU devices on the board
@@ -1927,13 +2159,13 @@ Functions
         - Gets the command result of all channel measurements of the device the given channel belongs to.
       * - :py:obj:`get_number_of_devices <aspectdeviceengine.enginecore.IdSmuBoardModel.get_number_of_devices>`\ ()
         - Returns the number of detected idSMU devices
-      * - :py:obj:`get_output_force_ranges_for_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_ranges_for_channel>`\ (channel_id)
+      * - :py:obj:`get_output_force_ranges_for_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_ranges_for_channel>`\ (channel_name)
         - Returns the output force ranges for the channel with the given channel id
-      * - :py:obj:`get_output_force_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_value>`\ (channel_id)
+      * - :py:obj:`get_output_force_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_value>`\ (channel_name)
         - Returns the output force value for the channel with the given channel id
       * - :py:obj:`get_slots <aspectdeviceengine.enginecore.IdSmuBoardModel.get_slots>`\ ()
         - Returns a list of IdSmuDeviceModel in the order of the slots of the board
-      * - :py:obj:`get_valid_range_for_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.get_valid_range_for_channel_parameter>`\ (parameter_name, channel_id)
+      * - :py:obj:`get_valid_range_for_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.get_valid_range_for_channel_parameter>`\ (parameter_name, channel_Name)
         - Returns the range of the given parameter as a list of strings
       * - :py:obj:`initialize_devices <aspectdeviceengine.enginecore.IdSmuBoardModel.initialize_devices>`\ (wait_for_result, device_names)
         - Initialize all installed idSMU devices on the board
@@ -1981,7 +2213,7 @@ Functions
         - Sets the output force value for channels
       * - :py:obj:`set_voltages <aspectdeviceengine.enginecore.IdSmuBoardModel.set_voltages>`\ (voltage, channel_names)
         - Set the output voltage for channel(s)
-      * - :py:obj:`stringify_analog_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.stringify_analog_channel_parameter>`\ (parameter_name, channel_id)
+      * - :py:obj:`stringify_analog_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.stringify_analog_channel_parameter>`\ (parameter_name, channel_name)
         - Returns the value of the given parameter as string
       * - :py:obj:`write_fpga <aspectdeviceengine.enginecore.IdSmuBoardModel.write_fpga>`\ (register_address, register_value, device_id)
         - Writes to a FPGA register
@@ -2076,40 +2308,40 @@ Functions
 
       Returns the name of the channel with the given channel id
 
-      :param channel_id: Id of the channel
+      :param channel_id: Id or name of the channel
       :type channel_id: str
 
       :returns: The channel name
       :rtype: str
 
 
-   .. py:method:: get_clamp_high_value(channel_id: str) -> float
+   .. py:method:: get_clamp_high_value(channel_name: str) -> float
 
       Returns the analog clamp high value of the channel with the given id
 
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: The analog clamp high value
-                         :rtype: float
-      :type channel_id: str
+                           :returns: The analog clamp high value
+                           :rtype: float
+      :type channel_name: str
 
 
-   .. py:method:: get_clamp_low_value(channel_id: str) -> float
+   .. py:method:: get_clamp_low_value(channel_name: str) -> float
 
       Returns the analog clamp low value of the channel with the given id
 
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: The analog clamp low value
-                         :rtype: float
-      :type channel_id: str
+                           :returns: The analog clamp low value
+                           :rtype: float
+      :type channel_name: str
 
 
    .. py:method:: get_current_range(channel_name: str) -> CurrentRange
 
       Returns the current range of a channel
 
-      :param channel_name: Names or Id of the channel for which the current range should be returned
+      :param channel_name: Names or Id or name of the channel for which the current range should be returned
       :type channel_name: str
 
       :rtype: CurrentRange
@@ -2148,26 +2380,26 @@ Functions
       :rtype: bool
 
 
-   .. py:method:: get_enable_channel(channel_id: str) -> bool
+   .. py:method:: get_enable_channel(channel_name: str) -> bool
 
       Returns the enabled state of the channel with the given id
 
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: Returns true if the channel is enabled
-                         :rtype: bool
-      :type channel_id: str
+                           :returns: Returns true if the channel is enabled
+                           :rtype: bool
+      :type channel_name: str
 
 
-   .. py:method:: get_enable_clamps(channel_id: str) -> bool
+   .. py:method:: get_enable_clamps(channel_name: str) -> bool
 
       Returns the clamps enabled state of the channel with the given id
 
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: True if the channel clamps are enabled
-                         :rtype: bool
-      :type channel_id: str
+                           :returns: True if the channel clamps are enabled
+                           :rtype: bool
+      :type channel_name: str
 
 
    .. py:method:: get_function_generator_results(device_id: str, channel_number: int) -> FunctionGeneratorResult
@@ -2236,23 +2468,23 @@ Functions
       :rtype: int
 
 
-   .. py:method:: get_output_force_ranges_for_channel(channel_id: str) -> list[float]
+   .. py:method:: get_output_force_ranges_for_channel(channel_name: str) -> list[float]
 
       Returns the output force ranges for the channel with the given channel id
 
-      :param channel_id: Id of the channel
-      :type channel_id: str
+      :param channel_name: Id or name of the channel
+      :type channel_name: str
 
       :returns: The output force ranges in the order Vmin, Vman and (if force current mode is available) Imin,Imax
       :rtype: List[float]
 
 
-   .. py:method:: get_output_force_value(channel_id: str) -> float
+   .. py:method:: get_output_force_value(channel_name: str) -> float
 
       Returns the output force value for the channel with the given channel id
 
-      :param channel_id: Id of the channel
-      :type channel_id: str
+      :param channel_name: Id or name of the channel
+      :type channel_name: str
 
       :returns: The output force value
       :rtype: float
@@ -2266,17 +2498,17 @@ Functions
       :rtype: List[IdSmuDeviceModel]
 
 
-   .. py:method:: get_valid_range_for_channel_parameter(parameter_name: str, channel_id: str) -> list[str]
+   .. py:method:: get_valid_range_for_channel_parameter(parameter_name: str, channel_Name: str) -> list[str]
 
       Returns the range of the given parameter as a list of strings
 
       :param parameter_name: Name of the parameter
       :type parameter_name: str
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: The range as a list of strings
-                         :rtype: List[str]
-      :type channel_id: str
+                           :returns: The range as a list of strings
+                           :rtype: List[str]
+      :type channel_name: str
 
 
    .. py:method:: initialize_devices(wait_for_result: bool, device_names: list[str] = []) -> list[CommandReply]
@@ -2518,17 +2750,17 @@ Functions
       :type channel_names: list
 
 
-   .. py:method:: stringify_analog_channel_parameter(parameter_name: str, channel_id: str) -> str
+   .. py:method:: stringify_analog_channel_parameter(parameter_name: str, channel_name: str) -> str
 
       Returns the value of the given parameter as string
 
       :param parameter_name: Name of the parameter
       :type parameter_name: str
-      :param channel_id:    Id of the channel
+      :param channel_name:    Id or name of the channel
 
-                         :returns: The parameter value as string
-                         :rtype: str
-      :type channel_id: str
+                           :returns: The parameter value as string
+                           :rtype: str
+      :type channel_name: str
 
 
    .. py:method:: write_fpga(register_address: int, register_value: int, device_id: str) -> int
@@ -2745,10 +2977,6 @@ Functions
         - Returns the board model with the given address
       * - :py:obj:`get_board_addresses <aspectdeviceengine.enginecore.IdSmuService.get_board_addresses>`\ ()
         - Returns the addresses of all detected boards
-      * - :py:obj:`get_fake_board <aspectdeviceengine.enginecore.IdSmuService.get_fake_board>`\ (board_address)
-        - Returns the fake board model with the given address
-      * - :py:obj:`get_fake_board_addresses <aspectdeviceengine.enginecore.IdSmuService.get_fake_board_addresses>`\ ()
-        - Returns the addresses of all fake boards
       * - :py:obj:`get_first_board <aspectdeviceengine.enginecore.IdSmuService.get_first_board>`\ ()
         - Returns the first board of all detected idSMU boards
       * - :py:obj:`get_number_of_boards <aspectdeviceengine.enginecore.IdSmuService.get_number_of_boards>`\ ()
@@ -2820,25 +3048,6 @@ Functions
    .. py:method:: get_board_addresses() -> list[str]
 
       Returns the addresses of all detected boards
-
-      :returns: Addresses of all detected boards
-      :rtype: List[str]
-
-
-   .. py:method:: get_fake_board(board_address: str) -> IdSmuBoardModel
-
-      Returns the fake board model with the given address
-
-      :param board_address: Address of the board
-      :type board_address: str
-
-      :returns: An IdsmuBoardModel object
-      :rtype: IdsmuBoardModel
-
-
-   .. py:method:: get_fake_board_addresses() -> list[str]
-
-      Returns the addresses of all fake boards
 
       :returns: Addresses of all detected boards
       :rtype: List[str]

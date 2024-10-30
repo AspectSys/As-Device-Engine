@@ -21,7 +21,7 @@ import numpy as np
 srunner = IdSmuServiceRunner()
 
 
-# In[17]:
+# In[2]:
 
 
 mbX1 : IdSmuBoardModel = srunner.get_idsmu_service().get_first_board()
@@ -78,9 +78,9 @@ print(mbX1.get_current_range("ch1"))
 # In[8]:
 
 
-smu_channel.current_range = SmuCurrentRange._2mA
+smu_channel.current_range = SmuCurrentRange.Range_2mA
 print(mbX1.get_current_range("ch1"))
-mbX1.set_current_ranges(CurrentRange._200uA_SMU, ["ch1"])
+mbX1.set_current_ranges(CurrentRange.Range_200uA_SMU, ["ch1"])
 print(smu_channel.current_range)
 
 
@@ -109,7 +109,7 @@ print(f'The default upper clamp value is {smu_channel.clamp_high_value}A')
 # To see the clamp in action, the voltage is swept across an LED and the current is measured (more on IV sweeps in the next chapters).  
 # The clamp is first set to 100uA and the current range is adjusted to this current range:
 
-# In[127]:
+# In[9]:
 
 
 currents = np.zeros(40);voltages = np.zeros(40)
@@ -118,7 +118,7 @@ smu_channel.clamp_enabled = True
 smu_channel.clamp_high_value=0.0001
 # an alternative to set lower and upper clamp together is to use the board method:
 # mbX1.set_clamps_low_and_high_values(-0.001, 0.0001, ["ch1"])
-smu_channel.current_range = SmuCurrentRange._200uA
+smu_channel.current_range = SmuCurrentRange.Range_200uA
 for i in range(1,40):
     smu_channel.voltage = 2.0+0.2*i
     currents[i] = smu_channel.current
@@ -329,7 +329,7 @@ fig
 
 # Do not forget to shut down the services before proceeding:
 
-# In[4]:
+# In[10]:
 
 
 srunner.shutdown()

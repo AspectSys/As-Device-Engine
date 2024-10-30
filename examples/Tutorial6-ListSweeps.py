@@ -19,7 +19,7 @@
 # ---
 # 
 
-# In[1]:
+# In[2]:
 
 
 from aspectdeviceengine.enginecore import IdSmuService, IdSmuServiceRunner, IdSmuBoardModel, MeasurementMode, FunctionGeneratorType, generate_function_generator_data, CurrentRange
@@ -31,7 +31,7 @@ srunner = IdSmuServiceRunner()
 mbX1 : IdSmuBoardModel = srunner.get_idsmu_service().get_first_board()
 
 
-# In[2]:
+# In[3]:
 
 
 # It is always a good idea to check if the modules on the board are initialized
@@ -42,7 +42,7 @@ print(mbX1.device_information)
 # ### Preparation
 # We prepare some variables and enable 2 channels of one idSMU module for the sweep with the multi-side methods. Nothing new here:
 
-# In[3]:
+# In[4]:
 
 
 device_id = "M1.S1"
@@ -73,12 +73,12 @@ for i, channel in enumerate(idSmu2.smu.channels.as_list()):
 # To measure a current in the sweep, we set the measurement type to current *(isense)*.  
 # We then adjust the current range to the maximum expected current. An autorange does not currently exist for the list sweeps.
 
-# In[4]:
+# In[6]:
 
 
 mbX1.set_voltages(1, channel_list)
-mbX1.set_measurement_mode(MeasurementMode.isense, channel_list)
-mbX1.set_current_ranges(CurrentRange._2mA_SMU, channel_list) # Note: the ranges for DPS-Modules differ from SMU modules!
+mbX1.set_measurement_modes(MeasurementMode.isense, channel_list)
+mbX1.set_current_ranges(CurrentRange.Range_2mA_SMU, channel_list) # Note: the ranges for DPS-Modules differ from SMU modules!
 mbX1.get_output_force_value(channel_list[0])
 
 
@@ -100,7 +100,7 @@ mbX1.get_output_force_value(channel_list[0])
 # 
 # With 4 lines of code you can configure an executable sweep. In addition, the measurement delay is adjusted in this example:
 
-# In[5]:
+# In[7]:
 
 
 # Instantiation of a channel configuration
@@ -130,7 +130,7 @@ print(f'Values: {config_ch1.force_values}')
 # ##### Execution and results
 # The sweep is executed by calling the `run()` method.
 
-# In[6]:
+# In[8]:
 
 
 # The run() method starts the sweep and returns after the measurement sweep is finished
@@ -149,7 +149,7 @@ sample_times = sweep_1ch.timecode
 # #### Plotting the results
 # The results are visualised as plots below:
 
-# In[7]:
+# In[9]:
 
 
 fig = make_subplots(rows=1, cols=2,  subplot_titles=("LED current vs sample time", "LED current vs voltage"))
@@ -176,10 +176,10 @@ fig
 # this time we use an array with its own force values on the first channel  
 # (even if the numpy arange() function again generates linear values with equidistant values)
 
-# In[82]:
+# In[10]:
 
 
-mbX1.set_current_ranges(CurrentRange._2mA_SMU, channel_list)
+mbX1.set_current_ranges(CurrentRange.Range_2mA_SMU, channel_list)
 # first channel configruation
 config_ch1 : ListSweepChannelConfiguration = ListSweepChannelConfiguration()
 # custom force values
@@ -206,7 +206,7 @@ sample_times = sweep.timecode
 # #### Plotting the results
 # The results are visualised as plots below:
 
-# In[83]:
+# In[11]:
 
 
 fig = make_subplots(rows=1, cols=2,  subplot_titles=("LED current vs sample time", "LED current vs voltage"))
@@ -238,7 +238,7 @@ fig
 # We plot the last sweep again and annotate the step indices to the plot.  
 # The switch-on behaviour becomes visible at steps 20-21 or 10-20 microamperes:
 
-# In[84]:
+# In[12]:
 
 
 def create_fig():  
@@ -268,16 +268,16 @@ fig
 # In this example the sweep starts with a range u 5uA, switches to 20uA at index 18uA and to 200uA at index 20.  
 # As can be seen in the plots below, the range below 20 microamperes is now much better resolved than in the last sweep.
 
-# In[80]:
+# In[14]:
 
 
 mbX1.set_voltages(1, channel_list)
-mbX1.set_current_ranges(CurrentRange._5uA, channel_list)
+mbX1.set_current_ranges(CurrentRange.Range_5uA, channel_list)
 config_ch2.clear_current_ranges()
 sweep.set_sample_count(1)
 sweep.set_measurement_delay(500)
-config_ch2.change_current_range_at(18, CurrentRange._20uA_SMU)
-config_ch2.change_current_range_at(20, CurrentRange._200uA_SMU)
+config_ch2.change_current_range_at(18, CurrentRange.Range_20uA_SMU)
+config_ch2.change_current_range_at(20, CurrentRange.Range_200uA_SMU)
 sweep.run()
 fig = create_fig()
 fig

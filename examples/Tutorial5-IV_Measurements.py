@@ -42,7 +42,7 @@ channel_list = [channel1_id, channel2_id]
 mbX1.set_voltages(1, channel_list)
 mbX1.set_enable_channels(True,channel_list )
 mbX1.set_measurement_modes(MeasurementMode.isense, channel_list)
-mbX1.set_current_ranges(CurrentRange._2mA_SMU, channel_list)
+mbX1.set_current_ranges(CurrentRange.Range_2mA_SMU, channel_list)
 
 
 # We define a simple helper function that can perform a software sweep.  
@@ -72,35 +72,36 @@ def sw_sweep(start, stop, step):
 # The first step is to perform the sweep with autoranging deactivated. 
 # The respective current range is then output for each step.
 
-# In[5]:
+# In[9]:
 
 
-mbX1.set_current_ranges(CurrentRange._200uA_SMU, channel_list)
+mbX1.set_current_ranges(CurrentRange.Range_200uA_SMU, channel_list)
 mbX1.enable_autorange(False, channel_list)
 mbX1.set_voltages(1, channel_list)
-sweep_without_outorange = sw_sweep(1,4, 0.2)
-print(sweep_without_outorange[3])
+sweep_without_autorange = sw_sweep(1,4, 0.2)
+print(sweep_without_autorange[3])
 
 
 # Autoranging is performed for both channels using the `enable_autorange()` method:
 
-# In[6]:
+# In[11]:
 
 
 mbX1.enable_autorange(True, channel_list)
 #Alternatively, autoranging can also be queried or set via the properties/setter of a channel
 print(mbX1.idSmu2Modules['M1.S1'].smu.channels[channel1_id].autorange)
-sweep_with_outorange = sw_sweep(1,4, 0.2)
-print(sweep_with_outorange[4])
+sweep_with_autorange = sw_sweep(1,4, 0.2)
+print(sweep_with_autorange[4])
 
 
 # ### Plotting the results
 # The following plots show the difference between the sweep with and without autorange. 
 # With a fixed value of 200uA, the current curve saturates at approximately this value.  
 # With an autorange set, the better resolution at low currents becomes clear. 
-# The curve does not saturate and reaches around 500uA. The plots are annotated with the current ranges:
+# The curve does not saturate and reaches around 500uA. The plots are annotated with the current ranges:  
+# *(Note: the enum prefixes 'Range_' are removed for better readability)*
 
-# In[8]:
+# In[15]:
 
 
 from plotly.subplots import make_subplots
@@ -108,12 +109,12 @@ def create_fig():
     fig = make_subplots(rows=2, cols=1,  subplot_titles=("LED current vs voltage", "LED current vs voltage"))
     fig.add_trace(go.Scatter(x=sweep_without_outorange[0], y=sweep_without_outorange[1],
                         mode='lines+markers+text',
-                        text = sweep_without_outorange[3],
+                        text = [s.replace("Range_", "") for s in sweep_without_autorange[3]],
                         textposition="top center",
                         name='LED'),  row=1, col=1)
     fig.add_trace(go.Scatter(x=sweep_with_outorange[0], y=sweep_with_outorange[1],
                         mode='lines+markers+text',
-                        text = sweep_with_outorange[3],
+                        text = [s.replace("Range_", "") for s in sweep_with_autorange[3]],
                         textposition="top center",
                         name='LED'),  row=2, col=1)
     fig.update_yaxes(type="log", range=[np.log(0.0001),np.log(1)], row=1, col=1)
@@ -126,7 +127,7 @@ fig
 #fig.show()
 
 
-# In[107]:
+# In[16]:
 
 
 srunner.shutdown()
