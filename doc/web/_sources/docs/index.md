@@ -9,12 +9,14 @@ kernelspec:
   name: python3
 ---
 
-# The Aspect Device Engine API
-## Python Software API Manual
 
 ```{figure} /aspectlogo.png
 :scale: 150%
 ```
+
+# The Aspect Device Engine API
+## Python Software API Manual
+
 ---
 ```{note}
 Preliminary Version - This is WIP
@@ -23,7 +25,9 @@ Preliminary Version - This is WIP
 Meanwhile visit:
 [aSpect Systems](https://www.aspect-sys.com/)
 
----
+---  
+
+ 
 
 <!-- <a href="../../../../../build/html/index.html" target="_blank">Open Local HTML</a> -->
 

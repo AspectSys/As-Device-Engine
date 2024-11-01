@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Part 2: More about channel measurements &#8212; The aSpect Device Engine Python API</title>
+    <title>2.2. Part 2: More about channel measurements &#8212; The aSpect Device Engine Python API</title>
   
   
   
@@ -61,8 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Part 3: Multiside and high performance" href="Tutorial3-Multiside_HighPerform.html" />
-    <link rel="prev" title="Part 1: Basics" href="Tutorial1-Basics.html" />
+    <link rel="next" title="2.3. Part 3: Multiside and high performance" href="Tutorial3-Multiside_HighPerform.html" />
+    <link rel="prev" title="2.1. Part 1: Basics" href="Tutorial1-Basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,16 +173,17 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">Part 1: Basics</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part 2: More about channel measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">Part 3: Multiside and high performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">Part 4: Clamps, Compliance &amp; Current Range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">Part 5: IV Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">Part 6: List sweps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">Part 7: Triggering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">Part 8a: Paramter Tables I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">Part 8b: Paramter Tables II</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">2. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">2.1. Part 1: Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. Part 2: More about channel measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">2.3. Part 3: Multiside and high performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">2.4. Part 4: Clamps, Compliance &amp; Current Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">2.5. Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">2.6. Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">2.7. Part 7: Triggering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">2.8. Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">2.9. Part 8b: Paramter Tables II</a></li>
 </ul>
 </details></li>
 </ul>
@@ -333,7 +334,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">Repeated measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">2.2.1. Repeated measurements</a></li>
 </ul>
             </nav>
         </div>
@@ -345,8 +346,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="part-2-more-about-channel-measurements">
-<h1>Part 2: More about channel measurements<a class="headerlink" href="#part-2-more-about-channel-measurements" title="Link to this heading">#</a></h1>
+  <section id="part-2-more-about-channel-measurements">
+<h1><span class="section-number">2.2. </span>Part 2: More about channel measurements<a class="headerlink" href="#part-2-more-about-channel-measurements" title="Link to this heading">#</a></h1>
 <p>This is the second introductory overview of programming the Aspect Device Engine Python API.<br />
 This document is available as pdf and interactive jupyter notebook.
 The introduction includes the following objectives:</p>
@@ -383,7 +384,7 @@ The introduction includes the following objectives:</p>
 </div>
 </div>
 <section id="repeated-measurements">
-<h2>Repeated measurements<a class="headerlink" href="#repeated-measurements" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.2.1. </span>Repeated measurements<a class="headerlink" href="#repeated-measurements" title="Link to this heading">#</a></h2>
 <p>While measurements can be repeated in the software, e.g. in a loop, as shown in the previous sections, the measurements can also be repeated directly on the hardware.<br />
 This has the advantage that the code is much more compact and that the measurements run much faster.<br />
 The <strong>measure_voltages()</strong> method takes one parameter: the number of repetitions for the measurement.</p>
@@ -572,7 +573,7 @@ if (outputEl) {{
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Part 1: Basics</p>
+        <p class="prev-next-title"><span class="section-number">2.1. </span>Part 1: Basics</p>
       </div>
     </a>
     <a class="right-next"
@@ -580,7 +581,7 @@ if (outputEl) {{
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Part 3: Multiside and high performance</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Part 3: Multiside and high performance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -600,7 +601,7 @@ if (outputEl) {{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">Repeated measurements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-measurements">2.2.1. Repeated measurements</a></li>
 </ul>
   </nav></div>
 
