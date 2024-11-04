@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.8. Part 8a: Paramter Tables I &#8212; The aSpect Device Engine Python API</title>
+    <title>3.9. Part 8a: Paramter Tables I &#8212; The aSpect Device Engine Python API</title>
   
   
   
@@ -61,8 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.9. Part 8b: Paramter Tables II" href="Tutorial8-ParameterTables_II.html" />
-    <link rel="prev" title="2.7. Part 7: Triggering" href="Tutorial7-Triggering.html" />
+    <link rel="next" title="3.10. Part 8b: Paramter Tables II" href="Tutorial8-ParameterTables_II.html" />
+    <link rel="prev" title="3.8. Part 7: Triggering" href="Tutorial7-Triggering.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,17 +173,26 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">2. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">2.1. Part 1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">2.2. Part 2: More about channel measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">2.3. Part 3: Multiside and high performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">2.4. Part 4: Clamps, Compliance &amp; Current Range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">2.5. Part 5: IV Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">2.6. Part 6: List sweps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">2.7. Part 7: Triggering</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.8. Part 8a: Paramter Tables I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">2.9. Part 8b: Paramter Tables II</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapters/introduction/overview.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/introduction/idSmuHardware.html">1.1. The idSMU hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/introduction/apioverview.html">1.2. Api architecture and concepts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapters/api_programming/overview.html">2. API programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/api_programming/initialization.html">2.1. Initialization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">3. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">3.1. Part 1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1b-Basics-Logging.html">3.2. Part 1b: Basics - Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">3.3. Part 2: More about channel measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">3.4. Part 3: Multiside and high performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">3.5. Part 4: Clamps, Compliance &amp; Current Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">3.6. Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">3.7. Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">3.8. Part 7: Triggering</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.9. Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">3.10. Part 8b: Paramter Tables II</a></li>
 </ul>
 </details></li>
 </ul>
@@ -334,10 +343,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-table-from-csv">2.8.2. Import a table from csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-of-table-entries">2.8.3. Modification of table entries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-parameters">2.8.4. Writing the parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.9.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-table-from-csv">3.9.2. Import a table from csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-of-table-entries">3.9.3. Modification of table entries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-parameters">3.9.4. Writing the parameters</a></li>
 </ul>
             </nav>
         </div>
@@ -350,7 +359,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="part-8a-paramter-tables-i">
-<h1><span class="section-number">2.8. </span>Part 8a: Paramter Tables I<a class="headerlink" href="#part-8a-paramter-tables-i" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.9. </span>Part 8a: Paramter Tables I<a class="headerlink" href="#part-8a-paramter-tables-i" title="Link to this heading">#</a></h1>
 <p>This is the 8th introductory overview of programming the Aspect Device Engine Python API.<br />
 This document is available as pdf and interactive jupyter notebook.
 The introduction includes the following objectives:</p>
@@ -361,7 +370,7 @@ The introduction includes the following objectives:</p>
 <li><p>Sending the parameters of a table to the hardware</p></li>
 </ul>
 <section id="introduction">
-<h2><span class="section-number">2.8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>There are two basic options for programming the idSMU hardware:<br />
 Firstly, by calling object methods or setting properties of the hardware models, as described in the previous chapters.<br />
 The second method is a tabular method.<br />
@@ -393,7 +402,7 @@ Instead of dozens of method calls, just one is then sufficient to set all parame
 </div>
 </section>
 <section id="import-a-table-from-csv">
-<h2><span class="section-number">2.8.2. </span>Import a table from csv<a class="headerlink" href="#import-a-table-from-csv" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9.2. </span>Import a table from csv<a class="headerlink" href="#import-a-table-from-csv" title="Link to this heading">#</a></h2>
 <p>The parameter tables, also known as setting tables, have a special format.<br />
 If you open one of the CSV files with such a table, it looks like this, for example:<br />
 <img alt="title" src="../_images/idqtable.png" /></p>
@@ -439,7 +448,7 @@ Group name: SMU-Device
 </div>
 </section>
 <section id="modification-of-table-entries">
-<h2><span class="section-number">2.8.3. </span>Modification of table entries<a class="headerlink" href="#modification-of-table-entries" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9.3. </span>Modification of table entries<a class="headerlink" href="#modification-of-table-entries" title="Link to this heading">#</a></h2>
 <p>The entire table with its groups is managed by an actual table of the type <code class="docutils literal notranslate"><span class="pre">IdqTable</span></code>.<br />
 The <code class="docutils literal notranslate"><span class="pre">dqTableGroup</span></code> type represents a group.</p>
 <div class="cell docutils container">
@@ -498,7 +507,7 @@ Group name: SMU-Device
 </div>
 </section>
 <section id="writing-the-parameters">
-<h2><span class="section-number">2.8.4. </span>Writing the parameters<a class="headerlink" href="#writing-the-parameters" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.9.4. </span>Writing the parameters<a class="headerlink" href="#writing-the-parameters" title="Link to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">apply_parameter_setting()</span></code> method can now be used to write the parameters of a group or the entire table to the hardware.<br />
 We then examine a few channel parameters:</p>
 <div class="cell docutils container">
@@ -599,7 +608,7 @@ Group name: SMU-Device
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.7. </span>Part 7: Triggering</p>
+        <p class="prev-next-title"><span class="section-number">3.8. </span>Part 7: Triggering</p>
       </div>
     </a>
     <a class="right-next"
@@ -607,7 +616,7 @@ Group name: SMU-Device
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.9. </span>Part 8b: Paramter Tables II</p>
+        <p class="prev-next-title"><span class="section-number">3.10. </span>Part 8b: Paramter Tables II</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -627,10 +636,10 @@ Group name: SMU-Device
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.8.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-table-from-csv">2.8.2. Import a table from csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-of-table-entries">2.8.3. Modification of table entries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-parameters">2.8.4. Writing the parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.9.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-a-table-from-csv">3.9.2. Import a table from csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modification-of-table-entries">3.9.3. Modification of table entries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-the-parameters">3.9.4. Writing the parameters</a></li>
 </ul>
   </nav></div>
 

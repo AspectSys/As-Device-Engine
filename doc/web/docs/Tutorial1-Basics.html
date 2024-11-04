@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.1. Part 1: Basics &#8212; The aSpect Device Engine Python API</title>
+    <title>3.1. Part 1: Basics &#8212; The aSpect Device Engine Python API</title>
   
   
   
@@ -61,8 +61,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.2. Part 2: More about channel measurements" href="Tutorial2-Multimeasure.html" />
-    <link rel="prev" title="2. Tutorials" href="tutorials.html" />
+    <link rel="next" title="3.2. Part 1b: Basics - Logging" href="Tutorial1b-Basics-Logging.html" />
+    <link rel="prev" title="3. Tutorials" href="tutorials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,17 +173,26 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">1. Overview</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">2. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. Part 1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">2.2. Part 2: More about channel measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">2.3. Part 3: Multiside and high performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">2.4. Part 4: Clamps, Compliance &amp; Current Range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">2.5. Part 5: IV Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">2.6. Part 6: List sweps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">2.7. Part 7: Triggering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">2.8. Part 8a: Paramter Tables I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">2.9. Part 8b: Paramter Tables II</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapters/introduction/overview.html">1. Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/introduction/idSmuHardware.html">1.1. The idSMU hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/introduction/apioverview.html">1.2. Api architecture and concepts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="chapters/api_programming/overview.html">2. API programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapters/api_programming/initialization.html">2.1. Initialization</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">3. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Part 1: Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1b-Basics-Logging.html">3.2. Part 1b: Basics - Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">3.3. Part 2: More about channel measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">3.4. Part 3: Multiside and high performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">3.5. Part 4: Clamps, Compliance &amp; Current Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">3.6. Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">3.7. Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">3.8. Part 7: Triggering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">3.9. Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">3.10. Part 8b: Paramter Tables II</a></li>
 </ul>
 </details></li>
 </ul>
@@ -334,27 +343,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">2.1.1. Python imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">2.1.2. Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">2.1.2.1. IdSmuServiceRunner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">2.1.2.2. IdSmuService</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">2.1.2.3. The IdSmuBoardModel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">3.1.1. Python imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">3.1.2. Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">3.1.2.1. IdSmuServiceRunner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">3.1.2.2. IdSmuService</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">3.1.2.3. The IdSmuBoardModel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">2.1.3. Programming the hardware with the API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">2.1.3.1. idSmu Modules/Devices and Channels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">2.1.3.2. IdSmuDeviceModel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">2.1.3.3. Alias names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">3.1.3. Programming the hardware with the API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">3.1.3.1. idSmu Modules/Devices and Channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">3.1.3.2. IdSmuDeviceModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">3.1.3.3. Alias names</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">2.1.4. Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">2.1.4.1. The channel models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">3.1.4. Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">3.1.4.1. The channel models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">2.1.5. Parameterization and measurements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">2.1.5.1. Measuring voltage and current</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">2.1.5.2. Setting voltage and current</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">2.1.5.3. Bonus: Getting the maximum output voltage and output current ratings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">3.1.5. Parameterization and measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">3.1.5.1. Measuring voltage and current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">3.1.5.2. Setting voltage and current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">3.1.5.3. Bonus: Getting the maximum output voltage and output current ratings</a></li>
 </ul>
 </li>
 </ul>
@@ -369,7 +378,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="part-1-basics">
-<h1><span class="section-number">2.1. </span>Part 1: Basics<a class="headerlink" href="#part-1-basics" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.1. </span>Part 1: Basics<a class="headerlink" href="#part-1-basics" title="Link to this heading">#</a></h1>
 <p>This is the introductory overview of programming the Aspect Device Engine Python API.<br />
 This document is available as pdf and interactive jupyter notebook.
 The introduction includes the following objectives:</p>
@@ -398,7 +407,7 @@ The introduction includes the following objectives:</p>
 <p>At the end of this document, this code and some of the background to it should be understandable.</p>
 <hr class="docutils" />
 <section id="python-imports">
-<h2><span class="section-number">2.1.1. </span>Python imports<a class="headerlink" href="#python-imports" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1.1. </span>Python imports<a class="headerlink" href="#python-imports" title="Link to this heading">#</a></h2>
 <p>There are only a few python imports needed for this introduction. Everthing is imported from the <em>aspectdeviceengine.engincore</em> module.
 Actually, only the IdSmuServiceRunner would be needed since this is the only class that will be instantiated. The other classes are only imported for type hinting. The objects of these types are intantiated by the API services.</p>
 <div class="cell docutils container">
@@ -410,9 +419,9 @@ Actually, only the IdSmuServiceRunner would be needed since this is the only cla
 </div>
 </section>
 <section id="starting-the-services-and-hardware-initialization">
-<h2><span class="section-number">2.1.2. </span>Starting the services and hardware initialization<a class="headerlink" href="#starting-the-services-and-hardware-initialization" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1.2. </span>Starting the services and hardware initialization<a class="headerlink" href="#starting-the-services-and-hardware-initialization" title="Link to this heading">#</a></h2>
 <section id="idsmuservicerunner">
-<h3><span class="section-number">2.1.2.1. </span>IdSmuServiceRunner<a class="headerlink" href="#idsmuservicerunner" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.2.1. </span>IdSmuServiceRunner<a class="headerlink" href="#idsmuservicerunner" title="Link to this heading">#</a></h3>
 <p>The <em>IdSmuServiceRunner</em> holds the references to the background services.
 If it goes out of scope, all services are shut down (cleanup processes).
 The lifetime should therefore be guranteed until the end of the session:</p>
@@ -425,7 +434,7 @@ The lifetime should therefore be guranteed until the end of the session:</p>
 </div>
 </section>
 <section id="idsmuservice">
-<h3><span class="section-number">2.1.2.2. </span>IdSmuService<a class="headerlink" href="#idsmuservice" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.2.2. </span>IdSmuService<a class="headerlink" href="#idsmuservice" title="Link to this heading">#</a></h3>
 <p>idSmu devices are detected by the <strong>IdSmuService</strong>. If the <em>get_first_board()</em>
 method is called prior to the detection method, the detection and initialization
 is performed automatically. This is useful for situations where
@@ -433,7 +442,7 @@ no specific configuration needs to be done before initialization.</p>
 <p><strong>Important note:</strong> At the end of a session (be it a jupyter notebook or a python script) the services must be shut down. In the case of the termination of a python script, this happens automatically. When moving from one notebook tutorial to the next, either the kernel must be terminated or the shutdown() method must be executed manually (see last cell in the notebook).</p>
 </section>
 <section id="the-idsmuboardmodel">
-<h3><span class="section-number">2.1.2.3. </span>The IdSmuBoardModel<a class="headerlink" href="#the-idsmuboardmodel" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.2.3. </span>The IdSmuBoardModel<a class="headerlink" href="#the-idsmuboardmodel" title="Link to this heading">#</a></h3>
 <p>The IdSmuBoardModel is the host and (multiside-)controller for idSmu devices.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -469,9 +478,9 @@ In the case of the API, the terms <em>Resource-Id</em> and <em>Address</em> are 
 </section>
 </section>
 <section id="programming-the-hardware-with-the-api">
-<h2><span class="section-number">2.1.3. </span>Programming the hardware with the API<a class="headerlink" href="#programming-the-hardware-with-the-api" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1.3. </span>Programming the hardware with the API<a class="headerlink" href="#programming-the-hardware-with-the-api" title="Link to this heading">#</a></h2>
 <section id="idsmu-modules-devices-and-channels">
-<h3><span class="section-number">2.1.3.1. </span>idSmu Modules/Devices and Channels<a class="headerlink" href="#idsmu-modules-devices-and-channels" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.3.1. </span>idSmu Modules/Devices and Channels<a class="headerlink" href="#idsmu-modules-devices-and-channels" title="Link to this heading">#</a></h3>
 <p>With this system of hierarchical resource localization, each resource is uniquely identifiable,
 even in a multi-board setup.<br />
 As we can see (in a single idSmu board setup), there is
@@ -497,7 +506,7 @@ channel IDs:  [&#39;M1.S1.C1&#39;, &#39;M1.S1.C2&#39;, &#39;M1.S1.C3&#39;, &#39;
 </div>
 </section>
 <section id="idsmudevicemodel">
-<h3><span class="section-number">2.1.3.2. </span>IdSmuDeviceModel<a class="headerlink" href="#idsmudevicemodel" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.3.2. </span>IdSmuDeviceModel<a class="headerlink" href="#idsmudevicemodel" title="Link to this heading">#</a></h3>
 <p>The idSmuModules classes are proxy classes that implement the [ ] operator for quick access to a device/module of type IdSmuDeviceModel and the as_list() method to get all devices of the same type on the board. There are implementations for the all types of idSmu.</p>
 <p>To access a module we can simply use <code class="docutils literal notranslate"><span class="pre">idSmu2Modules['address</span> <span class="pre">or</span> <span class="pre">name</span> <span class="pre">of</span> <span class="pre">module']</span></code></p>
 <div class="cell docutils container">
@@ -515,7 +524,7 @@ channel IDs:  [&#39;M1.S1.C1&#39;, &#39;M1.S1.C2&#39;, &#39;M1.S1.C3&#39;, &#39;
 </div>
 </section>
 <section id="alias-names">
-<h3><span class="section-number">2.1.3.3. </span>Alias names<a class="headerlink" href="#alias-names" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.3.3. </span>Alias names<a class="headerlink" href="#alias-names" title="Link to this heading">#</a></h3>
 <p>Devices can be renamed, either programmatically or by so-called parameter settings.
 Parameter settings are applied during initialization and the changed name can thus be used immediately. (programming via parameter settings is an advanced topic and will not be dealt with here).<br />
 The advantage of renaming resources is that you can use an alias name for addressing
@@ -556,7 +565,7 @@ instead of the rather abstract resource IDs / addresses:</p>
 </section>
 </section>
 <section id="descending-further-into-the-model-hierarchy">
-<h2><span class="section-number">2.1.4. </span>Descending further into the model hierarchy<a class="headerlink" href="#descending-further-into-the-model-hierarchy" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1.4. </span>Descending further into the model hierarchy<a class="headerlink" href="#descending-further-into-the-model-hierarchy" title="Link to this heading">#</a></h2>
 <p>The idSmu-Hardware is not just a source measurement unit, but combines various hardware components.
 For example, digital signals can be generated or a RAM memory can be used, depending on the hardware/software support.
 The software therefore models the hardware in dedicated units. One of the most important elements of the IdSmuDeviceModel
@@ -575,7 +584,7 @@ These units are called SMU or DPS, depending on the device type.</p>
 </div>
 </div>
 <section id="the-channel-models">
-<h3><span class="section-number">2.1.4.1. </span>The channel models<a class="headerlink" href="#the-channel-models" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.4.1. </span>The channel models<a class="headerlink" href="#the-channel-models" title="Link to this heading">#</a></h3>
 <p>The smu/dps subcomponents are again proxy objects and contain a Channels object.<br />
 This Channels object implements the [ ] operator for fast access to the channels of the source measurement unit. There is also a as_list() method again to itearate over the channels.
 The objects returned by the channels object are of type AnalogChannelModel.
@@ -643,7 +652,7 @@ The reason is that the engine accepts names as resource identifiers for many ope
 </section>
 </section>
 <section id="parameterization-and-measurements">
-<h2><span class="section-number">2.1.5. </span>Parameterization and measurements<a class="headerlink" href="#parameterization-and-measurements" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.1.5. </span>Parameterization and measurements<a class="headerlink" href="#parameterization-and-measurements" title="Link to this heading">#</a></h2>
 <p>Now we have a reference to the channel object and can finally parameterize it and take measurements.
 A channel must be active so that a voltage (or a current) can be output or meaningful measurements can be made.<br />
 Let’s check if the channel is enabled, and if it is not, enable it:</p>
@@ -665,7 +674,7 @@ Channel enabled? True
 </div>
 </div>
 <section id="measuring-voltage-and-current">
-<h3><span class="section-number">2.1.5.1. </span>Measuring voltage and current<a class="headerlink" href="#measuring-voltage-and-current" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.5.1. </span>Measuring voltage and current<a class="headerlink" href="#measuring-voltage-and-current" title="Link to this heading">#</a></h3>
 <p>The quickest and easiest way to measure a voltage or a current are the properties <code class="docutils literal notranslate"><span class="pre">voltage</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -683,7 +692,7 @@ Measured current: 0.000002
 </div>
 </section>
 <section id="setting-voltage-and-current">
-<h3><span class="section-number">2.1.5.2. </span>Setting voltage and current<a class="headerlink" href="#setting-voltage-and-current" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.5.2. </span>Setting voltage and current<a class="headerlink" href="#setting-voltage-and-current" title="Link to this heading">#</a></h3>
 <p>The quickest and easiest way to set a voltage or a current are the setters <code class="docutils literal notranslate"><span class="pre">voltage</span></code> and <code class="docutils literal notranslate"><span class="pre">current</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,7 +714,7 @@ Measured current: 0.000002
 </div>
 </section>
 <section id="bonus-getting-the-maximum-output-voltage-and-output-current-ratings">
-<h3><span class="section-number">2.1.5.3. </span>Bonus: Getting the maximum output voltage and output current ratings<a class="headerlink" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.1.5.3. </span>Bonus: Getting the maximum output voltage and output current ratings<a class="headerlink" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vMin</span><span class="p">,</span> <span class="n">vMax</span><span class="p">,</span> <span class="n">iMin</span><span class="p">,</span> <span class="n">iMax</span> <span class="o">=</span> <span class="n">channel1</span><span class="o">.</span><span class="n">output_ranges</span>
@@ -769,15 +778,15 @@ Output current range: [-0.075000, 0.074998] A
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Tutorials</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Tutorials</p>
       </div>
     </a>
     <a class="right-next"
-       href="Tutorial2-Multimeasure.html"
+       href="Tutorial1b-Basics-Logging.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>Part 2: More about channel measurements</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Part 1b: Basics - Logging</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -797,27 +806,27 @@ Output current range: [-0.075000, 0.074998] A
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">2.1.1. Python imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">2.1.2. Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">2.1.2.1. IdSmuServiceRunner</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">2.1.2.2. IdSmuService</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">2.1.2.3. The IdSmuBoardModel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-imports">3.1.1. Python imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-services-and-hardware-initialization">3.1.2. Starting the services and hardware initialization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservicerunner">3.1.2.1. IdSmuServiceRunner</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmuservice">3.1.2.2. IdSmuService</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-idsmuboardmodel">3.1.2.3. The IdSmuBoardModel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">2.1.3. Programming the hardware with the API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">2.1.3.1. idSmu Modules/Devices and Channels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">2.1.3.2. IdSmuDeviceModel</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">2.1.3.3. Alias names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-the-hardware-with-the-api">3.1.3. Programming the hardware with the API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmu-modules-devices-and-channels">3.1.3.1. idSmu Modules/Devices and Channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idsmudevicemodel">3.1.3.2. IdSmuDeviceModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alias-names">3.1.3.3. Alias names</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">2.1.4. Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">2.1.4.1. The channel models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descending-further-into-the-model-hierarchy">3.1.4. Descending further into the model hierarchy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-channel-models">3.1.4.1. The channel models</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">2.1.5. Parameterization and measurements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">2.1.5.1. Measuring voltage and current</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">2.1.5.2. Setting voltage and current</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">2.1.5.3. Bonus: Getting the maximum output voltage and output current ratings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameterization-and-measurements">3.1.5. Parameterization and measurements</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-voltage-and-current">3.1.5.1. Measuring voltage and current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-voltage-and-current">3.1.5.2. Setting voltage and current</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-getting-the-maximum-output-voltage-and-output-current-ratings">3.1.5.3. Bonus: Getting the maximum output voltage and output current ratings</a></li>
 </ul>
 </li>
 </ul>

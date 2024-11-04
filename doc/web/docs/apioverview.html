@@ -180,14 +180,15 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tutorials.html">2. Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="Tutorial1-Basics.html">2.1. Part 1: Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">2.2. Part 2: More about channel measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">2.3. Part 3: Multiside and high performance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">2.4. Part 4: Clamps, Compliance &amp; Current Range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">2.5. Part 5: IV Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">2.6. Part 6: List sweps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">2.7. Part 7: Triggering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">2.8. Part 8a: Paramter Tables I</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">2.9. Part 8b: Paramter Tables II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial1b-Basics-Logging.html">2.2. Part 1b: Basics - Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">2.3. Part 2: More about channel measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">2.4. Part 3: Multiside and high performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">2.5. Part 4: Clamps, Compliance &amp; Current Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">2.6. Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">2.7. Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">2.8. Part 7: Triggering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">2.9. Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_II.html">2.10. Part 8b: Paramter Tables II</a></li>
 </ul>
 </details></li>
 </ul>
@@ -354,13 +355,27 @@ document.write(`
 <h1><span class="section-number">1.2. </span>Api architecture and concepts<a class="headerlink" href="#api-architecture-and-concepts" title="Link to this heading">#</a></h1>
 <section id="the-hierarchical-hardware-model-of-the-api">
 <h2><span class="section-number">1.2.1. </span>The hierarchical hardware model of the API<a class="headerlink" href="#the-hierarchical-hardware-model-of-the-api" title="Link to this heading">#</a></h2>
+<p>The core element of the API are the classes that model the idSMU hardware. The part that relates to the measurement and control of current and voltage (SMU) is the most extensive part of the API.<br />
+There is also a smaller API part that deals with programming the digital IOs. This part is kept very simple and will be discussed in a later chapter.<br />
+Any customised software is not part of the core API and will not be discussed in this document.</p>
+<p>The lowest in this hardware model that the user has to deal with are the channels.
+A large part of the parameterisation of the SMU properties of idSMU is carried out in the channel model. For example, the channel model has the property ‘output foce value’ or ‘clamp enabled’.<br />
+The next hierarchical level is the ‘Analogue Device Model’. This models the device on idSMU that is responsible for generating and measuring currents and voltages, i.e. the actual SMU (or DPS) chip.<br />
+The analogue device model can contain one or more channels, depending on the type of idSMU. In addition to the channels, the device itself also has some programmable parameters. An example of this is an internal resistor that can be switched on if required. Otherwise, the user has very little contact with other properties of the device model.<br />
+One level further up you will find the idSMU device model. This contains the analogue device model and the digital IO in the standard API. The idSMU device model is the container that contains the various hardware components of idSMU. In idSMU3 there is also a power module at this level. This is not shown in the following images for the sake of simplicity.<br />
+The board model is located at the top level. There can be one or more idSMU devices on a board.</p>
 <figure class="align-default" id="markdown-fig">
 <a class="reference internal image-reference" href="../_images/api_architecture1.png"><img alt="arch1" src="../_images/api_architecture1.png" style="width: 500px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">High level view on the API architecture</span><a class="headerlink" href="#markdown-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>…</p>
+<p>The internal functionality of the device engine is briefly presented here.
+The hardware of idSMU is parameterised internally via registers. This applies to the channel parameters, the analogue device parameters or the digital IOs.<br />
+If a user sets a channel parameter using a method such as ‘SetVoltage’, this is converted into a register value and saved in a register model.<br />
+At the same time, this change is communicated to the board model, which also serves as a control unit. Communication with the hardware is command-orientated.<br />
+To stay with the example of setting a voltage, a command is assembled that contains the channel to be programmed as an address and the register value that represents this voltage. This command is assembled by the board model and sent to other parts of the device engine, which finally communicate with the hardware via USB.<br />
+These register models and the commands normally remain hidden from the user. Instead, they can work with the descriptive methods and properties of the hardware models.</p>
 <figure class="align-default" id="markdown-fig2">
 <a class="reference internal image-reference" href="../_images/api_architecture2.png"><img alt="arch2" src="../_images/api_architecture2.png" style="width: 500px;" /></a>
 <figcaption>
