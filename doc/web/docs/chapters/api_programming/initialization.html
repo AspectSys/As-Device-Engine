@@ -350,7 +350,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-detection">2.1.4. Device detection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-initialization">2.1.5. Device initialization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-detection-and-initialization">2.1.6. Combining detection and initialization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-methods-for-device-detection-and-initialization">2.1.7. Summary: Methods for device detection and initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shutdown-deinitialization">2.1.7. Shutdown / deinitialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-methods-for-device-detection-and-initialization">2.1.8. Summary: Methods for device detection and initialization</a></li>
 </ul>
             </nav>
         </div>
@@ -433,8 +434,13 @@ The method <code class="docutils literal notranslate"><span class="pre">get_firs
 </pre></div>
 </div>
 </section>
+<section id="shutdown-deinitialization">
+<h2><span class="section-number">2.1.7. </span>Shutdown / deinitialization<a class="headerlink" href="#shutdown-deinitialization" title="Link to this heading">#</a></h2>
+<p>The method <code class="docutils literal notranslate"><span class="pre">shutdown_devices()</span></code> does the opposite of initialization.
+It can be used in combination with another initialization to reset the devices to their initial state.</p>
+</section>
 <section id="summary-methods-for-device-detection-and-initialization">
-<h2><span class="section-number">2.1.7. </span>Summary: Methods for device detection and initialization<a class="headerlink" href="#summary-methods-for-device-detection-and-initialization" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1.8. </span>Summary: Methods for device detection and initialization<a class="headerlink" href="#summary-methods-for-device-detection-and-initialization" title="Link to this heading">#</a></h2>
 <p>IdSmuService methods:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -460,6 +466,9 @@ The method <code class="docutils literal notranslate"><span class="pre">get_firs
 </tr>
 <tr class="row-odd"><td class="text-left"><p>get_first_board()</p></td>
 <td class="text-left"><p>Detects and initializes all devices<br>and returns the first board</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>shutdown_devices()</p></td>
+<td class="text-left"><p>Shutdown &amp; Deinitialization of all devices</p></td>
 </tr>
 </tbody>
 </table>
@@ -537,7 +546,8 @@ The method <code class="docutils literal notranslate"><span class="pre">get_firs
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-detection">2.1.4. Device detection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device-initialization">2.1.5. Device initialization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-detection-and-initialization">2.1.6. Combining detection and initialization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-methods-for-device-detection-and-initialization">2.1.7. Summary: Methods for device detection and initialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shutdown-deinitialization">2.1.7. Shutdown / deinitialization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-methods-for-device-detection-and-initialization">2.1.8. Summary: Methods for device detection and initialization</a></li>
 </ul>
   </nav></div>
 

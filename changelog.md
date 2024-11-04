@@ -1,6 +1,14 @@
 # Change Log
 <br/>
 
+## [0.9.566] - 2024-11-04
+
+### Fixed
+- Fixed a bug where deinitialization did not reset the device state to "not initialized"
+
+### Added
+- More configuration options for logging
+
 ## [0.9.559] - 2024-10-30
 
 ### Added

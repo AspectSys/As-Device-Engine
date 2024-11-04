@@ -73,6 +73,11 @@ Full example detection and initialization:
    myboard = smu_service.get_first_board()
 ```
 
+## Shutdown / deinitialization
+
+The method `shutdown_devices()` does the opposite of initialization.
+It can be used in combination with another initialization to reset the devices to their initial state.
+
 ## Summary: Methods for device detection and initialization 
 
 IdSmuService methods:
@@ -85,6 +90,7 @@ IdSmuService methods:
 | initialize_board(<board_address>) | Initializes a board (the devices on it)                                  |
 | detect_and_initialize_devices()   | Detects and initializes all devices                                      |
 | get_first_board()                 | Detects and initializes all devices<br>and returns the first board       |
+| shutdown_devices()                | Shutdown & Deinitialization of all devices                               |
 
 
 
