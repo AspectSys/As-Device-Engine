@@ -1,6 +1,12 @@
 # Change Log
 <br/>
 
+## [0.9.568] - 2024-11-05
+
+### Fixed
+- Fixed a bug where TRACE file log level was ignored when logging binary protocol
+
+
 ## [0.9.566] - 2024-11-04
 
 ### Fixed
@@ -8,6 +14,7 @@
 
 ### Added
 - More configuration options for logging
+
 
 ## [0.9.559] - 2024-10-30
 

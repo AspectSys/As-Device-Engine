@@ -180,6 +180,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../api_programming/overview.html">2. API programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api_programming/initialization.html">2.1. Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_programming/boardmodel.html">2.2. The Board Model</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials.html">3. Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -359,7 +360,7 @@ document.write(`
   <section id="api-architecture-and-concepts">
 <h1><span class="section-number">1.2. </span>Api architecture and concepts<a class="headerlink" href="#api-architecture-and-concepts" title="Link to this heading">#</a></h1>
 <section id="the-hierarchical-hardware-model-of-the-api">
-<h2><span class="section-number">1.2.1. </span>The hierarchical hardware model of the API<a class="headerlink" href="#the-hierarchical-hardware-model-of-the-api" title="Link to this heading">#</a></h2>
+<span id="intro-hardware-model"></span><h2><span class="section-number">1.2.1. </span>The hierarchical hardware model of the API<a class="headerlink" href="#the-hierarchical-hardware-model-of-the-api" title="Link to this heading">#</a></h2>
 <p>The core element of the API are the classes that model the idSMU hardware. The part that relates to the measurement and control of current and voltage (SMU) is the most extensive part of the API.<br />
 There is also a smaller API part that deals with programming the digital IOs. This part is kept very simple and will be discussed in a later chapter.<br />
 Any customised software is not part of the core API and will not be discussed in this document.</p>

@@ -1,6 +1,7 @@
 Api architecture and concepts
 =============================
 
+(intro-hardware-model)=
 ## The hierarchical hardware model of the API
 
 The core element of the API are the classes that model the idSMU hardware. The part that relates to the measurement and control of current and voltage (SMU) is the most extensive part of the API.  

@@ -321,7 +321,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -337,6 +339,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addressing-identifier-scheme">2.2.2. Addressing &amp; Identifier Scheme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-via-board-model-vs-channel-model">2.2.3. Programming via board model vs channel model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-board-model">2.2.4. Accessing a board model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-information-about-the-board-and-administrative-methods">2.2.5. Obtaining information about the board and administrative methods</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -348,6 +362,134 @@ document.write(`
                   
   <section id="the-board-model">
 <h1><span class="section-number">2.2. </span>The Board Model<a class="headerlink" href="#the-board-model" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2><span class="section-number">2.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The central elements of the API are the classes that model the idSMU hardware.<br />
+This model basically has two tasks: It stores the <strong>state</strong> of the hardware and it provides simplified access to the <strong>command interface</strong> that is used to communicate with the hardware.<br />
+The model is a mixture of composition and inheritance.<br />
+The board model is at the top level. This is represented in the API via the <code class="docutils literal notranslate"><span class="pre">IdSmuBoardModel</span></code> class. As already shown in the <a class="reference internal" href="../introduction/apioverview.html#intro-hardware-model"><span class="std std-ref">introductory overview</span></a>, this model is the container class for the underlying components.<br />
+The IdSmuBoardModel class is not instantiated directly by the user. The entire hardware model is built by the IdSmuService during <a class="reference internal" href="initialization.html#device-detection"><span class="std std-ref">hardware detection</span></a>. Access to these objects is then obtained via the <code class="docutils literal notranslate"><span class="pre">IdSmuService</span></code>.<br />
+An IdSmuBoardModel contains one or more <code class="docutils literal notranslate"><span class="pre">IdSmuModel</span></code>s. An IdSmuModel represents a single idSMU hardware module. This in turn contains an SMU chip, represented by the <code class="docutils literal notranslate"><span class="pre">AnalogueDeviceModel</span></code>.<br />
+Most of the parameterisation and state storage ultimately takes place in the AnalogChannelModel.<br />
+Another central paradigm of the idSmuBoardModel is the possibility of highly parallel (multiside) programming of the hardware. For this purpose, the board model manages a reference to all channels. This means that parameterisation and measurements can be carried out on several or dozens of channels in parallel.<br />
+This high level of scalability means that the user can work with individual modules at channel level as well as with many modules in parallel at board level.</p>
+<figure class="align-default" id="classdiag-fig">
+<a class="reference internal image-reference" href="../../../_images/classdiag.png"><img alt="classdiag" src="../../../_images/classdiag.png" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Simplified class diagram of hardware model</span><a class="headerlink" href="#classdiag-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="addressing-identifier-scheme">
+<h2><span class="section-number">2.2.2. </span>Addressing &amp; Identifier Scheme<a class="headerlink" href="#addressing-identifier-scheme" title="Link to this heading">#</a></h2>
+<p>The model components Board, SmuModel/Module and Channel presented above can each be addressed by unique identifiers in the API.<br />
+When initialising the hardware, the firmware of an idSmu module determines its own unique address. As this address is unique in a network of idSMU modules, it is also referred to as the identifier.<br />
+The firmware uses special address pins on the hardware interface to determine this address.
+The structure of this identifier is divided into three parts and follows the hardware hierarchy: board address, module address, channel address.
+The board address can be set by the user and is <em>M1</em> by default. The module address (or slot address) is defined by the position of a module on a board. For a single module board, this is <em>S1</em> by default. The channel address results from the logical numbering of the channels of a module and has the format <em>Cz</em>, where ‘z’ is a channel number starting from 1.<br />
+The itentifier is a string composed of these three parts and has the format Mx.Sy.Cz.<br />
+The identifier (or resource address) is a string made up of these three parts and has the format Mx.Sy.Cz for a channel, Mx.Sy for a module and Mx for a board.   Many of the API functions expect this identifier as an input parameter. As an example: The <code class="docutils literal notranslate"><span class="pre">set_voltages</span></code> method of the board model expects a list of channel IDs in addition to the voltage value:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>   <span class="n">myboard</span><span class="o">.</span><span class="n">set_voltages</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;M1.S1.C1&#39;</span><span class="p">,</span> <span class="s1">&#39;M1.S1.C2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="programming-via-board-model-vs-channel-model">
+<h2><span class="section-number">2.2.3. </span>Programming via board model vs channel model<a class="headerlink" href="#programming-via-board-model-vs-channel-model" title="Link to this heading">#</a></h2>
+<p>As a user of the API, you can choose whether to set the parameters (and measurements) on channel objects or via the board model.
+Configuration via the channel model is somewhat more intuitive and can be done (in Python) via properties.<br />
+The same functionality can be achieved in the board model via class methods.<br />
+If you want high parallelism (multiside), the user must use these methods.</p>
+</section>
+<section id="accessing-a-board-model">
+<h2><span class="section-number">2.2.4. </span>Accessing a board model<a class="headerlink" href="#accessing-a-board-model" title="Link to this heading">#</a></h2>
+<p>An IdSmuBoardModel can be accessed via the IdSmuService.<br />
+There are basically 2 methods for this: <code class="docutils literal notranslate"><span class="pre">get_first_board()</span></code>and <code class="docutils literal notranslate"><span class="pre">get_board(&lt;board_address&gt;)</span></code>.<br />
+The first of these methods,<code class="docutils literal notranslate"><span class="pre">get_first_board()</span></code>, takes over the detection and initialisation of the hardware, if not already done, and returns the first detected board.<br />
+The second method, <code class="docutils literal notranslate"><span class="pre">get_board(&lt;board_address&gt;)</span></code>, assumes that a board with the address <em>‘board_address’</em> has already been detected.</p>
+</section>
+<section id="obtaining-information-about-the-board-and-administrative-methods">
+<h2><span class="section-number">2.2.5. </span>Obtaining information about the board and administrative methods<a class="headerlink" href="#obtaining-information-about-the-board-and-administrative-methods" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the context of the IdSmuBoardModel, an idSmu module or its model IdSmuModel is usually referred to as a <em>device</em>.</p>
+</div>
+<p>As soon as you have received an IdSmuBoard model instance via the IdSmuService, you can query some useful information about the board.<br />
+In addition, alias names can be assigned to channels and modules/devices.
+Below is a list of these methods:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Method</p></th>
+<th class="head text-left"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>get_address()</p></td>
+<td class="text-left"><p>Returns the board address in the format Mx</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>get_all_hardware_ids()</p></td>
+<td class="text-left"><p>Returns a list of all device/module and channel<br>IDs</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>get_number_of_devices()</p></td>
+<td class="text-left"><p>Returns the number of devices (idSMU Modules)<br>detected on this board</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>is_board_initialized()</p></td>
+<td class="text-left"><p>Returns true if all devices on this board are<br>initialized</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>print_device_information()<br>(device_information property)</p></td>
+<td class="text-left"><p>Prints and returns tabular information about<br>the deteced idSMU Modules/devices</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>channel_information property</p></td>
+<td class="text-left"><p>Prints and returns tabular information about<br>all channels</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>get_channel_name(&lt;channel_id&gt;)</p></td>
+<td class="text-left"><p>Returns the (alias) name of a channel if it<br>was set</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>set_channel_name(&lt;ID&gt;, &lt;name&gt;)</p></td>
+<td class="text-left"><p>Sets an (alias) name for a channel</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>set_device_name(&lt;ID&gt;, &lt;name&gt;)</p></td>
+<td class="text-left"><p>Sets an (alias) name for a device</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Example script using the above methods:</em></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>   <span class="kn">from</span> <span class="nn">aspectdeviceengine.enginecore</span> <span class="kn">import</span> <span class="n">IdSmuService</span><span class="p">,</span> <span class="n">IdSmuServiceRunner</span><span class="p">,</span> <span class="n">IdSmuBoardModel</span>
+   <span class="n">srunner</span> <span class="o">=</span> <span class="n">IdSmuServiceRunner</span><span class="p">()</span>
+
+   <span class="n">my_board</span> <span class="o">=</span> <span class="n">srunner</span><span class="o">.</span><span class="n">get_idsmu_service</span><span class="p">()</span><span class="o">.</span><span class="n">get_first_board</span><span class="p">()</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_board</span><span class="o">.</span><span class="n">device_information</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_board</span><span class="o">.</span><span class="n">is_board_initialized</span><span class="p">())</span>  
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_board</span><span class="o">.</span><span class="n">get_all_hardware_ids</span><span class="p">())</span>
+   <span class="n">my_board</span><span class="o">.</span><span class="n">set_channel_name</span><span class="p">(</span><span class="s2">&quot;M1.S1.C1&quot;</span><span class="p">,</span> <span class="s2">&quot;my_channel&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">my_board</span><span class="o">.</span><span class="n">get_channel_name</span><span class="p">(</span><span class="s2">&quot;M1.S1.C1&quot;</span><span class="p">))</span>
+
+   <span class="c1"># output:</span>
+<span class="w">   </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">   +----------+------------+-------+----------+-------------+</span>
+<span class="sd">   | DeviceId | IdSmu-Type | Name  | Firmware | Initialized |</span>
+<span class="sd">   +----------+------------+-------+----------+-------------+</span>
+<span class="sd">   | M1.S1    | IdSmu2     | M1.S1 | 0x08191f | true        |</span>
+<span class="sd">   +----------+------------+-------+----------+-------------+</span>
+<span class="sd">   True</span>
+<span class="sd">   [&#39;M1.S1&#39;, &#39;M1.S1.C1&#39;, &#39;M1.S1.C2&#39;, &#39;M1.S1.C3&#39;, &#39;M1.S1.C4&#39;]</span>
+<span class="sd">   my_channel</span>
+<span class="sd">   +----------+------------+-----------+----------+-------------+</span>
+<span class="sd">   | DeviceId | IdSmu-Type | Name      | Firmware | Initialized |</span>
+<span class="sd">   +----------+------------+-----------+----------+-------------+</span>
+<span class="sd">   | M1.S1    | IdSmu2     | my_module | 0x08191f | true        |</span>
+<span class="sd">   +----------+------------+-----------+----------+-------------+</span>
+<span class="sd">   +----------+------------+--------------+</span>
+<span class="sd">   | Channel# | Channel_ID | Channel_Name |</span>
+<span class="sd">   +----------+------------+--------------+</span>
+<span class="sd">   | 1        | M1.S1.C1   | my_channel   |</span>
+<span class="sd">   | 2        | M1.S1.C2   | M1.S1.C2     |</span>
+<span class="sd">   | 3        | M1.S1.C3   | M1.S1.C3     |</span>
+<span class="sd">   | 4        | M1.S1.C4   | M1.S1.C4     |</span>
+<span class="sd">   +----------+------------+--------------+</span>
+<span class="sd">   &#39;&#39;&#39;</span>
+</pre></div>
+</div>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Python</p></th>
@@ -367,6 +509,7 @@ document.write(`
 </tbody>
 </table>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -423,6 +566,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">2.2.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addressing-identifier-scheme">2.2.2. Addressing &amp; Identifier Scheme</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-via-board-model-vs-channel-model">2.2.3. Programming via board model vs channel model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-a-board-model">2.2.4. Accessing a board model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obtaining-information-about-the-board-and-administrative-methods">2.2.5. Obtaining information about the board and administrative methods</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

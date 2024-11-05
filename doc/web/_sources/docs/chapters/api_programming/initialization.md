@@ -23,6 +23,7 @@ When using the IdSmuService alone, the user would be responsible for this clean-
     idsmu_service = srunner.get_idsmu_service()
  ```
 
+(device-detection)=
 ## Device detection
 
 :::{note}
