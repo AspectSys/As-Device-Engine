@@ -1,0 +1,1267 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="#" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 --><title>Index - Device Engine Python API</title>
+<link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=ad57bd55" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Device Engine Python API</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/aspect.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Device Engine Python API</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="autoapi/index.html">Aspect Device Engine Python API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Aspect Device Engine Python API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="autoapi/aspectdeviceengine/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">aspectdeviceengine</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of aspectdeviceengine</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="autoapi/aspectdeviceengine/enginecore/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">aspectdeviceengine.enginecore</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<section class="genindex-section">
+  <h1 id="index">Index</h1>
+  <div class="genindex-jumpbox"><a href="#A"><strong>A</strong></a> | <a href="#B"><strong>B</strong></a> | <a href="#C"><strong>C</strong></a> | <a href="#D"><strong>D</strong></a> | <a href="#E"><strong>E</strong></a> | <a href="#F"><strong>F</strong></a> | <a href="#G"><strong>G</strong></a> | <a href="#H"><strong>H</strong></a> | <a href="#I"><strong>I</strong></a> | <a href="#K"><strong>K</strong></a> | <a href="#L"><strong>L</strong></a> | <a href="#M"><strong>M</strong></a> | <a href="#N"><strong>N</strong></a> | <a href="#O"><strong>O</strong></a> | <a href="#P"><strong>P</strong></a> | <a href="#R"><strong>R</strong></a> | <a href="#S"><strong>S</strong></a> | <a href="#T"><strong>T</strong></a> | <a href="#U"><strong>U</strong></a> | <a href="#V"><strong>V</strong></a> | <a href="#W"><strong>W</strong></a></div>
+</section>
+<section id="A" class="genindex-section">
+  <h2>A</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel">AD5522ChannelModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel">AD5560ChannelModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.add_channel_configuration">add_channel_configuration() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AnalogChannelModel">AnalogChannelModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.append">append() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.append">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.append">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.append">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.append">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.append">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.append">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.apply_parameter_setting">apply_parameter_setting() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.apply_parameter_settings_at_column_values">apply_parameter_settings_at_column_values() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps.Channels.as_list">as_list() (aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps.Channels method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu.Channels.as_list">(aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu.Channels method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu1Modules.as_list">(aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu1Modules method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules.as_list">(aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules method)</a>
+</li>
+        </ul></li>
+        <li>
+    aspectdeviceengine
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/index.html#module-aspectdeviceengine">module</a>
+</li>
+        </ul></li>
+        <li>
+    aspectdeviceengine.enginecore
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#module-aspectdeviceengine.enginecore">module</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.at">at (aspectdeviceengine.enginecore.IdqTableGroup property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.At">At (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.autorange">autorange (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.autorange">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="B" class="genindex-section">
+  <h2>B</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.bake_filter_into_table">bake_filter_into_table() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="C" class="genindex-section">
+  <h2>C</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.can_run">can_run() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableCell.cell_value">cell_value (aspectdeviceengine.enginecore.IdqTableCell attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.change_current_range_at">change_current_range_at() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.channel_ids">channel_ids (aspectdeviceengine.enginecore.IdSmuDeviceModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.channel_ids">(aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.channel_names">channel_names (aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult">ChannelResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps.channels">channels (aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu.channels">(aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.check_future_is_ready">check_future_is_ready() (in module aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_enabled">clamp_enabled (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_enabled">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_high_value">clamp_high_value (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_low_value">clamp_low_value (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_low_value">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.clear">clear() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.clear">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.clear">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.clear">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.clear">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.clear">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.clear">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.clear_current_ranges">clear_current_ranges() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.RowFilter.column_name">column_name (aspectdeviceengine.enginecore.RowFilter attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.columns">columns (aspectdeviceengine.enginecore.IdqTableGroup property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply">CommandReply (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyFuture">CommandReplyFuture (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList">CommandReplyList (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.contains_device">contains_device() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.count">count() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.count">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.count">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.count">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.count">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.count">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.count">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.current">current (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.current">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.current_range">current_range (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.current_range">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange">CurrentRange (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="D" class="genindex-section">
+  <h2>D</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.detect_and_initialize_devices">detect_and_initialize_devices() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.detect_and_initialize_devices_with_setting">detect_and_initialize_devices_with_setting() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.detect_devices">detect_devices() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.Device">Device (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.device_id">device_id (aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.device_information">device_information (aspectdeviceengine.enginecore.IdSmuBoardModel property)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList">DeviceList (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceModel">DeviceModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceResult">DeviceResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.devices_are_detected">devices_are_detected() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList">DoubleList (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.dps">dps (aspectdeviceengine.enginecore.IdSmu1DeviceModel property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange">DpsCurrentRange (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="E" class="genindex-section">
+  <h2>E</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.enable_autorange">enable_autorange() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.enable_timecode">enable_timecode() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.enabled">enabled (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.enabled">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.RowFilter.exact_match">exact_match (aspectdeviceengine.enginecore.RowFilter attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.execution_time">execution_time (aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.export_settings_to_csv">export_settings_to_csv() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.export_settings_to_xlsx">export_settings_to_xlsx() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.extend">extend() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.extend">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.extend">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.extend">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.extend">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.extend">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.extend">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="F" class="genindex-section">
+  <h2>F</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.filter_columns">filter_columns() (aspectdeviceengine.enginecore.IdqTable method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.filter_columns">(aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.RowFilter.filter_expression">filter_expression (aspectdeviceengine.enginecore.RowFilter attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.filter_rows">filter_rows() (aspectdeviceengine.enginecore.IdqTable method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.filter_rows">(aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FirmwareVersion">FirmwareVersion (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.force_values">force_values (aspectdeviceengine.enginecore.ListSweepChannelConfiguration property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.function_generator">function_generator() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorResult">FunctionGeneratorResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType">FunctionGeneratorType (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="G" class="genindex-section">
+  <h2>G</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.generate_function_generator_data">generate_function_generator_data() (in module aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyFuture.get">get() (aspectdeviceengine.enginecore.CommandReplyFuture method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_address">get_address() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_all_hardware_ids">get_all_hardware_ids() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.get_board">get_board() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.get_board_addresses">get_board_addresses() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.get_build_number">get_build_number() (in module aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_cell_value">get_cell_value() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_channel_name">get_channel_name() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_high_value">get_clamp_high_value() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_low_value">get_clamp_low_value() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_column_filter">get_column_filter() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_column_names">get_column_names() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_current_range">get_current_range() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SequencingCommandResult.get_device_id">get_device_id() (aspectdeviceengine.enginecore.SequencingCommandResult method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_model">get_device_model() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_power_options">get_device_power_options() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceResult.get_devices">get_devices() (aspectdeviceengine.enginecore.DeviceResult method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_channel">get_enable_channel() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_clamps">get_enable_clamps() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_INT10K">get_enable_INT10K() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_execution_time">get_execution_time() (aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_file_path">get_file_path() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_filtered_table">get_filtered_table() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.Device.get_firmware_version">get_firmware_version() (aspectdeviceengine.enginecore.Device method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.get_firmware_version">(aspectdeviceengine.enginecore.IdSmuDeviceModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.get_first_board">get_first_board() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_float_values">get_float_values() (aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.get_force_values">get_force_values() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_function_generator_results">get_function_generator_results() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.get_git_version">get_git_version() (in module aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_grouped_by">get_grouped_by() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.get_hardware_id">get_hardware_id() (aspectdeviceengine.enginecore.IdSmuDeviceModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.Device.get_id">get_id() (aspectdeviceengine.enginecore.Device method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuServiceRunner.get_idsmu_service">get_idsmu_service() (aspectdeviceengine.enginecore.IdSmuServiceRunner method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_immediate_mode">get_immediate_mode() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_initialize_devices_results">get_initialize_devices_results() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_measure_channels_results">get_measure_channels_results() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_measurement_channel_result">get_measurement_channel_result() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.get_measurement_result">get_measurement_result() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_measurement_results_for_channel">get_measurement_results_for_channel() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_merged_column_names">get_merged_column_names() (aspectdeviceengine.enginecore.IdqTable method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.get_merged_column_names">(aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_name">get_name() (aspectdeviceengine.enginecore.IdqTable method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_name">(aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.get_number_of_boards">get_number_of_boards() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_number_of_devices">get_number_of_devices() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_ranges_for_channel">get_output_force_ranges_for_channel() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_value">get_output_force_value() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_setting">get_parameter_setting() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_settings_for_board">get_parameter_settings_for_board() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_settings_names">get_parameter_settings_names() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_range_descriptors">get_range_descriptors() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SequencingCommandResult.get_results">get_results() (aspectdeviceengine.enginecore.SequencingCommandResult method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_row">get_row() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_row_filters">get_row_filters() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_row_index">get_row_index() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.get_rows">get_rows() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.get_settings_service">get_settings_service() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_slots">get_slots() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_table_group">get_table_group() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_table_group_names">get_table_group_names() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.get_table_groups_as_list">get_table_groups_as_list() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.get_timecode">get_timecode() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.get_valid_range_for_channel_parameter">get_valid_range_for_channel_parameter() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult.get_values">get_values() (aspectdeviceengine.enginecore.ChannelResult method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_values">(aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.group_setting">group_setting() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="H" class="genindex-section">
+  <h2>H</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.hardware_id">hardware_id (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.hardware_id">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.hardware_id">(aspectdeviceengine.enginecore.IdSmuDeviceModel property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.highZ">highZ (aspectdeviceengine.enginecore.MeasurementMode attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="I" class="genindex-section">
+  <h2>I</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable">IdqTable (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableCell">IdqTableCell (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup">IdqTableGroup (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow">IdqTableRow (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows">IdqTableRows (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel">IdSmu1DeviceModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps">IdSmu1DeviceModel.Dps (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps.Channels">IdSmu1DeviceModel.Dps.Channels (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.idSmu1Modules">idSmu1Modules (aspectdeviceengine.enginecore.IdSmuBoardModel property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel">IdSmu2DeviceModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu">IdSmu2DeviceModel.Smu (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu.Channels">IdSmu2DeviceModel.Smu.Channels (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.idSmu2Modules">idSmu2Modules (aspectdeviceengine.enginecore.IdSmuBoardModel property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel">IdSmuBoardModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu1Modules">IdSmuBoardModel.IdSmu1Modules (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules">IdSmuBoardModel.IdSmu2Modules (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel">IdSmuDeviceModel (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService">IdSmuService (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuServiceRunner">IdSmuServiceRunner (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService">IdSmuSettingsService (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.iloc">iloc (aspectdeviceengine.enginecore.IdqTableGroup property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.Iloc">Iloc (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.import_settings_from_csv">import_settings_from_csv() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.import_settings_from_xlsx">import_settings_from_xlsx() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.initialize_board">initialize_board() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.initialize_devices">initialize_devices() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.insert">insert() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.insert">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.insert">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.insert">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.insert">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.insert">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.insert">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.is_autorange_enabled">is_autorange_enabled() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.is_board_initialized">is_board_initialized() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.is_device_initialized">is_device_initialized() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.is_error">is_error() (aspectdeviceengine.enginecore.CommandReply method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.is_filter_active">is_filter_active() (aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.is_result">is_result() (aspectdeviceengine.enginecore.CommandReply method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.isense">isense (aspectdeviceengine.enginecore.MeasurementMode attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MapOfStringVectors.items">items() (aspectdeviceengine.enginecore.MapOfStringVectors method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="K" class="genindex-section">
+  <h2>K</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MapOfStringVectors.keys">keys() (aspectdeviceengine.enginecore.MapOfStringVectors method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="L" class="genindex-section">
+  <h2>L</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep">ListSweep (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration">ListSweepChannelConfiguration (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="M" class="genindex-section">
+  <h2>M</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MapOfStringVectors">MapOfStringVectors (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.measure_channels">measure_channels() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.measure_channels">(aspectdeviceengine.enginecore.IdSmuDeviceModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.measure_channels_async">measure_channels_async() (aspectdeviceengine.enginecore.IdSmuDeviceModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.measure_current">measure_current() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.measure_current">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.measure_currents">measure_currents() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.measure_currents">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.measure_voltage">measure_voltage() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.measure_voltage">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.measure_voltages">measure_voltages() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.measure_voltages">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorResult.measurement_values">measurement_values (aspectdeviceengine.enginecore.FunctionGeneratorResult attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode">MeasurementMode (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li>
+    module
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/index.html#module-aspectdeviceengine">aspectdeviceengine</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#module-aspectdeviceengine.enginecore">aspectdeviceengine.enginecore</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="N" class="genindex-section">
+  <h2>N</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.name">name (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.name">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.name">(aspectdeviceengine.enginecore.CurrentRange property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.name">(aspectdeviceengine.enginecore.DpsCurrentRange property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.name">(aspectdeviceengine.enginecore.FunctionGeneratorType property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.name">(aspectdeviceengine.enginecore.IdqTable property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.name">(aspectdeviceengine.enginecore.IdqTableGroup property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuDeviceModel.name">(aspectdeviceengine.enginecore.IdSmuDeviceModel property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.name">(aspectdeviceengine.enginecore.MeasurementMode property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SmuCurrentRange.name">(aspectdeviceengine.enginecore.SmuCurrentRange property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="O" class="genindex-section">
+  <h2>O</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.output_ranges">output_ranges (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.output_ranges">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="P" class="genindex-section">
+  <h2>P</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ParamterChangedObserverProxy">ParamterChangedObserverProxy (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.pop">pop() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.pop">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.pop">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.pop">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.pop">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.pop">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.pop">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.print_channel_registers">print_channel_registers() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.print_device_information">print_device_information() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.print_device_information">(aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.print_fpga_register">print_fpga_register() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.print_settings">print_settings() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuService.print_status_register">print_status_register() (aspectdeviceengine.enginecore.IdSmuService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.print_uncommited_registers">print_uncommited_registers() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="R" class="genindex-section">
+  <h2>R</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.ramp">ramp (aspectdeviceengine.enginecore.FunctionGeneratorType attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_1200mA">Range_1200mA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_1200mA_DPS">Range_1200mA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_200uA_SMU">Range_200uA_SMU (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_20uA_SMU">Range_20uA_SMU (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_2500uA">Range_2500uA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_2500uA_DPS">Range_2500uA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_250uA">Range_250uA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_250uA_DPS">Range_250uA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_25mA">Range_25mA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_25mA_DPS">Range_25mA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_25uA">Range_25uA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_25uA_DPS">Range_25uA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_2mA_SMU">Range_2mA_SMU (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.Range_500mA">Range_500mA (aspectdeviceengine.enginecore.DpsCurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_500mA_DPS">Range_500mA_DPS (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_5uA">Range_5uA (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.Range_70mA_SMU">Range_70mA_SMU (aspectdeviceengine.enginecore.CurrentRange attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.read_fpga">read_fpga() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult">ReadAdcCommandIdSmuResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadWriteFpgaIdSmuResult">ReadWriteFpgaIdSmuResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.refresh_table">refresh_table() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.refresh_table_row">refresh_table_row() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ParamterChangedObserverProxy.register_observer">register_observer() (aspectdeviceengine.enginecore.ParamterChangedObserverProxy method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReplyList.remove">remove() (aspectdeviceengine.enginecore.CommandReplyList method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DeviceList.remove">(aspectdeviceengine.enginecore.DeviceList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DoubleList.remove">(aspectdeviceengine.enginecore.DoubleList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRow.remove">(aspectdeviceengine.enginecore.IdqTableRow method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableRows.remove">(aspectdeviceengine.enginecore.IdqTableRows method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList.remove">(aspectdeviceengine.enginecore.StringList method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable.remove">(aspectdeviceengine.enginecore.StringTable method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.remove_parameter_setting">remove_parameter_setting() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.Result">Result (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.RowFilter">RowFilter (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.run">run() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="S" class="genindex-section">
+  <h2>S</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.sawtooth">sawtooth (aspectdeviceengine.enginecore.FunctionGeneratorType attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuSettingsService.search_and_replace">search_and_replace() (aspectdeviceengine.enginecore.IdSmuSettingsService method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SequencingCommandResult">SequencingCommandResult (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_analog_device_parameters_from_strings">set_analog_device_parameters_from_strings() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.set_cell_value">set_cell_value() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_channel_name">set_channel_name() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.set_clamp_high_value">set_clamp_high_value() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.set_clamp_high_value">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.set_clamp_low_value">set_clamp_low_value() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.set_clamp_low_value">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_clamps_low_and_high_values">set_clamps_low_and_high_values() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_constant_force_mode">set_constant_force_mode() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.set_current">set_current() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_current_ranges">set_current_ranges() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_currents">set_currents() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_device_name">set_device_name() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_device_power_options">set_device_power_options() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_disable_measurement">set_disable_measurement() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_channels">set_enable_channels() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_clamps">set_enable_clamps() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_INT10K">set_enable_INT10K() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_force_values">set_force_values() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_immediate_mode">set_immediate_mode() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_linear_sweep">set_linear_sweep() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.set_measurement_delay">set_measurement_delay() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_modes">set_measurement_modes() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.set_name">set_name() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.set_name">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.set_name">(aspectdeviceengine.enginecore.IdqTable method)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.set_name">(aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_number_of_steps">set_number_of_steps() (aspectdeviceengine.enginecore.ListSweepChannelConfiguration method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_output_force_values">set_output_force_values() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.set_parameter_value">set_parameter_value() (aspectdeviceengine.enginecore.IdqTableGroup method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.set_sample_count">set_sample_count() (aspectdeviceengine.enginecore.ListSweep method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.set_voltage">set_voltage() (aspectdeviceengine.enginecore.AD5522ChannelModel method)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.set_voltage">(aspectdeviceengine.enginecore.AD5560ChannelModel method)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.set_voltages">set_voltages() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTableGroup.shape">shape (aspectdeviceengine.enginecore.IdqTableGroup property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuServiceRunner.shutdown">shutdown() (aspectdeviceengine.enginecore.IdSmuServiceRunner method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.sinus">sinus (aspectdeviceengine.enginecore.FunctionGeneratorType attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.size">size (aspectdeviceengine.enginecore.ListSweep property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmu2DeviceModel.smu">smu (aspectdeviceengine.enginecore.IdSmu2DeviceModel property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SmuCurrentRange">SmuCurrentRange (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.square">square (aspectdeviceengine.enginecore.FunctionGeneratorType attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.stringify_analog_channel_parameter">stringify_analog_channel_parameter() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringList">StringList (class in aspectdeviceengine.enginecore)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.StringTable">StringTable (class in aspectdeviceengine.enginecore)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="T" class="genindex-section">
+  <h2>T</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdqTable.table_groups">table_groups (aspectdeviceengine.enginecore.IdqTable property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorResult.time_codes">time_codes (aspectdeviceengine.enginecore.FunctionGeneratorResult attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ListSweep.timecode">timecode (aspectdeviceengine.enginecore.ListSweep property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.timecode">(aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FirmwareVersion.to_hex_string">to_hex_string() (aspectdeviceengine.enginecore.FirmwareVersion method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CommandReply.to_json">to_json() (aspectdeviceengine.enginecore.CommandReply method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.triangle">triangle (aspectdeviceengine.enginecore.FunctionGeneratorType attribute)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.tsense">tsense (aspectdeviceengine.enginecore.MeasurementMode attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="U" class="genindex-section">
+  <h2>U</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ParamterChangedObserverProxy.unregister_observer">unregister_observer() (aspectdeviceengine.enginecore.ParamterChangedObserverProxy method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="V" class="genindex-section">
+  <h2>V</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.CurrentRange.value">value (aspectdeviceengine.enginecore.CurrentRange property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.DpsCurrentRange.value">(aspectdeviceengine.enginecore.DpsCurrentRange property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.FunctionGeneratorType.value">(aspectdeviceengine.enginecore.FunctionGeneratorType property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.value">(aspectdeviceengine.enginecore.MeasurementMode property)</a>
+</li>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.SmuCurrentRange.value">(aspectdeviceengine.enginecore.SmuCurrentRange property)</a>
+</li>
+        </ul></li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.ChannelResult.values">values (aspectdeviceengine.enginecore.ChannelResult property)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MapOfStringVectors.values">values() (aspectdeviceengine.enginecore.MapOfStringVectors method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5522ChannelModel.voltage">voltage (aspectdeviceengine.enginecore.AD5522ChannelModel property)</a>
+
+        <ul>
+          <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.AD5560ChannelModel.voltage">(aspectdeviceengine.enginecore.AD5560ChannelModel property)</a>
+</li>
+        </ul></li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.MeasurementMode.vsense">vsense (aspectdeviceengine.enginecore.MeasurementMode attribute)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+<section id="W" class="genindex-section">
+  <h2>W</h2>
+  <table style="width: 100%" class="indextable genindextable"><tr>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.write_fpga">write_fpga() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+    </ul></td>
+    <td style="width: 33%; vertical-align: top;"><ul>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.write_uncommited_settings">write_uncommited_settings() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+        <li><a href="autoapi/aspectdeviceengine/enginecore/index.html#aspectdeviceengine.enginecore.IdSmuBoardModel.write_uncommited_settings_for_device">write_uncommited_settings_for_device() (aspectdeviceengine.enginecore.IdSmuBoardModel method)</a>
+</li>
+    </ul></td>
+  </tr></table>
+</section>
+
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, lo
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

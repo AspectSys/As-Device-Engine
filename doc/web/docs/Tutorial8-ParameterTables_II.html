@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.10. Part 8b: Paramter Tables II &#8212; The aSpect Device Engine Python API</title>
+    <title>3.11. Part 8b: Paramter Tables II &#8212; The aSpect Device Engine Python API</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -42,7 +42,7 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
@@ -61,7 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="3.9. Part 8a: Paramter Tables I" href="Tutorial8-ParameterTables_I.html" />
+    <link rel="prev" title="3.10. Part 8a: Paramter Tables I" href="Tutorial8-ParameterTables_I.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,6 +179,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="chapters/api_programming/overview.html">2. API programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="chapters/api_programming/initialization.html">2.1. Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapters/api_programming/boardmodel.html">2.2. The Board Model</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">3. Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -187,11 +188,12 @@
 <li class="toctree-l2"><a class="reference internal" href="Tutorial2-Multimeasure.html">3.3. Part 2: More about channel measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tutorial3-Multiside_HighPerform.html">3.4. Part 3: Multiside and high performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tutorial4-Ranges_and_Clamps.html">3.5. Part 4: Clamps, Compliance &amp; Current Range</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">3.6. Part 5: IV Measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">3.7. Part 6: List sweps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">3.8. Part 7: Triggering</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">3.9. Part 8a: Paramter Tables I</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.10. Part 8b: Paramter Tables II</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial4b-SampleCount.html">3.6. Part 4b: Sample Count and Sample Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial5-IV_Measurements.html">3.7. Part 5: IV Measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial6-ListSweeps.html">3.8. Part 6: List sweps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial7-Triggering.html">3.9. Part 7: Triggering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorial8-ParameterTables_I.html">3.10. Part 8a: Paramter Tables I</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.11. Part 8b: Paramter Tables II</a></li>
 </ul>
 </details></li>
 </ul>
@@ -342,10 +344,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.10.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-a-table">3.10.2. Exporting a table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-applying-sub-tables">3.10.3. Filtering and applying sub-tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-filter">3.10.3.1. Row filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.11.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-a-table">3.11.2. Exporting a table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-applying-sub-tables">3.11.3. Filtering and applying sub-tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-filter">3.11.3.1. Row filter</a></li>
 </ul>
 </li>
 </ul>
@@ -360,7 +362,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="part-8b-paramter-tables-ii">
-<h1><span class="section-number">3.10. </span>Part 8b: Paramter Tables II<a class="headerlink" href="#part-8b-paramter-tables-ii" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">3.11. </span>Part 8b: Paramter Tables II<a class="headerlink" href="#part-8b-paramter-tables-ii" title="Link to this heading">#</a></h1>
 <p>This is the 8th introductory overview of programming the Aspect Device Engine Python API.<br />
 This document is available as pdf and interactive jupyter notebook.
 The introduction includes the following objectives:</p>
@@ -369,7 +371,7 @@ The introduction includes the following objectives:</p>
 <li><p>Filtering</p></li>
 </ul>
 <section id="introduction">
-<h2><span class="section-number">3.10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>The basics of the parameter tables were presented in the last chapter.<br />
 Further options will now be discussed.</p>
 <div class="cell docutils container">
@@ -395,7 +397,7 @@ Further options will now be discussed.</p>
 </div>
 </section>
 <section id="exporting-a-table">
-<h2><span class="section-number">3.10.2. </span>Exporting a table<a class="headerlink" href="#exporting-a-table" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.11.2. </span>Exporting a table<a class="headerlink" href="#exporting-a-table" title="Link to this heading">#</a></h2>
 <p>The Methode get_parameter_settings_for_board() is used to read out the current status of the hardware and generate a parameter table.<br />
 We first change a few parameters and then analyse the table:</p>
 <div class="cell docutils container">
@@ -466,12 +468,12 @@ In the example here, we only write the table just created to the file:</p>
 <img alt="title" src="../_images/idqtable2.png" /></p>
 </section>
 <section id="filtering-and-applying-sub-tables">
-<h2><span class="section-number">3.10.3. </span>Filtering and applying sub-tables<a class="headerlink" href="#filtering-and-applying-sub-tables" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">3.11.3. </span>Filtering and applying sub-tables<a class="headerlink" href="#filtering-and-applying-sub-tables" title="Link to this heading">#</a></h2>
 <p>Previously, all entries in a table or group were always sent to the hardware.<br />
 But what if you only want to use certain entries?<br />
 There are various filter methods. You can then send only the filtered table to the hardware instead of the entire table.</p>
 <section id="row-filter">
-<h3><span class="section-number">3.10.3.1. </span>Row filter<a class="headerlink" href="#row-filter" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">3.11.3.1. </span>Row filter<a class="headerlink" href="#row-filter" title="Link to this heading">#</a></h3>
 <p>The parameters of the <code class="docutils literal notranslate"><span class="pre">filter_rows()</span></code> method are the column name, the value in this column and whether to search for whole words and not just substrings (exact_match).<br />
 To print the filtered version of a table, the second parameter in <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">print_settings()</span></code> method is set to True.</p>
 <div class="cell docutils container">
@@ -607,7 +609,7 @@ Group name: SMU-Device
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.9. </span>Part 8a: Paramter Tables I</p>
+        <p class="prev-next-title"><span class="section-number">3.10. </span>Part 8a: Paramter Tables I</p>
       </div>
     </a>
 </div>
@@ -626,10 +628,10 @@ Group name: SMU-Device
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.10.1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-a-table">3.10.2. Exporting a table</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-applying-sub-tables">3.10.3. Filtering and applying sub-tables</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-filter">3.10.3.1. Row filter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">3.11.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-a-table">3.11.2. Exporting a table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-and-applying-sub-tables">3.11.3. Filtering and applying sub-tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#row-filter">3.11.3.1. Row filter</a></li>
 </ul>
 </li>
 </ul>

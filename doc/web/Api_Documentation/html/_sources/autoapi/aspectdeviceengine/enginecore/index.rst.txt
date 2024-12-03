@@ -1,0 +1,5024 @@
+
+:py:mod:`aspectdeviceengine.enginecore`
+=======================================
+
+.. py:module:: aspectdeviceengine.enginecore
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`AD5522ChannelModel <aspectdeviceengine.enginecore.AD5522ChannelModel>`
+     - \-
+   * - :py:obj:`AD5560ChannelModel <aspectdeviceengine.enginecore.AD5560ChannelModel>`
+     - \-
+   * - :py:obj:`AnalogChannelModel <aspectdeviceengine.enginecore.AnalogChannelModel>`
+     - \-
+   * - :py:obj:`At <aspectdeviceengine.enginecore.At>`
+     - \-
+   * - :py:obj:`ChannelResult <aspectdeviceengine.enginecore.ChannelResult>`
+     - The result of a ReadAdcCommandIdSmu
+   * - :py:obj:`CommandReply <aspectdeviceengine.enginecore.CommandReply>`
+     - The aspect device engine is a command driven framework.
+   * - :py:obj:`CommandReplyFuture <aspectdeviceengine.enginecore.CommandReplyFuture>`
+     - \-
+   * - :py:obj:`CommandReplyList <aspectdeviceengine.enginecore.CommandReplyList>`
+     - List of command replies.
+   * - :py:obj:`CurrentRange <aspectdeviceengine.enginecore.CurrentRange>`
+     - Members:
+   * - :py:obj:`Device <aspectdeviceengine.enginecore.Device>`
+     - \-
+   * - :py:obj:`DeviceList <aspectdeviceengine.enginecore.DeviceList>`
+     - List of devices.
+   * - :py:obj:`DeviceModel <aspectdeviceengine.enginecore.DeviceModel>`
+     - \-
+   * - :py:obj:`DeviceResult <aspectdeviceengine.enginecore.DeviceResult>`
+     - The result of a device detection command.
+   * - :py:obj:`DoubleList <aspectdeviceengine.enginecore.DoubleList>`
+     - List of doubles.
+   * - :py:obj:`DpsCurrentRange <aspectdeviceengine.enginecore.DpsCurrentRange>`
+     - Members:
+   * - :py:obj:`FirmwareVersion <aspectdeviceengine.enginecore.FirmwareVersion>`
+     - Firmware version of a device detected by the engine.
+   * - :py:obj:`FunctionGeneratorResult <aspectdeviceengine.enginecore.FunctionGeneratorResult>`
+     - \-
+   * - :py:obj:`FunctionGeneratorType <aspectdeviceengine.enginecore.FunctionGeneratorType>`
+     - Members:
+   * - :py:obj:`IdSmu1DeviceModel <aspectdeviceengine.enginecore.IdSmu1DeviceModel>`
+     - IdSmuDeviceModel class that contains idSmu1 specific methods and properties.
+   * - :py:obj:`IdSmu2DeviceModel <aspectdeviceengine.enginecore.IdSmu2DeviceModel>`
+     - IdSmuDeviceModel class that contains idSmu2 specific methods and properties.
+   * - :py:obj:`IdSmuBoardModel <aspectdeviceengine.enginecore.IdSmuBoardModel>`
+     - Container and controller vor idSmu modules and channels
+   * - :py:obj:`IdSmuDeviceModel <aspectdeviceengine.enginecore.IdSmuDeviceModel>`
+     - \-
+   * - :py:obj:`IdSmuService <aspectdeviceengine.enginecore.IdSmuService>`
+     - Service class that detects and manages idSmu hardware.
+   * - :py:obj:`IdSmuServiceRunner <aspectdeviceengine.enginecore.IdSmuServiceRunner>`
+     - Simplifies the starting of idSmu services and controls their lifetime.
+   * - :py:obj:`IdSmuSettingsService <aspectdeviceengine.enginecore.IdSmuSettingsService>`
+     - \-
+   * - :py:obj:`IdqTable <aspectdeviceengine.enginecore.IdqTable>`
+     - \-
+   * - :py:obj:`IdqTableCell <aspectdeviceengine.enginecore.IdqTableCell>`
+     - \-
+   * - :py:obj:`IdqTableGroup <aspectdeviceengine.enginecore.IdqTableGroup>`
+     - \-
+   * - :py:obj:`IdqTableRow <aspectdeviceengine.enginecore.IdqTableRow>`
+     - Row of IdqTableCells.
+   * - :py:obj:`IdqTableRows <aspectdeviceengine.enginecore.IdqTableRows>`
+     - Table of IdqTableCells.
+   * - :py:obj:`Iloc <aspectdeviceengine.enginecore.Iloc>`
+     - \-
+   * - :py:obj:`ListSweep <aspectdeviceengine.enginecore.ListSweep>`
+     - Class to perform a List Sweep on a idSmu module
+   * - :py:obj:`ListSweepChannelConfiguration <aspectdeviceengine.enginecore.ListSweepChannelConfiguration>`
+     - Instances of this class are needed to configure a List Sweep
+   * - :py:obj:`MapOfStringVectors <aspectdeviceengine.enginecore.MapOfStringVectors>`
+     - Map of string vectors
+   * - :py:obj:`MeasurementMode <aspectdeviceengine.enginecore.MeasurementMode>`
+     - Members:
+   * - :py:obj:`ParamterChangedObserverProxy <aspectdeviceengine.enginecore.ParamterChangedObserverProxy>`
+     - \-
+   * - :py:obj:`ReadAdcCommandIdSmuResult <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult>`
+     - \-
+   * - :py:obj:`ReadWriteFpgaIdSmuResult <aspectdeviceengine.enginecore.ReadWriteFpgaIdSmuResult>`
+     - \-
+   * - :py:obj:`Result <aspectdeviceengine.enginecore.Result>`
+     - The aspect device engine is a command driven framework.
+   * - :py:obj:`RowFilter <aspectdeviceengine.enginecore.RowFilter>`
+     - \-
+   * - :py:obj:`SequencingCommandResult <aspectdeviceengine.enginecore.SequencingCommandResult>`
+     - The result of a sequencing command.
+   * - :py:obj:`SmuCurrentRange <aspectdeviceengine.enginecore.SmuCurrentRange>`
+     - Members:
+   * - :py:obj:`StringList <aspectdeviceengine.enginecore.StringList>`
+     - List of strings.
+   * - :py:obj:`StringTable <aspectdeviceengine.enginecore.StringTable>`
+     - Table of strings.
+
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   aspectdeviceengine.enginecore.check_future_is_ready
+   aspectdeviceengine.enginecore.generate_function_generator_data
+   aspectdeviceengine.enginecore.get_build_number
+   aspectdeviceengine.enginecore.get_git_version
+
+
+
+
+.. py:class:: AD5522ChannelModel
+
+
+   Bases: :py:obj:`AnalogChannelModel`
+
+   ..    ..    ..    .. .. py:property:: autorange
+      :type: bool
+
+      Property that gets/sets the state of the channels automatic current range functionality
+
+      :param enable: If set to true, the autoranging is enabled
+      :type enable: bool
+
+      :returns: The state of the auto range enabled state
+      :rtype: bool
+
+   ..    .. .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
+   ..    .. .. py:property:: clamp_high_value
+      :type: float
+
+      Property that gets/sets the channel clamp high value
+
+      :param clamp_high_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_high_value: float
+
+      :returns: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :rtype: float
+
+   ..    .. .. py:property:: clamp_low_value
+      :type: float
+
+      Property that gets/sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_low_value: float
+
+      :returns: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :rtype: float
+
+   ..    .. .. py:property:: current
+      :type: float
+
+      Property that measures/sets the channel output current
+
+      :param current: The current in the unit of ampere [A]
+      :type current: float
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+   ..    .. .. py:property:: current_range
+      :type: SmuCurrentRange
+
+      Property that gets/sets the channel current reange
+
+      :param current_range: The current range
+      :type current_range: SmuCurrentRange
+
+      :returns: The currently applied current range
+      :rtype: SmuCurrentRange
+
+   ..    .. .. py:property:: enabled
+      :type: bool
+
+      Property that gets/sets the channel enabled state
+
+      :param enabled: True to enable the channel, false to disable the channel
+      :type enabled: bool
+
+      :returns: The enabled state of the channel
+      :rtype: bool
+
+   ..    .. .. py:property:: hardware_id
+      :type: str
+
+      Property that gets the channel id
+
+      :returns: The id of the channel
+      :rtype: str
+
+   ..    .. .. py:property:: name
+      :type: str
+
+      Property that gets/sets the channel name
+
+      :param name: True to enable the channel, false to disable the channel
+
+      :returns: The name of the channel
+      :rtype: str
+
+   ..    .. .. py:property:: output_ranges
+      :type: list[float]
+
+      Property that gets the channel min/max output voltage and current
+
+      :returns: A list containing the values [Vmin, Vmax, Imin, Imax]
+      :rtype: List[float]
+
+   ..    .. .. py:property:: voltage
+      :type: float
+
+      Property that measures/sets the channel output voltage
+
+      :param voltage: The voltage in unit of volt [V]
+      :type voltage: float
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`autorange <aspectdeviceengine.enginecore.AD5522ChannelModel.autorange>`
+        - Property that gets/sets the state of the channels automatic current range functionality
+      * - :py:obj:`clamp_enabled <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_enabled>`
+        - Property that gets/sets the channel clamp enable state
+      * - :py:obj:`clamp_high_value <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_high_value>`
+        - Property that gets/sets the channel clamp high value
+      * - :py:obj:`clamp_low_value <aspectdeviceengine.enginecore.AD5522ChannelModel.clamp_low_value>`
+        - Property that gets/sets the channel clamp low value
+      * - :py:obj:`current <aspectdeviceengine.enginecore.AD5522ChannelModel.current>`
+        - Property that measures/sets the channel output current
+      * - :py:obj:`current_range <aspectdeviceengine.enginecore.AD5522ChannelModel.current_range>`
+        - Property that gets/sets the channel current reange
+      * - :py:obj:`enabled <aspectdeviceengine.enginecore.AD5522ChannelModel.enabled>`
+        - Property that gets/sets the channel enabled state
+      * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.AD5522ChannelModel.hardware_id>`
+        - Property that gets the channel id
+      * - :py:obj:`name <aspectdeviceengine.enginecore.AD5522ChannelModel.name>`
+        - Property that gets/sets the channel name
+      * - :py:obj:`output_ranges <aspectdeviceengine.enginecore.AD5522ChannelModel.output_ranges>`
+        - Property that gets the channel min/max output voltage and current
+      * - :py:obj:`voltage <aspectdeviceengine.enginecore.AD5522ChannelModel.voltage>`
+        - Property that measures/sets the channel output voltage
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`measure_current <aspectdeviceengine.enginecore.AD5522ChannelModel.measure_current>`\ ()
+        - Property that returns the measured current at the channel output (sample count is 16)
+      * - :py:obj:`measure_currents <aspectdeviceengine.enginecore.AD5522ChannelModel.measure_currents>`\ (repetitions)
+        - Measures the currents at the channel output (sample count is 16)
+      * - :py:obj:`measure_voltage <aspectdeviceengine.enginecore.AD5522ChannelModel.measure_voltage>`\ ()
+        - Measures the voltage at the channel output (sample count is 16)
+      * - :py:obj:`measure_voltages <aspectdeviceengine.enginecore.AD5522ChannelModel.measure_voltages>`\ (arg0)
+        - Measures the voltages at the channel output (sample count is 16)
+      * - :py:obj:`set_clamp_high_value <aspectdeviceengine.enginecore.AD5522ChannelModel.set_clamp_high_value>`\ (clamp_high_value)
+        - Sets the channel clamp high value
+      * - :py:obj:`set_clamp_low_value <aspectdeviceengine.enginecore.AD5522ChannelModel.set_clamp_low_value>`\ (clamp_low_value)
+        - Sets the channel clamp low value
+      * - :py:obj:`set_current <aspectdeviceengine.enginecore.AD5522ChannelModel.set_current>`\ (voltage)
+        - Sets the channel output current
+      * - :py:obj:`set_name <aspectdeviceengine.enginecore.AD5522ChannelModel.set_name>`\ (name)
+        - Sets the channel name
+      * - :py:obj:`set_voltage <aspectdeviceengine.enginecore.AD5522ChannelModel.set_voltage>`\ (voltage)
+        - Sets the channel output voltage
+
+
+   .. rubric:: Members
+
+   .. py:property:: autorange
+      :type: bool
+
+      Property that gets/sets the state of the channels automatic current range functionality
+
+      :param enable: If set to true, the autoranging is enabled
+      :type enable: bool
+
+      :returns: The state of the auto range enabled state
+      :rtype: bool
+
+   .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
+   .. py:property:: clamp_high_value
+      :type: float
+
+      Property that gets/sets the channel clamp high value
+
+      :param clamp_high_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_high_value: float
+
+      :returns: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :rtype: float
+
+   .. py:property:: clamp_low_value
+      :type: float
+
+      Property that gets/sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_low_value: float
+
+      :returns: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :rtype: float
+
+   .. py:property:: current
+      :type: float
+
+      Property that measures/sets the channel output current
+
+      :param current: The current in the unit of ampere [A]
+      :type current: float
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+   .. py:property:: current_range
+      :type: SmuCurrentRange
+
+      Property that gets/sets the channel current reange
+
+      :param current_range: The current range
+      :type current_range: SmuCurrentRange
+
+      :returns: The currently applied current range
+      :rtype: SmuCurrentRange
+
+   .. py:property:: enabled
+      :type: bool
+
+      Property that gets/sets the channel enabled state
+
+      :param enabled: True to enable the channel, false to disable the channel
+      :type enabled: bool
+
+      :returns: The enabled state of the channel
+      :rtype: bool
+
+   .. py:property:: hardware_id
+      :type: str
+
+      Property that gets the channel id
+
+      :returns: The id of the channel
+      :rtype: str
+
+   .. py:property:: name
+      :type: str
+
+      Property that gets/sets the channel name
+
+      :param name: True to enable the channel, false to disable the channel
+
+      :returns: The name of the channel
+      :rtype: str
+
+   .. py:property:: output_ranges
+      :type: list[float]
+
+      Property that gets the channel min/max output voltage and current
+
+      :returns: A list containing the values [Vmin, Vmax, Imin, Imax]
+      :rtype: List[float]
+
+   .. py:property:: voltage
+      :type: float
+
+      Property that measures/sets the channel output voltage
+
+      :param voltage: The voltage in unit of volt [V]
+      :type voltage: float
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+
+   .. py:method:: measure_current() -> float
+
+      Property that returns the measured current at the channel output (sample count is 16)
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+
+   .. py:method:: measure_currents(repetitions: int) -> numpy.ndarray[numpy.float64]
+
+      Measures the currents at the channel output (sample count is 16)
+
+      :param repetitions: The number of repetitions of the measurement
+      :type repetitions: int
+
+      :returns: The measured currents in the unit of ampere [A]
+      :rtype: ndarray
+
+
+   .. py:method:: measure_voltage() -> float
+
+      Measures the voltage at the channel output (sample count is 16)
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+
+   .. py:method:: measure_voltages(arg0: int) -> list[float]
+
+      Measures the voltages at the channel output (sample count is 16)
+
+      :param repetitions: The number of repetitions of the measurement
+      :type repetitions: int
+
+      :returns: The measured currents in the unit of volt [V]
+      :rtype: List[float]
+
+
+   .. py:method:: set_clamp_high_value(clamp_high_value: float) -> int
+
+      Sets the channel clamp high value
+
+      :param clamp_high_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_high_value: float
+
+
+   .. py:method:: set_clamp_low_value(clamp_low_value: float) -> int
+
+      Sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit depending on the output force mode ampere [A] if voltage is forced, else volt [V]
+      :type clamp_low_value: float
+
+
+   .. py:method:: set_current(voltage: float) -> None
+
+      Sets the channel output current
+
+      :param current: The current in the the unit of ampere  [A]
+      :type current: float
+
+
+   .. py:method:: set_name(name: str) -> None
+
+      Sets the channel name
+
+      :param name: The name of the channel
+      :type name: str
+
+
+   .. py:method:: set_voltage(voltage: float) -> None
+
+      Sets the channel output voltage
+
+      :param voltage: The voltage in the unit of volt [V]
+      :type voltage: float
+
+
+
+
+.. py:class:: AD5560ChannelModel
+
+
+   Bases: :py:obj:`AnalogChannelModel`
+
+   ..    ..    ..    .. .. py:property:: autorange
+      :type: bool
+
+      Property that gets/sets the state of the channels automatic current range functionality
+
+      :param enable: If set to true, the autoranging is enabled
+      :type enable: bool
+
+      :returns: The state of the auto range enabled state
+      :rtype: bool
+
+   ..    .. .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
+   ..    .. .. py:property:: clamp_low_value
+      :type: float
+
+      Property that gets/sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit of ampere [A]
+      :type clamp_low_value: float
+
+      :returns: The clamp value in the unit of ampere [A]
+      :rtype: float
+
+   ..    .. .. py:property:: current
+      :type: float
+
+      Property that returns the measured current at the channel output (sample count is 16)
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+   ..    .. .. py:property:: current_range
+      :type: DpsCurrentRange
+
+      Property that gets/sets the channel current reange
+
+      :param current_range: The current range
+      :type current_range: DpsCurrentRange
+
+      :returns: The currently applied current range
+      :rtype: DpsCurrentRange
+
+   ..    .. .. py:property:: enabled
+      :type: bool
+
+      Property that gets/sets the channel enabled state
+
+      :param enabled: True to enable the channel, false to disable the channel
+      :type enabled: bool
+
+      :returns: The enabled state of the channel
+      :rtype: bool
+
+   ..    .. .. py:property:: hardware_id
+      :type: str
+
+      Property that gets the channel id
+
+      :returns: The id of the channel
+      :rtype: str
+
+   ..    .. .. py:property:: name
+      :type: str
+
+      Property that gets/sets the channel name
+
+      :param name: The name of the channel
+
+      :returns: The name of the channel
+      :rtype: str
+
+   ..    .. .. py:property:: output_ranges
+      :type: list[float]
+
+      Property that gets the channel min/max output voltage and current
+
+      :returns: A list containing the values [Vmin, Vmax, Imin, Imax]
+      :rtype: List[float]
+
+   ..    .. .. py:property:: voltage
+      :type: float
+
+      Property that measures/sets the channel output voltage
+
+      :param voltage: The voltage in unit of volt [V]
+      :type voltage: float
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`autorange <aspectdeviceengine.enginecore.AD5560ChannelModel.autorange>`
+        - Property that gets/sets the state of the channels automatic current range functionality
+      * - :py:obj:`clamp_enabled <aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_enabled>`
+        - Property that gets/sets the channel clamp enable state
+      * - :py:obj:`clamp_low_value <aspectdeviceengine.enginecore.AD5560ChannelModel.clamp_low_value>`
+        - Property that gets/sets the channel clamp low value
+      * - :py:obj:`current <aspectdeviceengine.enginecore.AD5560ChannelModel.current>`
+        - Property that returns the measured current at the channel output (sample count is 16)
+      * - :py:obj:`current_range <aspectdeviceengine.enginecore.AD5560ChannelModel.current_range>`
+        - Property that gets/sets the channel current reange
+      * - :py:obj:`enabled <aspectdeviceengine.enginecore.AD5560ChannelModel.enabled>`
+        - Property that gets/sets the channel enabled state
+      * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.AD5560ChannelModel.hardware_id>`
+        - Property that gets the channel id
+      * - :py:obj:`name <aspectdeviceengine.enginecore.AD5560ChannelModel.name>`
+        - Property that gets/sets the channel name
+      * - :py:obj:`output_ranges <aspectdeviceengine.enginecore.AD5560ChannelModel.output_ranges>`
+        - Property that gets the channel min/max output voltage and current
+      * - :py:obj:`voltage <aspectdeviceengine.enginecore.AD5560ChannelModel.voltage>`
+        - Property that measures/sets the channel output voltage
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`measure_current <aspectdeviceengine.enginecore.AD5560ChannelModel.measure_current>`\ ()
+        - Measures the current at the channel output (sample count is 16)
+      * - :py:obj:`measure_currents <aspectdeviceengine.enginecore.AD5560ChannelModel.measure_currents>`\ (arg0)
+        - Measures the currents at the channel output (sample count is 16)
+      * - :py:obj:`measure_voltage <aspectdeviceengine.enginecore.AD5560ChannelModel.measure_voltage>`\ ()
+        - Measures the voltage at the channel output (sample count is 16)
+      * - :py:obj:`measure_voltages <aspectdeviceengine.enginecore.AD5560ChannelModel.measure_voltages>`\ (arg0)
+        - Measures the voltages at the channel output (sample count is 16)
+      * - :py:obj:`set_clamp_high_value <aspectdeviceengine.enginecore.AD5560ChannelModel.set_clamp_high_value>`\ (clamp_high_value)
+        - Sets the channel clamp high value
+      * - :py:obj:`set_clamp_low_value <aspectdeviceengine.enginecore.AD5560ChannelModel.set_clamp_low_value>`\ (clamp_low_value)
+        - Sets the channel clamp low value
+      * - :py:obj:`set_name <aspectdeviceengine.enginecore.AD5560ChannelModel.set_name>`\ (name)
+        - Sets the channel name
+      * - :py:obj:`set_voltage <aspectdeviceengine.enginecore.AD5560ChannelModel.set_voltage>`\ (voltage)
+        - Sets the channel output voltage
+
+
+   .. rubric:: Members
+
+   .. py:property:: autorange
+      :type: bool
+
+      Property that gets/sets the state of the channels automatic current range functionality
+
+      :param enable: If set to true, the autoranging is enabled
+      :type enable: bool
+
+      :returns: The state of the auto range enabled state
+      :rtype: bool
+
+   .. py:property:: clamp_enabled
+      :type: bool
+
+      Property that gets/sets the channel clamp enable state
+
+      :param clamp_enabled:
+      :type clamp_enabled: bool
+
+      :returns: The clamp enable state
+      :rtype: bool
+
+   .. py:property:: clamp_low_value
+      :type: float
+
+      Property that gets/sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit of ampere [A]
+      :type clamp_low_value: float
+
+      :returns: The clamp value in the unit of ampere [A]
+      :rtype: float
+
+   .. py:property:: current
+      :type: float
+
+      Property that returns the measured current at the channel output (sample count is 16)
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+   .. py:property:: current_range
+      :type: DpsCurrentRange
+
+      Property that gets/sets the channel current reange
+
+      :param current_range: The current range
+      :type current_range: DpsCurrentRange
+
+      :returns: The currently applied current range
+      :rtype: DpsCurrentRange
+
+   .. py:property:: enabled
+      :type: bool
+
+      Property that gets/sets the channel enabled state
+
+      :param enabled: True to enable the channel, false to disable the channel
+      :type enabled: bool
+
+      :returns: The enabled state of the channel
+      :rtype: bool
+
+   .. py:property:: hardware_id
+      :type: str
+
+      Property that gets the channel id
+
+      :returns: The id of the channel
+      :rtype: str
+
+   .. py:property:: name
+      :type: str
+
+      Property that gets/sets the channel name
+
+      :param name: The name of the channel
+
+      :returns: The name of the channel
+      :rtype: str
+
+   .. py:property:: output_ranges
+      :type: list[float]
+
+      Property that gets the channel min/max output voltage and current
+
+      :returns: A list containing the values [Vmin, Vmax, Imin, Imax]
+      :rtype: List[float]
+
+   .. py:property:: voltage
+      :type: float
+
+      Property that measures/sets the channel output voltage
+
+      :param voltage: The voltage in unit of volt [V]
+      :type voltage: float
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+
+   .. py:method:: measure_current() -> float
+
+      Measures the current at the channel output (sample count is 16)
+
+      :returns: The measured current in the unit of ampere [A]
+      :rtype: float
+
+
+   .. py:method:: measure_currents(arg0: int) -> list[float]
+
+      Measures the currents at the channel output (sample count is 16)
+
+      :param repetitions: The number of repetitions of the measurement
+      :type repetitions: int
+
+      :returns: The measured currents in the unit of ampere [A]
+      :rtype: List[float]
+
+
+   .. py:method:: measure_voltage() -> float
+
+      Measures the voltage at the channel output (sample count is 16)
+
+      :returns: The measured voltage in the unit of volt [V]
+      :rtype: float
+
+
+   .. py:method:: measure_voltages(arg0: int) -> list[float]
+
+      Measures the voltages at the channel output (sample count is 16)
+
+      :param repetitions: The number of repetitions of the measurement
+      :type repetitions: int
+
+      :returns: The measured currents in the unit of volt [V]
+      :rtype: List[float]
+
+
+   .. py:method:: set_clamp_high_value(clamp_high_value: float) -> int
+
+      Sets the channel clamp high value
+
+      :param clamp_high_value: The clamp value in the unit of ampere [A]
+      :type clamp_high_value: float
+
+
+   .. py:method:: set_clamp_low_value(clamp_low_value: float) -> int
+
+      Sets the channel clamp low value
+
+      :param clamp_low_value: The clamp value in the unit of ampere [A]
+      :type clamp_low_value: float
+
+
+   .. py:method:: set_name(name: str) -> None
+
+      Sets the channel name
+
+      :param name: The name of the channel
+      :type name: str
+
+
+   .. py:method:: set_voltage(voltage: float) -> None
+
+      Sets the channel output voltage
+
+      :param voltage: The voltage in the unit of volt [V]
+      :type voltage: float
+
+
+
+
+.. py:class:: AnalogChannelModel
+
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: At
+
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: ChannelResult
+
+
+   The result of a ReadAdcCommandIdSmu
+
+
+   ..    ..    ..    .. .. py:property:: values
+      :type: numpy.ndarray[numpy.float64]
+
+      Returns the measurement values for a channel
+
+      :rtype: ndarray
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`values <aspectdeviceengine.enginecore.ChannelResult.values>`
+        - Returns the measurement values for a channel
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_values <aspectdeviceengine.enginecore.ChannelResult.get_values>`\ ()
+        - Returns the measurement values for a channel
+
+
+   .. rubric:: Members
+
+   .. py:property:: values
+      :type: numpy.ndarray[numpy.float64]
+
+      Returns the measurement values for a channel
+
+      :rtype: ndarray
+
+
+   .. py:method:: get_values() -> list[float]
+
+      Returns the measurement values for a channel
+
+      :returns: A DoubleList object
+      :rtype: DoubleList
+
+
+
+
+.. py:class:: CommandReply
+
+
+   The aspect device engine is a command driven framework.
+   This is the base class of all command replies (and results).
+   The reply can be an error or a result.
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`is_error <aspectdeviceengine.enginecore.CommandReply.is_error>`\ ()
+        - Indicates whether the response is a command error
+      * - :py:obj:`is_result <aspectdeviceengine.enginecore.CommandReply.is_result>`\ ()
+        - Indicates whether the response is an command result
+      * - :py:obj:`to_json <aspectdeviceengine.enginecore.CommandReply.to_json>`\ ()
+        - Returns the reply as a JSON string
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: is_error() -> bool
+
+      Indicates whether the response is a command error
+
+      :rtype: bool
+
+
+   .. py:method:: is_result() -> bool
+
+      Indicates whether the response is an command result
+
+      :rtype: bool
+
+
+   .. py:method:: to_json() -> str
+
+      Returns the reply as a JSON string
+
+      :rtype: str
+
+
+
+
+.. py:class:: CommandReplyFuture
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get <aspectdeviceengine.enginecore.CommandReplyFuture.get>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: get() -> CommandReply
+
+
+
+
+.. py:class:: CommandReplyList
+              CommandReplyList(arg0: list[CommandReply])
+              CommandReplyList(arg0: Iterable)
+
+
+   List of command replies.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.CommandReplyList.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.CommandReplyList.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.CommandReplyList.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.CommandReplyList.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.CommandReplyList.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.CommandReplyList.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.CommandReplyList.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: CommandReply) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: CommandReply) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: list[CommandReply]) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: CommandReply) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> CommandReply
+                  pop(i: int) -> CommandReply
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: CommandReply) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: CurrentRange(value: int)
+
+
+   Members:
+
+     Range_5uA
+
+     Range_20uA_SMU
+
+     Range_200uA_SMU
+
+     Range_2mA_SMU
+
+     Range_70mA_SMU
+
+     Range_25uA_DPS
+
+     Range_250uA_DPS
+
+     Range_2500uA_DPS
+
+     Range_25mA_DPS
+
+     Range_500mA_DPS
+
+     Range_1200mA_DPS
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+
+   ..    .. .. py:property:: value
+      :type: int
+
+
+   ..    
+   ..    .. .. py:attribute:: Range_1200mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_200uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_20uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2500uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_250uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_500mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_5uA
+      :type: ClassVar[CurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_70mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Range_1200mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_1200mA_DPS>`
+        - \-
+      * - :py:obj:`Range_200uA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_200uA_SMU>`
+        - \-
+      * - :py:obj:`Range_20uA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_20uA_SMU>`
+        - \-
+      * - :py:obj:`Range_2500uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_2500uA_DPS>`
+        - \-
+      * - :py:obj:`Range_250uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_250uA_DPS>`
+        - \-
+      * - :py:obj:`Range_25mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_25mA_DPS>`
+        - \-
+      * - :py:obj:`Range_25uA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_25uA_DPS>`
+        - \-
+      * - :py:obj:`Range_2mA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_2mA_SMU>`
+        - \-
+      * - :py:obj:`Range_500mA_DPS <aspectdeviceengine.enginecore.CurrentRange.Range_500mA_DPS>`
+        - \-
+      * - :py:obj:`Range_5uA <aspectdeviceengine.enginecore.CurrentRange.Range_5uA>`
+        - \-
+      * - :py:obj:`Range_70mA_SMU <aspectdeviceengine.enginecore.CurrentRange.Range_70mA_SMU>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.CurrentRange.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.CurrentRange.value>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+
+   .. py:property:: value
+      :type: int
+
+
+   .. py:attribute:: Range_1200mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_200uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_20uA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_2500uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_250uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_25mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_25uA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_2mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_500mA_DPS
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_5uA
+      :type: ClassVar[CurrentRange]
+
+      
+
+   .. py:attribute:: Range_70mA_SMU
+      :type: ClassVar[CurrentRange]
+
+      
+
+
+
+
+.. py:class:: Device
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_firmware_version <aspectdeviceengine.enginecore.Device.get_firmware_version>`\ ()
+        - \-
+      * - :py:obj:`get_id <aspectdeviceengine.enginecore.Device.get_id>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: get_firmware_version() -> FirmwareVersion
+
+
+   .. py:method:: get_id() -> str
+
+
+
+
+.. py:class:: DeviceList
+              DeviceList(arg0: list[Device])
+              DeviceList(arg0: Iterable)
+
+
+   List of devices.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.DeviceList.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.DeviceList.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.DeviceList.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.DeviceList.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.DeviceList.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.DeviceList.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.DeviceList.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: Device) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: Device) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: list[Device]) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: Device) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> Device
+                  pop(i: int) -> Device
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: Device) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: DeviceModel
+
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: DeviceResult
+
+
+   Bases: :py:obj:`CommandReply`
+
+   The result of a device detection command.
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_devices <aspectdeviceengine.enginecore.DeviceResult.get_devices>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: get_devices() -> list[Device]
+
+
+
+
+.. py:class:: DoubleList
+              DoubleList(arg0: DoubleList)
+              DoubleList(arg0: Iterable)
+
+
+   List of doubles.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.DoubleList.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.DoubleList.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.DoubleList.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.DoubleList.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.DoubleList.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.DoubleList.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.DoubleList.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: float) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: float) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: DoubleList) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: float) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> float
+                  pop(i: int) -> float
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: float) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: DpsCurrentRange(value: int)
+
+
+   Members:
+
+     Range_25uA
+
+     Range_250uA
+
+     Range_2500uA
+
+     Range_25mA
+
+     Range_500mA
+
+     Range_1200mA
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+
+   ..    .. .. py:property:: value
+      :type: int
+
+
+   ..    
+   ..    .. .. py:attribute:: Range_1200mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_2500uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_250uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_25uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   ..    .. .. py:attribute:: Range_500mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Range_1200mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_1200mA>`
+        - \-
+      * - :py:obj:`Range_2500uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_2500uA>`
+        - \-
+      * - :py:obj:`Range_250uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_250uA>`
+        - \-
+      * - :py:obj:`Range_25mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_25mA>`
+        - \-
+      * - :py:obj:`Range_25uA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_25uA>`
+        - \-
+      * - :py:obj:`Range_500mA <aspectdeviceengine.enginecore.DpsCurrentRange.Range_500mA>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.DpsCurrentRange.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.DpsCurrentRange.value>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+
+   .. py:property:: value
+      :type: int
+
+
+   .. py:attribute:: Range_1200mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_2500uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_250uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_25mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_25uA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+   .. py:attribute:: Range_500mA
+      :type: ClassVar[DpsCurrentRange]
+
+      
+
+
+
+
+.. py:class:: FirmwareVersion
+
+
+   Firmware version of a device detected by the engine.
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`to_hex_string <aspectdeviceengine.enginecore.FirmwareVersion.to_hex_string>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: to_hex_string() -> str
+
+
+
+
+.. py:class:: FunctionGeneratorResult
+
+
+   ..    ..    ..    
+   ..    .. .. py:attribute:: measurement_values
+      :type: list[float]
+
+      
+
+   ..    .. .. py:attribute:: time_codes
+      :type: list[float]
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`measurement_values <aspectdeviceengine.enginecore.FunctionGeneratorResult.measurement_values>`
+        - \-
+      * - :py:obj:`time_codes <aspectdeviceengine.enginecore.FunctionGeneratorResult.time_codes>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:attribute:: measurement_values
+      :type: list[float]
+
+      
+
+   .. py:attribute:: time_codes
+      :type: list[float]
+
+      
+
+
+
+
+.. py:class:: FunctionGeneratorType(value: int)
+
+
+   Members:
+
+     sawtooth
+
+     sinus
+
+     square
+
+     triangle
+
+     ramp
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+
+   ..    .. .. py:property:: value
+      :type: int
+
+
+   ..    
+   ..    .. .. py:attribute:: ramp
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   ..    .. .. py:attribute:: sawtooth
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   ..    .. .. py:attribute:: sinus
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   ..    .. .. py:attribute:: square
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   ..    .. .. py:attribute:: triangle
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ramp <aspectdeviceengine.enginecore.FunctionGeneratorType.ramp>`
+        - \-
+      * - :py:obj:`sawtooth <aspectdeviceengine.enginecore.FunctionGeneratorType.sawtooth>`
+        - \-
+      * - :py:obj:`sinus <aspectdeviceengine.enginecore.FunctionGeneratorType.sinus>`
+        - \-
+      * - :py:obj:`square <aspectdeviceengine.enginecore.FunctionGeneratorType.square>`
+        - \-
+      * - :py:obj:`triangle <aspectdeviceengine.enginecore.FunctionGeneratorType.triangle>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.FunctionGeneratorType.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.FunctionGeneratorType.value>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+
+   .. py:property:: value
+      :type: int
+
+
+   .. py:attribute:: ramp
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   .. py:attribute:: sawtooth
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   .. py:attribute:: sinus
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   .. py:attribute:: square
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+   .. py:attribute:: triangle
+      :type: ClassVar[FunctionGeneratorType]
+
+      
+
+
+
+
+.. py:class:: IdSmu1DeviceModel
+
+
+   Bases: :py:obj:`IdSmuDeviceModel`
+
+   IdSmuDeviceModel class that contains idSmu1 specific methods and properties.
+
+
+
+   
+   .. py:class:: Dps
+
+
+      DPS object for quick access to the dps
+
+
+
+      
+      .. py:class:: Channels
+
+
+         DPS channels object for quick access to the dps channels with the bracket operator []
+
+
+
+         ..    ..    ..    
+         .. 
+
+         .. rubric:: Overview
+
+
+         ..
+         .. list-table:: Methods
+            :header-rows: 0
+            :widths: auto
+            :class: summarytable
+
+            * - :py:obj:`as_list <aspectdeviceengine.enginecore.IdSmu1DeviceModel.Dps.Channels.as_list>`\ ()
+              - \-
+
+
+         .. rubric:: Members
+
+
+         .. py:method:: as_list() -> list[AD5560ChannelModel]
+
+
+
+      ..    ..    ..    .. .. py:property:: channels
+         :type: IdSmu1DeviceModel
+
+         Returns an object for quick access to the dps channels with the bracket operator []
+
+         :returns: The channels object
+         :rtype: object
+
+      ..    
+      .. 
+
+
+      .. rubric:: Members
+
+      .. py:property:: channels
+         :type: IdSmu1DeviceModel
+
+         Returns an object for quick access to the dps channels with the bracket operator []
+
+         :returns: The channels object
+         :rtype: object
+
+
+
+   ..    ..    ..    .. .. py:property:: dps
+      :type: IdSmu1DeviceModel
+
+      Returns an object for quick access to the dps (analog device model of dps based idSmu)
+
+      :returns: dps object
+      :rtype: object
+
+   ..    
+   .. 
+
+
+   .. rubric:: Members
+
+   .. py:property:: dps
+      :type: IdSmu1DeviceModel
+
+      Returns an object for quick access to the dps (analog device model of dps based idSmu)
+
+      :returns: dps object
+      :rtype: object
+
+
+
+
+.. py:class:: IdSmu2DeviceModel
+
+
+   Bases: :py:obj:`IdSmuDeviceModel`
+
+   IdSmuDeviceModel class that contains idSmu2 specific methods and properties.
+
+
+   
+   .. py:class:: Smu
+
+
+      SMU object for quick access to the smu
+
+
+
+      
+      .. py:class:: Channels
+
+
+         ..    ..    ..    
+         .. 
+
+         .. rubric:: Overview
+
+
+         ..
+         .. list-table:: Methods
+            :header-rows: 0
+            :widths: auto
+            :class: summarytable
+
+            * - :py:obj:`as_list <aspectdeviceengine.enginecore.IdSmu2DeviceModel.Smu.Channels.as_list>`\ ()
+              - \-
+
+
+         .. rubric:: Members
+
+
+         .. py:method:: as_list() -> list[AD5522ChannelModel]
+
+
+
+      ..    ..    ..    .. .. py:property:: channels
+         :type: IdSmu2DeviceModel
+
+         Returns an object for quick access to the smu channels with the bracket operator []
+
+         :returns: The channels object
+         :rtype: object
+
+      ..    
+      .. 
+
+
+      .. rubric:: Members
+
+      .. py:property:: channels
+         :type: IdSmu2DeviceModel
+
+         Returns an object for quick access to the smu channels with the bracket operator []
+
+         :returns: The channels object
+         :rtype: object
+
+
+
+   ..    ..    ..    .. .. py:property:: smu
+      :type: IdSmu2DeviceModel
+
+      Returns an object for quick access to the smu (analog device model of smu based idSmu)
+
+      :returns: smu object
+      :rtype: object
+
+   ..    
+   .. 
+
+
+   .. rubric:: Members
+
+   .. py:property:: smu
+      :type: IdSmu2DeviceModel
+
+      Returns an object for quick access to the smu (analog device model of smu based idSmu)
+
+      :returns: smu object
+      :rtype: object
+
+
+
+
+.. py:class:: IdSmuBoardModel
+
+
+   Container and controller vor idSmu modules and channels
+
+
+   
+   .. py:class:: IdSmu1Modules
+
+
+      This class represents all idSmu1 (DPS) modules on the board
+
+
+      ..    ..    ..    
+      .. 
+
+      .. rubric:: Overview
+
+
+      ..
+      .. list-table:: Methods
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`as_list <aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu1Modules.as_list>`\ ()
+           - \-
+
+
+      .. rubric:: Members
+
+
+      .. py:method:: as_list() -> list[IdSmu1DeviceModel]
+
+
+
+   
+   .. py:class:: IdSmu2Modules
+
+
+      This class represents all idSmu2 (SMU) modules on the board
+
+
+      ..    ..    ..    
+      .. 
+
+      .. rubric:: Overview
+
+
+      ..
+      .. list-table:: Methods
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`as_list <aspectdeviceengine.enginecore.IdSmuBoardModel.IdSmu2Modules.as_list>`\ ()
+           - Returns the force values that are used by the function_generator method
+
+
+      .. rubric:: Members
+
+
+      .. py:method:: as_list() -> list[IdSmu2DeviceModel]
+
+         Returns the force values that are used by the function_generator method
+
+         :returns: A list of IdSmu2DeviceModel objects
+         :rtype: List[IdSmu2DeviceModel]
+
+
+
+   ..    ..    ..    .. .. py:property:: device_information
+      :type: str
+
+      Prints information about the detected idSMU devices to the standard output (console)
+
+   ..    .. .. py:property:: idSmu1Modules
+      :type: IdSmuBoardModel
+
+
+   ..    .. .. py:property:: idSmu2Modules
+      :type: IdSmuBoardModel
+
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`device_information <aspectdeviceengine.enginecore.IdSmuBoardModel.device_information>`
+        - Prints information about the detected idSMU devices to the standard output (console)
+      * - :py:obj:`idSmu1Modules <aspectdeviceengine.enginecore.IdSmuBoardModel.idSmu1Modules>`
+        - \-
+      * - :py:obj:`idSmu2Modules <aspectdeviceengine.enginecore.IdSmuBoardModel.idSmu2Modules>`
+        - \-
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`contains_device <aspectdeviceengine.enginecore.IdSmuBoardModel.contains_device>`\ (device_id)
+        - Returns true if the device with the given hardware-id is located on the board
+      * - :py:obj:`enable_autorange <aspectdeviceengine.enginecore.IdSmuBoardModel.enable_autorange>`\ (enable, channel_names)
+        - Enables or disables the autoranging for channel(s)
+      * - :py:obj:`enable_timecode <aspectdeviceengine.enginecore.IdSmuBoardModel.enable_timecode>`\ (device_name)
+        - Enables the time code controller to genarte time stamps (for measurements)
+      * - :py:obj:`function_generator <aspectdeviceengine.enginecore.IdSmuBoardModel.function_generator>`\ (device_id, channel_number, min_value, max_value, step_size, step_delay_in_microseconds, function_generator_type)
+        - Initialize all installed idSMU devices on the board
+      * - :py:obj:`get_address <aspectdeviceengine.enginecore.IdSmuBoardModel.get_address>`\ ()
+        - Returns the board address
+      * - :py:obj:`get_all_hardware_ids <aspectdeviceengine.enginecore.IdSmuBoardModel.get_all_hardware_ids>`\ ()
+        - Returns the device ids on the board
+      * - :py:obj:`get_channel_name <aspectdeviceengine.enginecore.IdSmuBoardModel.get_channel_name>`\ (channel_id)
+        - Returns the name of the channel with the given channel id
+      * - :py:obj:`get_clamp_high_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_high_value>`\ (channel_name)
+        - Returns the analog clamp high value of the channel with the given id
+      * - :py:obj:`get_clamp_low_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_clamp_low_value>`\ (channel_name)
+        - Returns the analog clamp low value of the channel with the given id
+      * - :py:obj:`get_current_range <aspectdeviceengine.enginecore.IdSmuBoardModel.get_current_range>`\ (channel_name)
+        - Returns the current range of a channel
+      * - :py:obj:`get_device_model <aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_model>`\ (device_id)
+        - Returns the IdSmuDeviceModel the given id
+      * - :py:obj:`get_device_power_options <aspectdeviceengine.enginecore.IdSmuBoardModel.get_device_power_options>`\ (device_id)
+        - Returns the state of the power options for the device with the given id
+      * - :py:obj:`get_enable_INT10K <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_INT10K>`\ (device_id)
+        - Returns the enabled state of the internal 10K resistor
+      * - :py:obj:`get_enable_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_channel>`\ (channel_name)
+        - Returns the enabled state of the channel with the given id
+      * - :py:obj:`get_enable_clamps <aspectdeviceengine.enginecore.IdSmuBoardModel.get_enable_clamps>`\ (channel_name)
+        - Returns the clamps enabled state of the channel with the given id
+      * - :py:obj:`get_function_generator_results <aspectdeviceengine.enginecore.IdSmuBoardModel.get_function_generator_results>`\ (device_id, channel_number)
+        - Initialize all installed idSMU devices on the board
+      * - :py:obj:`get_immediate_mode <aspectdeviceengine.enginecore.IdSmuBoardModel.get_immediate_mode>`\ ()
+        - Returns the state of the immediate mode.
+      * - :py:obj:`get_initialize_devices_results <aspectdeviceengine.enginecore.IdSmuBoardModel.get_initialize_devices_results>`\ ()
+        - Prints information about the detected idSMU devices to the standard output (console)
+      * - :py:obj:`get_measure_channels_results <aspectdeviceengine.enginecore.IdSmuBoardModel.get_measure_channels_results>`\ ()
+        - Returns a list of results of measurements since tha last measure_channels command (or replies in case of an error)
+      * - :py:obj:`get_measurement_channel_result <aspectdeviceengine.enginecore.IdSmuBoardModel.get_measurement_channel_result>`\ (channel_name)
+        - Gets the measured values for a channel. This is only valid if the result was stored for a previous async measurement command (not waited for the command result)
+      * - :py:obj:`get_measurement_results_for_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_measurement_results_for_channel>`\ (channel_name)
+        - Gets the command result of all channel measurements of the device the given channel belongs to.
+      * - :py:obj:`get_number_of_devices <aspectdeviceengine.enginecore.IdSmuBoardModel.get_number_of_devices>`\ ()
+        - Returns the number of detected idSMU devices
+      * - :py:obj:`get_output_force_ranges_for_channel <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_ranges_for_channel>`\ (channel_name)
+        - Returns the output force ranges for the channel with the given channel id
+      * - :py:obj:`get_output_force_value <aspectdeviceengine.enginecore.IdSmuBoardModel.get_output_force_value>`\ (channel_name)
+        - Returns the output force value for the channel with the given channel id
+      * - :py:obj:`get_slots <aspectdeviceengine.enginecore.IdSmuBoardModel.get_slots>`\ ()
+        - Returns a list of IdSmuDeviceModel in the order of the slots of the board
+      * - :py:obj:`get_valid_range_for_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.get_valid_range_for_channel_parameter>`\ (parameter_name, channel_Name)
+        - Returns the range of the given parameter as a list of strings
+      * - :py:obj:`initialize_devices <aspectdeviceengine.enginecore.IdSmuBoardModel.initialize_devices>`\ (wait_for_result, device_names)
+        - Initialize all installed idSMU devices on the board
+      * - :py:obj:`is_autorange_enabled <aspectdeviceengine.enginecore.IdSmuBoardModel.is_autorange_enabled>`\ (channel_name)
+        - Returns true if the autorange for the addressed channel is enabled
+      * - :py:obj:`is_board_initialized <aspectdeviceengine.enginecore.IdSmuBoardModel.is_board_initialized>`\ ()
+        - Returns true if all devices on the board are initialized
+      * - :py:obj:`is_device_initialized <aspectdeviceengine.enginecore.IdSmuBoardModel.is_device_initialized>`\ (device_id)
+        - Returns the initialized state of the device with the given id
+      * - :py:obj:`measure_channels <aspectdeviceengine.enginecore.IdSmuBoardModel.measure_channels>`\ (wait_for_result, sample_count, repetitions, channel_names, wait_for_trigger)
+        - Measures the voltage, current or temperature, depending on the adjusted MeasurementMode
+      * - :py:obj:`print_channel_registers <aspectdeviceengine.enginecore.IdSmuBoardModel.print_channel_registers>`\ (channel_name)
+        - Prints information about the channel register of the given channel
+      * - :py:obj:`print_device_information <aspectdeviceengine.enginecore.IdSmuBoardModel.print_device_information>`\ ()
+        - Prints information about the detected idSMU devices to the standard output (console)
+      * - :py:obj:`print_uncommited_registers <aspectdeviceengine.enginecore.IdSmuBoardModel.print_uncommited_registers>`\ ()
+        - Prints information about the registers that are set in the model but not committed to the hardware, yet.
+      * - :py:obj:`read_fpga <aspectdeviceengine.enginecore.IdSmuBoardModel.read_fpga>`\ (register_address, device_id)
+        - Writes to a FPGA register
+      * - :py:obj:`set_analog_device_parameters_from_strings <aspectdeviceengine.enginecore.IdSmuBoardModel.set_analog_device_parameters_from_strings>`\ (resource_id, parameter_names, parameter_values)
+        - Sets a parameter of a device or channel by a string value
+      * - :py:obj:`set_channel_name <aspectdeviceengine.enginecore.IdSmuBoardModel.set_channel_name>`\ (channel_id, channel_name)
+        - Sets the name/alias for the channel with the given id
+      * - :py:obj:`set_clamps_low_and_high_values <aspectdeviceengine.enginecore.IdSmuBoardModel.set_clamps_low_and_high_values>`\ (clamp_low_value, clamp_high_value, channel_names)
+        - Set the values of the channel(s) clamps
+      * - :py:obj:`set_current_ranges <aspectdeviceengine.enginecore.IdSmuBoardModel.set_current_ranges>`\ (current_range, channel_names)
+        - Sets the current range of a channel
+      * - :py:obj:`set_currents <aspectdeviceengine.enginecore.IdSmuBoardModel.set_currents>`\ (current, channel_names)
+        - Set the output current for channel(s)
+      * - :py:obj:`set_device_name <aspectdeviceengine.enginecore.IdSmuBoardModel.set_device_name>`\ (device_id, device_name)
+        - Sets the name/alias for the device with the given id
+      * - :py:obj:`set_device_power_options <aspectdeviceengine.enginecore.IdSmuBoardModel.set_device_power_options>`\ (enable_external_power, enable_high_current, device_id)
+        - Sets the state of the power options for the device with the given id
+      * - :py:obj:`set_enable_INT10K <aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_INT10K>`\ (enable_INT10k, device_names)
+        - Enables or disables the internal 10K resistor of the device(s)
+      * - :py:obj:`set_enable_channels <aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_channels>`\ (enable_channels, channel_names)
+        - Enables or disables channel(s)
+      * - :py:obj:`set_enable_clamps <aspectdeviceengine.enginecore.IdSmuBoardModel.set_enable_clamps>`\ (enable_clamps, channel_names)
+        - Enables or disables channel(s) clamp
+      * - :py:obj:`set_immediate_mode <aspectdeviceengine.enginecore.IdSmuBoardModel.set_immediate_mode>`\ (enabled)
+        - Enables or disables the immediate mode. If enabled, all methods that alter the device state are immediately written to the hardware
+      * - :py:obj:`set_measurement_modes <aspectdeviceengine.enginecore.IdSmuBoardModel.set_measurement_modes>`\ (measurement_mode, channel_names)
+        - Sets the measurement mode of a channel
+      * - :py:obj:`set_output_force_values <aspectdeviceengine.enginecore.IdSmuBoardModel.set_output_force_values>`\ (output_force_value, channel_names)
+        - Sets the output force value for channels
+      * - :py:obj:`set_voltages <aspectdeviceengine.enginecore.IdSmuBoardModel.set_voltages>`\ (voltage, channel_names)
+        - Set the output voltage for channel(s)
+      * - :py:obj:`stringify_analog_channel_parameter <aspectdeviceengine.enginecore.IdSmuBoardModel.stringify_analog_channel_parameter>`\ (parameter_name, channel_name)
+        - Returns the value of the given parameter as string
+      * - :py:obj:`write_fpga <aspectdeviceengine.enginecore.IdSmuBoardModel.write_fpga>`\ (register_address, register_value, device_id)
+        - Writes to a FPGA register
+      * - :py:obj:`write_uncommited_settings <aspectdeviceengine.enginecore.IdSmuBoardModel.write_uncommited_settings>`\ (wait_for_result)
+        - Writes all uncommited settings to the hardware
+      * - :py:obj:`write_uncommited_settings_for_device <aspectdeviceengine.enginecore.IdSmuBoardModel.write_uncommited_settings_for_device>`\ (wait_for_result, device_id)
+        - Writes all uncommited settings for the device to the hardware
+
+
+   .. rubric:: Members
+
+   .. py:property:: device_information
+      :type: str
+
+      Prints information about the detected idSMU devices to the standard output (console)
+
+   .. py:property:: idSmu1Modules
+      :type: IdSmuBoardModel
+
+
+   .. py:property:: idSmu2Modules
+      :type: IdSmuBoardModel
+
+
+
+   .. py:method:: contains_device(device_id: str) -> bool
+
+      Returns true if the device with the given hardware-id is located on the board
+
+      :param device_id: The hardware-id of the device
+      :type device_id: str
+
+      :returns: The board address
+      :rtype: bool
+
+
+   .. py:method:: enable_autorange(enable: bool, channel_names: list[str]) -> None
+
+      Enables or disables the autoranging for channel(s)
+
+      :param enable: Enables or disables the autoranging for the channel(s)
+      :type enable: bool
+      :param channel_names: Name of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: enable_timecode(device_name: str) -> None
+
+      Enables the time code controller to genarte time stamps (for measurements)
+
+      :param device_name: Name of or id of the device
+      :type device_name: str
+
+
+   .. py:method:: function_generator(device_id: str, channel_number: int, min_value: float, max_value: float, step_size: float, step_delay_in_microseconds: int, function_generator_type: FunctionGeneratorType) -> None
+
+      Initialize all installed idSMU devices on the board
+
+      :param device_id: DeviceId
+      :type device_id: str
+      :param channel_number: Channel number
+      :type channel_number: int
+      :param min_value: Minimum in generated function
+      :type min_value: float
+      :param max_value: Maximum in generated function
+      :type max_value: float
+      :param step_size: Voltage step
+      :type step_size: float
+      :param step_delay_in_microseconds: Delay between two steps
+      :type step_delay_in_microseconds: int
+      :param function_generator_type: The type of the function generator
+      :type function_generator_type: FunctionGeneratorType
+
+
+   .. py:method:: get_address() -> str
+
+      Returns the board address
+
+      :returns: The board address
+      :rtype: str
+
+
+   .. py:method:: get_all_hardware_ids() -> list[str]
+
+      Returns the device ids on the board
+
+      :returns: The list of device-ids
+      :rtype: List[str]
+
+
+   .. py:method:: get_channel_name(channel_id: str) -> str
+
+      Returns the name of the channel with the given channel id
+
+      :param channel_id: Id or name of the channel
+      :type channel_id: str
+
+      :returns: The channel name
+      :rtype: str
+
+
+   .. py:method:: get_clamp_high_value(channel_name: str) -> float
+
+      Returns the analog clamp high value of the channel with the given id
+
+      :param channel_name:    Id or name of the channel
+
+                           :returns: The analog clamp high value
+                           :rtype: float
+      :type channel_name: str
+
+
+   .. py:method:: get_clamp_low_value(channel_name: str) -> float
+
+      Returns the analog clamp low value of the channel with the given id
+
+      :param channel_name:    Id or name of the channel
+
+                           :returns: The analog clamp low value
+                           :rtype: float
+      :type channel_name: str
+
+
+   .. py:method:: get_current_range(channel_name: str) -> CurrentRange
+
+      Returns the current range of a channel
+
+      :param channel_name: Names or Id or name of the channel for which the current range should be returned
+      :type channel_name: str
+
+      :rtype: CurrentRange
+
+
+   .. py:method:: get_device_model(device_id: str) -> IdSmuDeviceModel
+
+      Returns the IdSmuDeviceModel the given id
+
+      :param device_id: Id of the device
+      :type device_id: str
+
+      :returns: The IdSmuDeviceModel
+      :rtype: IdSmuDeviceModel
+
+
+   .. py:method:: get_device_power_options(device_id: str) -> list[bool]
+
+      Returns the state of the power options for the device with the given id
+
+      :param device_id: The id of the device
+      :type device_id: str
+
+      :returns: A list of boolean flags in the order ExternalPowerEnabled  (+ for DPS: HighCurrentEnabled)
+      :rtype: List[bool]
+
+
+   .. py:method:: get_enable_INT10K(device_id: str) -> bool
+
+      Returns the enabled state of the internal 10K resistor
+
+      :param device_id: The id of the device
+      :type device_id: str
+
+      :returns: Enabled state of the internal 10k resistor
+      :rtype: bool
+
+
+   .. py:method:: get_enable_channel(channel_name: str) -> bool
+
+      Returns the enabled state of the channel with the given id
+
+      :param channel_name:    Id or name of the channel
+
+                           :returns: Returns true if the channel is enabled
+                           :rtype: bool
+      :type channel_name: str
+
+
+   .. py:method:: get_enable_clamps(channel_name: str) -> bool
+
+      Returns the clamps enabled state of the channel with the given id
+
+      :param channel_name:    Id or name of the channel
+
+                           :returns: True if the channel clamps are enabled
+                           :rtype: bool
+      :type channel_name: str
+
+
+   .. py:method:: get_function_generator_results(device_id: str, channel_number: int) -> FunctionGeneratorResult
+
+      Initialize all installed idSMU devices on the board
+
+      :param device_id: DeviceId
+      :type device_id: str
+      :param channel_number: Channel number
+      :type channel_number: int
+
+      :returns: FunctionGeneratorResult instance
+      :rtype: FunctionGeneratorResult
+
+
+   .. py:method:: get_immediate_mode() -> bool
+
+      Returns the state of the immediate mode.
+
+      :rtype: bool
+
+
+   .. py:method:: get_initialize_devices_results() -> list[CommandReply]
+
+      Prints information about the detected idSMU devices to the standard output (console)
+
+
+   .. py:method:: get_measure_channels_results() -> list[CommandReply]
+
+      Returns a list of results of measurements since tha last measure_channels command (or replies in case of an error)
+      This methods waits until all measurements have been completed, including any triggered measurements.
+      Important note: If one of the measurements is waiting for a trigger, this method blocks until the triggered measurement is completed.
+
+      :returns: A list of CommandReply object
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: get_measurement_channel_result(channel_name: str) -> ChannelResult
+
+      Gets the measured values for a channel. This is only valid if the result was stored for a previous async measurement command (not waited for the command result)
+
+      :param channel_name: Name of the channel
+      :type channel_name: str
+
+      :returns: A ChannelResult object.
+      :rtype: ChannelResult
+
+
+   .. py:method:: get_measurement_results_for_channel(channel_name: str) -> CommandReply
+
+      Gets the command result of all channel measurements of the device the given channel belongs to.
+      This is only valid if the result was stored for a previous async measurement command (not waited for the command result)
+
+      :param channel_name: Name of the channel
+      :type channel_name: str
+
+      :returns: A command reply which is of type ReadAdcCommandIdSmuResult in case of success.
+      :rtype: CommandReply
+
+
+   .. py:method:: get_number_of_devices() -> int
+
+      Returns the number of detected idSMU devices
+
+      :returns: Number of detected idSMU devices
+      :rtype: int
+
+
+   .. py:method:: get_output_force_ranges_for_channel(channel_name: str) -> list[float]
+
+      Returns the output force ranges for the channel with the given channel id
+
+      :param channel_name: Id or name of the channel
+      :type channel_name: str
+
+      :returns: The output force ranges in the order Vmin, Vman and (if force current mode is available) Imin,Imax
+      :rtype: List[float]
+
+
+   .. py:method:: get_output_force_value(channel_name: str) -> float
+
+      Returns the output force value for the channel with the given channel id
+
+      :param channel_name: Id or name of the channel
+      :type channel_name: str
+
+      :returns: The output force value
+      :rtype: float
+
+
+   .. py:method:: get_slots() -> list[IdSmuDeviceModel]
+
+      Returns a list of IdSmuDeviceModel in the order of the slots of the board
+
+      :returns: The list of the IdSmuDeviceModel
+      :rtype: List[IdSmuDeviceModel]
+
+
+   .. py:method:: get_valid_range_for_channel_parameter(parameter_name: str, channel_Name: str) -> list[str]
+
+      Returns the range of the given parameter as a list of strings
+
+      :param parameter_name: Name of the parameter
+      :type parameter_name: str
+      :param channel_name:    Id or name of the channel
+
+                           :returns: The range as a list of strings
+                           :rtype: List[str]
+      :type channel_name: str
+
+
+   .. py:method:: initialize_devices(wait_for_result: bool, device_names: list[str] = []) -> list[CommandReply]
+                  initialize_devices(wait_for_result: bool, parameter_setting: IdqTable, adapt_board_addresses: bool) -> list[CommandReply]
+
+      Initialize all installed idSMU devices on the board
+
+      :param wait_for_result: If set, the method waits until the all devices are initialized. If disabled, the method returns after the command was queued
+      :type wait_for_result: bool
+      :param parameter_setting: The settings used for the power options and naming of devices and channels.
+      :type parameter_setting: ParameterSetting
+      :param adapt_board_addresses:
+      :type adapt_board_addresses: bool
+
+      :returns: A list of CommandReply objects
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: is_autorange_enabled(channel_name: str) -> float
+
+      Returns true if the autorange for the addressed channel is enabled
+
+      :param channel_name: Name of the channel for which the value should be retrieved
+      :type channel_name: str
+
+      :returns: True if the autoranging is enabled
+      :rtype: bool
+
+
+   .. py:method:: is_board_initialized() -> bool
+
+      Returns true if all devices on the board are initialized
+
+      :rtype: bool
+
+
+   .. py:method:: is_device_initialized(device_id: str) -> bool
+
+      Returns the initialized state of the device with the given id
+
+      :param device_id: Id of the device
+      :type device_id: str
+
+      :returns: True if the device with the given id is initialized
+      :rtype: bool
+
+
+   .. py:method:: measure_channels(wait_for_result: bool, sample_count: int, repetitions: int, channel_names: list[str], wait_for_trigger: bool = False) -> list[CommandReply]
+
+      Measures the voltage, current or temperature, depending on the adjusted MeasurementMode
+
+      :param wait_for_result: If set, the method waits until the result for all measurements are present. If disabled, the method returns after the command was queued
+      :type wait_for_result: bool
+      :param sample_count: Sample count per measurement. Valid values are 1,2,4,8 ... 2^31 (2 to the power of x)
+      :type sample_count: int
+      :param repetitions: Number of measurements
+      :type repetitions: int
+      :param channel_names: Names of the devices for which the internal 10K resistor should be enabled or disabled
+      :type channel_names: list
+      :param wait_for_trigger: If true, the measurement is executed with the next hardware trigger signal
+      :type wait_for_trigger: bool
+
+      :returns: A list of CommandReply object
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: print_channel_registers(channel_name: str) -> None
+
+      Prints information about the channel register of the given channel
+
+      :param channel_name: Name of the channel which the register state(s) should be printed
+      :type channel_name: str
+
+
+   .. py:method:: print_device_information() -> str
+
+      Prints information about the detected idSMU devices to the standard output (console)
+
+
+   .. py:method:: print_uncommited_registers() -> None
+
+      Prints information about the registers that are set in the model but not committed to the hardware, yet.
+
+
+   .. py:method:: read_fpga(register_address: int, device_id: str) -> int
+
+      Writes to a FPGA register
+
+      :param register_address:
+      :type register_address: int
+      :param device_id:
+      :type device_id: str
+
+      :returns: The rgister value written, -1 if an error occured
+      :rtype: int
+
+
+   .. py:method:: set_analog_device_parameters_from_strings(resource_id: str, parameter_names: list[str], parameter_values: list[str]) -> None
+
+      Sets a parameter of a device or channel by a string value
+
+      :param resource_id: id of the device or channel
+      :type resource_id: str
+      :param parameter_names: Names of the parameters
+      :type parameter_names: list
+      :param parameter_values: Values of the parameters as strings
+      :type parameter_values: list
+
+
+   .. py:method:: set_channel_name(channel_id: str, channel_name: str) -> None
+
+      Sets the name/alias for the channel with the given id
+
+      :param device_id: Id of the device
+      :type device_id: str
+      :param channel_name: New name/alias of the channel
+      :type channel_name: str
+
+
+   .. py:method:: set_clamps_low_and_high_values(clamp_low_value: float, clamp_high_value: float, channel_names: list[str]) -> None
+
+      Set the values of the channel(s) clamps
+
+      :param clamp_low_value: Value for the lower clamp
+      :type clamp_low_value: clamp_low_value
+      :param clamp_high_value: Value for the higher clamp
+      :type clamp_high_value: clamp_high_value
+      :param channel_names: Names of the channels for which the clamp values should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_current_ranges(current_range: CurrentRange, channel_names: list[str]) -> None
+
+      Sets the current range of a channel
+
+      :param current_range: The current range. There are different current ranges available depending on the device type (DPS and SMU)
+      :type current_range: CurrentRange
+      :param channel_names: Names of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_currents(current: float, channel_names: list[str]) -> None
+
+      Set the output current for channel(s)
+
+      :param current: The current in the unit of ampere [A]
+      :type current: float
+      :param channel_names: Name of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_device_name(device_id: str, device_name: str) -> None
+
+      Sets the name/alias for the device with the given id
+
+      :param device_id: Id of the device
+      :type device_id: str
+      :param device_name: New name/alias of the device
+      :type device_name: str
+
+
+   .. py:method:: set_device_power_options(enable_external_power: bool, enable_high_current: bool, device_id: str) -> None
+
+      Sets the state of the power options for the device with the given id
+
+      :param enable_external_power: enables external power
+      :type enable_external_power: bool
+      :param enable_high_current: enables high current
+      :type enable_high_current: bool
+      :param device_id: The id of the device
+      :type device_id: str
+
+
+   .. py:method:: set_enable_INT10K(enable_INT10k: bool, device_names: list[str]) -> None
+
+      Enables or disables the internal 10K resistor of the device(s)
+
+      :param enable_INT10k: Enables or disables the internal 10K resistor
+      :type enable_INT10k: bool
+      :param device_names: Names of the devices for which the internal 10K resistor should be enabled or disabled
+      :type device_names: list
+
+
+   .. py:method:: set_enable_channels(enable_channels: bool, channel_names: list[str]) -> None
+
+      Enables or disables channel(s)
+
+      :param enable_channels: Enables or disables the channel
+      :type enable_channels: bool
+      :param channel_names: Name of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_enable_clamps(enable_clamps: bool, channel_names: list[str]) -> None
+
+      Enables or disables channel(s) clamp
+
+      :param enable_clamps: Enable or disables the channel clamp
+      :type enable_clamps: bool
+      :param channel_names: Names of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_immediate_mode(enabled: bool) -> None
+
+      Enables or disables the immediate mode. If enabled, all methods that alter the device state are immediately written to the hardware
+
+      :param enable: If set, the immediate mode is enabled
+      :type enable: bool
+
+
+   .. py:method:: set_measurement_modes(measurement_mode: MeasurementMode, channel_names: list[str]) -> None
+
+      Sets the measurement mode of a channel
+
+      :param measurement_mode: The measurement mode
+      :type measurement_mode: MeasurementMode
+      :param channel_names: Names of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_output_force_values(output_force_value: float, channel_names: list[str]) -> None
+
+      Sets the output force value for channels
+
+      :param output_force_value: The value to force at the channel output(s)
+      :type output_force_value: float
+      :param channel_names: Names of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: set_voltages(voltage: float, channel_names: list[str]) -> None
+
+      Set the output voltage for channel(s)
+
+      :param voltage: The voltage in the unit of volt [V]
+      :type voltage: float
+      :param channel_names: Name of the channels for which the value should be set
+      :type channel_names: list
+
+
+   .. py:method:: stringify_analog_channel_parameter(parameter_name: str, channel_name: str) -> str
+
+      Returns the value of the given parameter as string
+
+      :param parameter_name: Name of the parameter
+      :type parameter_name: str
+      :param channel_name:    Id or name of the channel
+
+                           :returns: The parameter value as string
+                           :rtype: str
+      :type channel_name: str
+
+
+   .. py:method:: write_fpga(register_address: int, register_value: int, device_id: str) -> int
+
+      Writes to a FPGA register
+
+      :param register_address:
+      :type register_address: int
+      :param register_value:
+      :type register_value: int
+      :param device_id:
+      :type device_id: str
+
+      :returns: The rgister value written, -1 if an error occured
+      :rtype: int
+
+
+   .. py:method:: write_uncommited_settings(wait_for_result: bool) -> SequencingCommandResult
+
+      Writes all uncommited settings to the hardware
+
+      :param wait_for_result: If set, the method waits until the result for all measurements are present. If disabled, the method returns after the command was queued
+      :type wait_for_result: bool
+
+      :returns: A CommandReply object
+      :rtype: CommandReply
+
+
+   .. py:method:: write_uncommited_settings_for_device(wait_for_result: bool, device_id: str) -> CommandReply
+
+      Writes all uncommited settings for the device to the hardware
+
+      :param wait_for_result: If set, the method waits until the result for all measurements are present. If disabled, the method returns after the command was queued
+      :type wait_for_result: bool
+      :param device_id: The id of the device
+      :type device_id: str
+
+      :returns: A CommandReply object
+      :rtype: CommandReply
+
+
+
+
+.. py:class:: IdSmuDeviceModel
+
+
+   ..    ..    ..    .. .. py:property:: channel_ids
+      :type: list[str]
+
+      Returns a list of all channel-ids (hardware-ids) in the format Mx.Sy.Cz (Motherboard.Slot.Channel - Format)
+      :returns: The list of the channel-ids
+      :rtype: List[str]
+
+   ..    .. .. py:property:: hardware_id
+      :type: str
+
+      Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
+
+      :returns: The hardware id
+      :rtype: str
+
+   ..    .. .. py:property:: name
+      :type: str
+
+      Property that gets/sets the device name
+
+      :param name: The device name
+
+      :returns: The name of the channel
+      :rtype: str
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`channel_ids <aspectdeviceengine.enginecore.IdSmuDeviceModel.channel_ids>`
+        - Returns a list of all channel-ids (hardware-ids) in the format Mx.Sy.Cz (Motherboard.Slot.Channel - Format)
+      * - :py:obj:`hardware_id <aspectdeviceengine.enginecore.IdSmuDeviceModel.hardware_id>`
+        - Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
+      * - :py:obj:`name <aspectdeviceengine.enginecore.IdSmuDeviceModel.name>`
+        - Property that gets/sets the device name
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_firmware_version <aspectdeviceengine.enginecore.IdSmuDeviceModel.get_firmware_version>`\ ()
+        - Returns the firmware version of this device
+      * - :py:obj:`get_hardware_id <aspectdeviceengine.enginecore.IdSmuDeviceModel.get_hardware_id>`\ ()
+        - Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
+      * - :py:obj:`measure_channels <aspectdeviceengine.enginecore.IdSmuDeviceModel.measure_channels>`\ (sample_count, repetitions, channel_numbers, wait_for_trigger)
+        - Performs a measurement command on the listed channels
+      * - :py:obj:`measure_channels_async <aspectdeviceengine.enginecore.IdSmuDeviceModel.measure_channels_async>`\ (sample_count, repetitions, channel_numbers, wait_for_trigger)
+        - Performs a measurement command on the listed channels. The method as "measure_channels", except the GIL scope is released in this version
+
+
+   .. rubric:: Members
+
+   .. py:property:: channel_ids
+      :type: list[str]
+
+      Returns a list of all channel-ids (hardware-ids) in the format Mx.Sy.Cz (Motherboard.Slot.Channel - Format)
+      :returns: The list of the channel-ids
+      :rtype: List[str]
+
+   .. py:property:: hardware_id
+      :type: str
+
+      Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
+
+      :returns: The hardware id
+      :rtype: str
+
+   .. py:property:: name
+      :type: str
+
+      Property that gets/sets the device name
+
+      :param name: The device name
+
+      :returns: The name of the channel
+      :rtype: str
+
+
+   .. py:method:: get_firmware_version() -> str
+
+      Returns the firmware version of this device
+
+      :returns: The firmware version
+      :rtype: str
+
+
+   .. py:method:: get_hardware_id() -> str
+
+      Returns the hardware id of this device in the format Mx.Sy (Motherboard.Slot - Format)
+
+      :returns: The hardware id
+      :rtype: str
+
+
+   .. py:method:: measure_channels(sample_count: int, repetitions: int, channel_numbers: list[int], wait_for_trigger: bool = False) -> CommandReplyFuture
+
+      Performs a measurement command on the listed channels
+
+      :param sample_count: The number of samples for the measurement
+      :type sample_count: int
+      :param repetitions: The number repetitions of the measurement
+      :type repetitions: int
+      :param channel_numbers: The channel numbers of the channels to measure
+      :type channel_numbers: List[int]
+      :param wait_for_trigger: If true, the measurement is executed with the next hardware trigger signal
+      :type wait_for_trigger: bool
+
+      :returns: A CommandReplyFuture
+      :rtype: CommandReplyFuture
+
+
+   .. py:method:: measure_channels_async(sample_count: int, repetitions: int, channel_numbers: list[int], wait_for_trigger: bool) -> CommandReplyFuture
+
+      Performs a measurement command on the listed channels. The method as "measure_channels", except the GIL scope is released in this version
+
+      :param sample_count: The number of samples for the measurement
+      :type sample_count: int
+      :param repetitions: The number repetitions of the measurement
+      :type repetitions: int
+      :param channel_numbers: The channel numbers of the channels to measure
+      :type channel_numbers: List[int]
+      :param wait_for_trigger: If true, the measurement is executed with the next hardware trigger signal
+      :type wait_for_trigger: bool
+
+      :returns: A CommandReplyFuture
+      :rtype: CommandReplyFuture
+
+
+
+
+.. py:class:: IdSmuService
+
+
+   Service class that detects and manages idSmu hardware.
+
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`detect_and_initialize_devices <aspectdeviceengine.enginecore.IdSmuService.detect_and_initialize_devices>`\ ()
+        - Tries to detect and initialize all installed idSMU devices. Default values for the power settings are taken.
+      * - :py:obj:`detect_and_initialize_devices_with_setting <aspectdeviceengine.enginecore.IdSmuService.detect_and_initialize_devices_with_setting>`\ (setting_name, adapt_board_addresses)
+        - Tries to detect and initialize all installed idSMU devices
+      * - :py:obj:`detect_devices <aspectdeviceengine.enginecore.IdSmuService.detect_devices>`\ ()
+        - Tries to detect and initialize all installed idSMU devices
+      * - :py:obj:`devices_are_detected <aspectdeviceengine.enginecore.IdSmuService.devices_are_detected>`\ ()
+        - Flag that indicates that a device detection was successfull
+      * - :py:obj:`get_board <aspectdeviceengine.enginecore.IdSmuService.get_board>`\ (board_address)
+        - Returns the board model with the given address
+      * - :py:obj:`get_board_addresses <aspectdeviceengine.enginecore.IdSmuService.get_board_addresses>`\ ()
+        - Returns the addresses of all detected boards
+      * - :py:obj:`get_first_board <aspectdeviceengine.enginecore.IdSmuService.get_first_board>`\ ()
+        - Returns the first board of all detected idSMU boards
+      * - :py:obj:`get_number_of_boards <aspectdeviceengine.enginecore.IdSmuService.get_number_of_boards>`\ ()
+        - Returns the number of detected idSMU boards
+      * - :py:obj:`get_settings_service <aspectdeviceengine.enginecore.IdSmuService.get_settings_service>`\ ()
+        - Returns an instance of IdSmuSettingsService object
+      * - :py:obj:`initialize_board <aspectdeviceengine.enginecore.IdSmuService.initialize_board>`\ (board_address, setting_name, adapt_board_addresses)
+        - Tries to initialize the board with the give address
+      * - :py:obj:`print_device_information <aspectdeviceengine.enginecore.IdSmuService.print_device_information>`\ ()
+        - Returns information of detected devices as printable table
+      * - :py:obj:`print_fpga_register <aspectdeviceengine.enginecore.IdSmuService.print_fpga_register>`\ (register_address)
+        - Returns the fpga register values of all detected devices as printable table
+      * - :py:obj:`print_status_register <aspectdeviceengine.enginecore.IdSmuService.print_status_register>`\ (register_address)
+        - Returns the status register values of all detected devices as printable table
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: detect_and_initialize_devices() -> list[CommandReply]
+
+      Tries to detect and initialize all installed idSMU devices. Default values for the power settings are taken.
+      If control over the power settings is required, the 2-step procedure of detecting and initializing a board must be executed manually
+
+      :returns: A list of CommandReply objects
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: detect_and_initialize_devices_with_setting(setting_name: str, adapt_board_addresses: bool) -> list[CommandReply]
+
+      Tries to detect and initialize all installed idSMU devices
+
+      :param setting_name: The name of the settings used for the power options and naming of devices and channels.
+      :type setting_name: str
+      :param adapt_board_addresses:
+      :type adapt_board_addresses: bool
+
+      :returns: A list of CommandReply objects
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: detect_devices() -> CommandReply
+
+      Tries to detect and initialize all installed idSMU devices
+
+      :returns: A CommandReply object
+      :rtype: CommandReply
+
+
+   .. py:method:: devices_are_detected() -> bool
+
+      Flag that indicates that a device detection was successfull
+
+      :returns: True if devices were detected
+      :rtype: bool
+
+
+   .. py:method:: get_board(board_address: str) -> IdSmuBoardModel
+
+      Returns the board model with the given address
+
+      :param board_address: Address of the board
+      :type board_address: str
+
+      :returns: An IdsmuBoardModel object
+      :rtype: IdsmuBoardModel
+
+
+   .. py:method:: get_board_addresses() -> list[str]
+
+      Returns the addresses of all detected boards
+
+      :returns: Addresses of all detected boards
+      :rtype: List[str]
+
+
+   .. py:method:: get_first_board() -> IdSmuBoardModel
+
+      Returns the first board of all detected idSMU boards
+
+      :returns: An IdsmuBoardModel object
+      :rtype: IdsmuBoardModel
+
+
+   .. py:method:: get_number_of_boards() -> int
+
+      Returns the number of detected idSMU boards
+
+      :returns: Number of detected idSMU boards
+      :rtype: int
+
+
+   .. py:method:: get_settings_service() -> IdSmuSettingsService
+
+      Returns an instance of IdSmuSettingsService object
+
+      :returns: An instance of IdSmuSettingsService object
+      :rtype: IdSmuSettingsService
+
+
+   .. py:method:: initialize_board(board_address: str, setting_name: str, adapt_board_addresses: bool) -> list[CommandReply]
+                  initialize_board(board_address: str) -> list[CommandReply]
+
+      Tries to initialize the board with the give address
+
+      :param board_address: Enables the external power option.
+      :type board_address: str
+
+      :returns: A list of CommandReply objects
+      :rtype: List[CommandReply]
+
+
+   .. py:method:: print_device_information() -> str
+
+      Returns information of detected devices as printable table
+
+      :rtype: str
+
+
+   .. py:method:: print_fpga_register(register_address: int) -> str
+
+      Returns the fpga register values of all detected devices as printable table
+
+      :param register_address: Address of the fpga register
+      :type register_address: int
+
+      :rtype: str
+
+
+   .. py:method:: print_status_register(register_address: int) -> str
+
+      Returns the status register values of all detected devices as printable table
+
+      :param register_address: Address of the status register
+      :type register_address: int
+
+      :rtype: str
+
+
+
+
+.. py:class:: IdSmuServiceRunner(log_level: int = 0, worker_thread_count: int = 4)
+
+
+   Simplifies the starting of idSmu services and controls their lifetime.
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_idsmu_service <aspectdeviceengine.enginecore.IdSmuServiceRunner.get_idsmu_service>`\ ()
+        - \-
+      * - :py:obj:`shutdown <aspectdeviceengine.enginecore.IdSmuServiceRunner.shutdown>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: get_idsmu_service() -> IdSmuService
+
+
+   .. py:method:: shutdown() -> None
+
+
+
+
+.. py:class:: IdSmuSettingsService
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`apply_parameter_setting <aspectdeviceengine.enginecore.IdSmuSettingsService.apply_parameter_setting>`\ (parameter_setting, board_address, filtered, table_group_name)
+        - Applies the parameters in a table to a idSMU board
+      * - :py:obj:`apply_parameter_settings_at_column_values <aspectdeviceengine.enginecore.IdSmuSettingsService.apply_parameter_settings_at_column_values>`\ (setting_name, board_address, column_name, column_values, filtered, table_group_name)
+        - Applies the parameters in a table to a idSMU board
+      * - :py:obj:`bake_filter_into_table <aspectdeviceengine.enginecore.IdSmuSettingsService.bake_filter_into_table>`\ (setting_name)
+        - Replaces the table/setting with its filtered version
+      * - :py:obj:`export_settings_to_csv <aspectdeviceengine.enginecore.IdSmuSettingsService.export_settings_to_csv>`\ (file_path, setting_names, append_to_file)
+        - Exports setting(s) to csv
+      * - :py:obj:`export_settings_to_xlsx <aspectdeviceengine.enginecore.IdSmuSettingsService.export_settings_to_xlsx>`\ (file_path, setting_names)
+        - Exports parameter setting table(s) to excel (xlsx format)
+      * - :py:obj:`filter_columns <aspectdeviceengine.enginecore.IdSmuSettingsService.filter_columns>`\ (setting_name, column_names)
+        - Filters columns and returns a new IdqTable object containing this columns only
+      * - :py:obj:`filter_rows <aspectdeviceengine.enginecore.IdSmuSettingsService.filter_rows>`\ (setting_name, column_name, filter_value, exact_match)
+        - Filters rows by the given filter_values and returns a new IdqTable object containing this rows only
+      * - :py:obj:`get_merged_column_names <aspectdeviceengine.enginecore.IdSmuSettingsService.get_merged_column_names>`\ (setting_name)
+        - Returns the unique headers of all groups as list of strings
+      * - :py:obj:`get_parameter_setting <aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_setting>`\ (setting_name)
+        - Returns a IdqTable object.
+      * - :py:obj:`get_parameter_settings_for_board <aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_settings_for_board>`\ (board_address, group_by)
+        - Returns the parameters settings for the give board address
+      * - :py:obj:`get_parameter_settings_names <aspectdeviceengine.enginecore.IdSmuSettingsService.get_parameter_settings_names>`\ ()
+        - Returns a list containing the names of all loaded settings
+      * - :py:obj:`group_setting <aspectdeviceengine.enginecore.IdSmuSettingsService.group_setting>`\ (setting_name, group_by)
+        - Groups the given setting in groups of the unique values of the given column
+      * - :py:obj:`import_settings_from_csv <aspectdeviceengine.enginecore.IdSmuSettingsService.import_settings_from_csv>`\ (file_path)
+        - Imports settings from CSV
+      * - :py:obj:`import_settings_from_xlsx <aspectdeviceengine.enginecore.IdSmuSettingsService.import_settings_from_xlsx>`\ (file_path)
+        - Enables or disables channel(s)
+      * - :py:obj:`print_settings <aspectdeviceengine.enginecore.IdSmuSettingsService.print_settings>`\ (setting_name, filtered, column_information, max_columns)
+        - Prints the setting / board to the console
+      * - :py:obj:`refresh_table <aspectdeviceengine.enginecore.IdSmuSettingsService.refresh_table>`\ (table_name)
+        - Refreshes a table. If the table represents a board state this table is updated.
+      * - :py:obj:`refresh_table_row <aspectdeviceengine.enginecore.IdSmuSettingsService.refresh_table_row>`\ (table_name, column_name, column_value)
+        - Refreshes a table row. The row is found by a given value in a given column(name)
+      * - :py:obj:`remove_parameter_setting <aspectdeviceengine.enginecore.IdSmuSettingsService.remove_parameter_setting>`\ (setting_name)
+        - Removes a setting from the service setting storage
+      * - :py:obj:`search_and_replace <aspectdeviceengine.enginecore.IdSmuSettingsService.search_and_replace>`\ (setting_name, search_term, replace_term)
+        - Replaces all occurences of a string in the parameter setting table
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: apply_parameter_setting(parameter_setting: IdqTable, board_address: str, filtered: bool, table_group_name: str | None) -> int
+                  apply_parameter_setting(setting_name: str, board_address: str, filtered: bool, table_group_name: str | None) -> int
+
+      Applies the parameters in a table to a idSMU board
+
+      :param setting_name: The name of a loaded setting (IdqTable)
+      :type setting_name: str
+      :param board_address: The address of the board
+      :type board_address: str
+      :param filtered: If this flag is set, the parameters are taken from the filtered version of the table
+      :type filtered: bool
+      :param table_group_name: Optional table group name
+      :type table_group_name: str
+
+      :returns: The number of resources the settings were applied to
+      :rtype: int
+
+
+   .. py:method:: apply_parameter_settings_at_column_values(setting_name: str, board_address: str, column_name: str, column_values: list[str], filtered: bool, table_group_name: str | None) -> int
+
+      Applies the parameters in a table to a idSMU board
+
+      :param setting_name: The name of a loaded setting (IdqTable)
+      :type setting_name: str
+      :param board_address: The address of the board
+      :type board_address: str
+      :param column_name: The name of the column to search for value(s)
+      :type column_name: str
+      :param column_values: One or more values to search for in the selected column
+      :type column_values: List[str]
+      :param filtered: If this flag is set, the parameters are taken from the filtered version of the table
+      :type filtered: bool
+      :param table_group_name: Optional table group name
+      :type table_group_name: str
+
+      :returns: The number of resources the settings were applied to
+      :rtype: int
+
+
+   .. py:method:: bake_filter_into_table(setting_name: str) -> None
+
+      Replaces the table/setting with its filtered version
+
+      :param setting_name: The name of the setting
+      :type setting_name: str
+
+
+   .. py:method:: export_settings_to_csv(file_path: str, setting_names: list[str], append_to_file: bool) -> str | None
+
+      Exports setting(s) to csv
+
+      :param file_path: Path to the csv file
+      :type file_path: str
+      :param setting_names: List of names of the settings to export
+      :type setting_names: List[str]
+      :param append_to_file: If true, appends the exported settings to the existing file
+      :type append_to_file: bool
+
+      :returns: Returns an error message if an error occured, else none
+      :rtype: str
+
+
+   .. py:method:: export_settings_to_xlsx(file_path: str, setting_names: list[str]) -> str | None
+
+      Exports parameter setting table(s) to excel (xlsx format)
+
+      :param file_path: Path to the xlsx file
+      :type file_path: str
+      :param setting_names: List of names of the parameter table settings to export
+      :type setting_names: List[str]
+
+      :returns: Returns an error message if an error occured, else none
+      :rtype: str
+
+
+   .. py:method:: filter_columns(setting_name: str, column_names: list[str]) -> IdqTable
+
+      Filters columns and returns a new IdqTable object containing this columns only
+
+      :param setting_name: The name of the setting to apply the filter to
+      :type setting_name: str
+      :param column_names: The names of the columns to filter out
+      :type column_names: List[str]
+
+      :returns: Returns a new IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: filter_rows(setting_name: str, column_name: str, filter_value: str, exact_match: bool) -> IdqTable
+
+      Filters rows by the given filter_values and returns a new IdqTable object containing this rows only
+
+      :param setting_name: The name of the setting to apply the filter to
+      :type setting_name: str
+      :param column: The name of the column to apply the filter to
+      :type column: str
+      :param filter_value: Each row in the given column is checked against the filter_value and selected if the string in the filter_value is conatained in the cell
+      :type filter_value: str
+      :param exact_match: If enabled a whole word is searched
+      :type exact_match: bool
+
+      :returns: Returns a new IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: get_merged_column_names(setting_name: str) -> list[str]
+
+      Returns the unique headers of all groups as list of strings
+
+      :param setting_name: The name of the setting to apply the filter to
+      :type setting_name: str
+
+      :returns: Returns the headers as  list of strings
+      :rtype: List[str]
+
+
+   .. py:method:: get_parameter_setting(setting_name: str) -> IdqTable
+
+      Returns a IdqTable object.
+
+      :param setting_name: Name of the parameter setting
+      :type setting_name: str
+
+      :returns: A IdqTable object with the given name
+      :rtype: IdqTable
+
+
+   .. py:method:: get_parameter_settings_for_board(board_address: str, group_by: str = 'Type') -> IdqTable
+
+      Returns the parameters settings for the give board address
+
+      :param board_address: A board address in the format Mx, where x is a number between 1 and 32
+      :type board_address: str
+      :param group_by: The column used to group the parameter tables
+      :type group_by: bool
+
+      :returns: A IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: get_parameter_settings_names() -> list[str]
+
+      Returns a list containing the names of all loaded settings
+
+      :returns: A list containing the names of all loaded settings
+      :rtype: List[str]
+
+
+   .. py:method:: group_setting(setting_name: str, group_by: str) -> IdqTable
+
+      Groups the given setting in groups of the unique values of the given column
+
+      :param setting_name: The name of the setting to apply the filter to
+      :type setting_name: str
+      :param group_by: The name of the column to use for the grouping
+      :type group_by: List[str]
+
+      :returns: Returns a new IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: import_settings_from_csv(file_path: str) -> str | None
+
+      Imports settings from CSV
+
+      :param file_path: Path to the csv file
+      :type file_path: str
+
+      :returns: Returns an error message if an error occured, else none
+      :rtype: str
+
+
+   .. py:method:: import_settings_from_xlsx(file_path: str) -> str | None
+                  import_settings_from_xlsx(file_path: str) -> str | None
+
+      Enables or disables channel(s)
+
+      :param file_path: Path to the csv settings file
+      :type file_path: str
+      :param delimiter: Delimiter (only a single character is allowed)
+      :type delimiter: str
+
+      :returns: Returns an error message if an error occured, else none
+      :rtype: str
+
+
+   .. py:method:: print_settings(setting_name: str, filtered: bool = False, column_information: bool = False, max_columns: int = -1) -> str
+
+      Prints the setting / board to the console
+
+      :param setting_name: Name of the setting
+      :type setting_name: str
+      :param filtered: If true, prints the setting with applied filteres
+      :type filtered: bool
+      :param column_information: Printss additional column information
+      :type column_information: bool
+
+
+   .. py:method:: refresh_table(table_name: str) -> bool
+
+      Refreshes a table. If the table represents a board state this table is updated.
+
+      :param table_name: Name of the table
+      :type table_name: str
+
+      :returns: Returns false if the table does not exist, else true
+      :rtype: bool
+
+
+   .. py:method:: refresh_table_row(table_name: str, column_name: str, column_value: str) -> tuple[str, int]
+
+      Refreshes a table row. The row is found by a given value in a given column(name)
+
+      :param table_name: Name of the table
+      :type table_name: str
+      :param column_name: Name of the column
+      :type column_name: str
+      :param column_value: Value in the column to search for
+      :type column_value: str
+
+      :returns: Returns tuple of the group name and the row within the grup where the setting was found
+      :rtype: Tuple
+
+
+   .. py:method:: remove_parameter_setting(setting_name: str) -> bool
+
+      Removes a setting from the service setting storage
+
+      :param setting_name: The name of the setting
+      :type setting_name: str
+
+
+   .. py:method:: search_and_replace(setting_name: str, search_term: str, replace_term: str) -> IdqTable
+
+      Replaces all occurences of a string in the parameter setting table
+
+      :param setting_name: The name of the paramter setting table
+      :type setting_name: str
+      :param search_term: The search query value
+      :type search_term: str
+      :param replace_term: The value for the replacement
+      :type replace_term: str
+
+      :returns: Returns the same paramter setting table with the replacements
+      :rtype: IdqTable
+
+
+
+
+.. py:class:: IdqTable
+
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+      Returns or sets the table name
+
+      :returns: Returns the table name
+      :rtype: str
+
+   ..    .. .. py:property:: table_groups
+      :type: list[IdqTableGroup]
+
+      Returns a list of table groups
+
+      :returns: A list of table groups
+      :rtype: List[IdqTableGroup]
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <aspectdeviceengine.enginecore.IdqTable.name>`
+        - Returns or sets the table name
+      * - :py:obj:`table_groups <aspectdeviceengine.enginecore.IdqTable.table_groups>`
+        - Returns a list of table groups
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`filter_columns <aspectdeviceengine.enginecore.IdqTable.filter_columns>`\ (column_names)
+        - Filters columns and returns a new IdqTable object containing this columns only
+      * - :py:obj:`filter_rows <aspectdeviceengine.enginecore.IdqTable.filter_rows>`\ (column_name, filter_value, exact_match)
+        - Filters rows by the given filter_values and returns a new IdqTable object containing this rows only
+      * - :py:obj:`get_column_filter <aspectdeviceengine.enginecore.IdqTable.get_column_filter>`\ ()
+        - Returns the list of column names that are applied as column filter
+      * - :py:obj:`get_file_path <aspectdeviceengine.enginecore.IdqTable.get_file_path>`\ ()
+        - Returns the path of the file the table was imported from, if available
+      * - :py:obj:`get_filtered_table <aspectdeviceengine.enginecore.IdqTable.get_filtered_table>`\ ()
+        - Returns the filtered table
+      * - :py:obj:`get_grouped_by <aspectdeviceengine.enginecore.IdqTable.get_grouped_by>`\ ()
+        - Returns the name of the column the table is grouped by
+      * - :py:obj:`get_merged_column_names <aspectdeviceengine.enginecore.IdqTable.get_merged_column_names>`\ ()
+        - Returns the unique headers of all groups as list of strings
+      * - :py:obj:`get_name <aspectdeviceengine.enginecore.IdqTable.get_name>`\ ()
+        - Returns the table name
+      * - :py:obj:`get_row_filters <aspectdeviceengine.enginecore.IdqTable.get_row_filters>`\ ()
+        - Returns the list of row filters applied to that table
+      * - :py:obj:`get_table_group <aspectdeviceengine.enginecore.IdqTable.get_table_group>`\ (group_name)
+        - Return the table group with the given name
+      * - :py:obj:`get_table_group_names <aspectdeviceengine.enginecore.IdqTable.get_table_group_names>`\ ()
+        - Returns a list of table group names
+      * - :py:obj:`get_table_groups_as_list <aspectdeviceengine.enginecore.IdqTable.get_table_groups_as_list>`\ ()
+        - Returns a list of table groups
+      * - :py:obj:`is_filter_active <aspectdeviceengine.enginecore.IdqTable.is_filter_active>`\ ()
+        - Returns true if a filter is applied to the table
+      * - :py:obj:`set_name <aspectdeviceengine.enginecore.IdqTable.set_name>`\ (name)
+        - Sets the name of the table
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+      Returns or sets the table name
+
+      :returns: Returns the table name
+      :rtype: str
+
+   .. py:property:: table_groups
+      :type: list[IdqTableGroup]
+
+      Returns a list of table groups
+
+      :returns: A list of table groups
+      :rtype: List[IdqTableGroup]
+
+
+   .. py:method:: filter_columns(column_names: list[str]) -> IdqTable
+
+      Filters columns and returns a new IdqTable object containing this columns only
+
+      :param column_names: The names of the columns to filter out
+      :type column_names: List[str]
+
+      :returns: Returns a new IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: filter_rows(column_name: str, filter_value: str, exact_match: bool) -> IdqTable
+
+      Filters rows by the given filter_values and returns a new IdqTable object containing this rows only
+
+      :param column_name: The name of the column to apply the filter to
+      :type column_name: str
+      :param filter_value: Each row in the given column   is checked against the filter_value and selected if the string in the filter_value is conatained in the cell
+      :type filter_value: str
+      :param exact_match: If enabled a whole word is searched
+      :type exact_match: bool
+
+      :returns: Returns a new IdqTable object
+      :rtype: IdqTable
+
+
+   .. py:method:: get_column_filter() -> list[str]
+
+      Returns the list of column names that are applied as column filter
+
+      :returns: Returns a list of strings of column names
+      :rtype: List[str]
+
+
+   .. py:method:: get_file_path() -> str | None
+
+      Returns the path of the file the table was imported from, if available
+
+      :returns: Returns a path or none
+      :rtype: str
+
+
+   .. py:method:: get_filtered_table() -> IdqTable
+
+      Returns the filtered table
+
+      :rtype: IdqTable
+
+
+   .. py:method:: get_grouped_by() -> str
+
+      Returns the name of the column the table is grouped by
+
+      :returns: Returns the name of the column the table is grouped by
+      :rtype: str
+
+
+   .. py:method:: get_merged_column_names() -> list[str]
+
+      Returns the unique headers of all groups as list of strings
+
+      :returns: Returns the headers as  list of strings
+      :rtype: List[str]
+
+
+   .. py:method:: get_name() -> str
+
+      Returns the table name
+
+      :returns: Returns the table name
+      :rtype: str
+
+
+   .. py:method:: get_row_filters() -> list[RowFilter]
+
+      Returns the list of row filters applied to that table
+
+      :returns: Returns a list of RowFilter objects
+      :rtype: List[RowFilter]
+
+
+   .. py:method:: get_table_group(group_name: str) -> IdqTableGroup
+
+      Return the table group with the given name
+
+      :param group_name: The name of the table group
+      :type group_name: str
+
+      :returns: Returns a the IdqTableGroup object
+      :rtype: IdqTable
+
+
+   .. py:method:: get_table_group_names() -> list[str]
+
+      Returns a list of table group names
+
+      :returns: A list of table group names
+      :rtype: List[str]
+
+
+   .. py:method:: get_table_groups_as_list() -> list[IdqTableGroup]
+
+      Returns a list of table groups
+
+      :returns: A list of table groups
+      :rtype: List[IdqTableGroup]
+
+
+   .. py:method:: is_filter_active() -> bool
+
+      Returns true if a filter is applied to the table
+
+      :rtype: bool
+
+
+   .. py:method:: set_name(name: str) -> None
+
+      Sets the name of the table
+
+      :param name: The new name of the table
+      :type name: str
+
+
+
+
+.. py:class:: IdqTableCell
+
+
+   ..    ..    ..    
+   ..    .. .. py:attribute:: cell_value
+      :type: str
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`cell_value <aspectdeviceengine.enginecore.IdqTableCell.cell_value>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:attribute:: cell_value
+      :type: str
+
+      
+
+
+
+
+.. py:class:: IdqTableGroup
+
+
+   ..    ..    ..    .. .. py:property:: at
+      :type: At
+
+
+   ..    .. .. py:property:: columns
+      :type: list[str]
+
+
+   ..    .. .. py:property:: iloc
+      :type: Iloc
+
+
+   ..    .. .. py:property:: name
+      :type: str
+
+      Returns or sets the group name
+
+      :returns: Returns the group name
+      :rtype: str
+
+   ..    .. .. py:property:: shape
+      :type: list[int]
+
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`at <aspectdeviceengine.enginecore.IdqTableGroup.at>`
+        - \-
+      * - :py:obj:`columns <aspectdeviceengine.enginecore.IdqTableGroup.columns>`
+        - \-
+      * - :py:obj:`iloc <aspectdeviceengine.enginecore.IdqTableGroup.iloc>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.IdqTableGroup.name>`
+        - Returns or sets the group name
+      * - :py:obj:`shape <aspectdeviceengine.enginecore.IdqTableGroup.shape>`
+        - \-
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_cell_value <aspectdeviceengine.enginecore.IdqTableGroup.get_cell_value>`\ (row_index, column_index)
+        - Gets a string parameter in the table group
+      * - :py:obj:`get_column_names <aspectdeviceengine.enginecore.IdqTableGroup.get_column_names>`\ ()
+        - Returns the headers as list of strings
+      * - :py:obj:`get_name <aspectdeviceengine.enginecore.IdqTableGroup.get_name>`\ ()
+        - Returns the group name
+      * - :py:obj:`get_range_descriptors <aspectdeviceengine.enginecore.IdqTableGroup.get_range_descriptors>`\ ()
+        - Returns the the description of the allowed parameter ranges for this group, if available
+      * - :py:obj:`get_row <aspectdeviceengine.enginecore.IdqTableGroup.get_row>`\ (row_index)
+        - Returns the row at the given index.
+      * - :py:obj:`get_row_index <aspectdeviceengine.enginecore.IdqTableGroup.get_row_index>`\ (column_name, column_value)
+        - Returns the row index of a the first value in the given column that matches the given value
+      * - :py:obj:`get_rows <aspectdeviceengine.enginecore.IdqTableGroup.get_rows>`\ ()
+        - Returns the rows as a list of list of strings (StringTable)
+      * - :py:obj:`set_cell_value <aspectdeviceengine.enginecore.IdqTableGroup.set_cell_value>`\ (row_index, column_name, cell_value)
+        - Sets a string parameter in the table group
+      * - :py:obj:`set_name <aspectdeviceengine.enginecore.IdqTableGroup.set_name>`\ (name)
+        - Sets the name of the table group
+      * - :py:obj:`set_parameter_value <aspectdeviceengine.enginecore.IdqTableGroup.set_parameter_value>`\ (row_index, parameter_name, parameter_value)
+        - Sets a string parameter in the table group
+
+
+   .. rubric:: Members
+
+   .. py:property:: at
+      :type: At
+
+
+   .. py:property:: columns
+      :type: list[str]
+
+
+   .. py:property:: iloc
+      :type: Iloc
+
+
+   .. py:property:: name
+      :type: str
+
+      Returns or sets the group name
+
+      :returns: Returns the group name
+      :rtype: str
+
+   .. py:property:: shape
+      :type: list[int]
+
+
+
+   .. py:method:: get_cell_value(row_index: int, column_index: int) -> str | None
+                  get_cell_value(row_index: int, column_name: str) -> str | None
+
+      Gets a string parameter in the table group
+
+      :param row_index: Index of the row in the table
+      :type row_index: int
+      :param column_name: Name of the column in the table
+      :type column_name: str
+
+      :rtype: str
+
+
+   .. py:method:: get_column_names() -> list[str]
+
+      Returns the headers as list of strings
+
+      :returns: Returns the headers as  list of strings
+      :rtype: StringList
+
+
+   .. py:method:: get_name() -> str
+
+      Returns the group name
+
+      :returns: Returns the group name
+      :rtype: str
+
+
+   .. py:method:: get_range_descriptors() -> dict[str, list[str]]
+
+      Returns the the description of the allowed parameter ranges for this group, if available
+
+      :returns: The the description of the allowed parameter ranges
+      :rtype: MapOfStringVectors
+
+
+   .. py:method:: get_row(row_index: int) -> list[IdqTableCell]
+
+      Returns the row at the given index.
+
+      :returns: Returns the row at the given index.
+      :rtype: IdqTableRow
+
+
+   .. py:method:: get_row_index(column_name: str, column_value: str) -> int
+
+      Returns the row index of a the first value in the given column that matches the given value
+
+      :param column_name: The name of the column
+      :type column_name: str
+      :param column_value: The value in the column to search for
+      :type column_value: str
+
+      :rtype: int
+
+
+   .. py:method:: get_rows() -> list[list[IdqTableCell]]
+
+      Returns the rows as a list of list of strings (StringTable)
+
+      :returns: Returns the rows as a list of list of IdqTableCell
+      :rtype: IdqTableRows
+
+
+   .. py:method:: set_cell_value(row_index: int, column_name: str, cell_value: str | None) -> None
+                  set_cell_value(row_index: int, column_index: int, cell_value: str | None) -> None
+
+      Sets a string parameter in the table group
+
+      :param row_index: Index of the row in the table
+      :type row_index: int
+      :param column_index: Index of the column in the table
+      :type column_index: str
+      :param cell_value: The value to set
+      :type cell_value: str
+
+
+   .. py:method:: set_name(name: str) -> None
+
+      Sets the name of the table group
+
+      :param name: The new name of the table group
+      :type name: str
+
+
+   .. py:method:: set_parameter_value(row_index: int, parameter_name: str, parameter_value: str) -> None
+
+      Sets a string parameter in the table group
+
+      :param row_index: Index of the row in the settings
+      :type row_index: int
+      :param parameter_name: Name of the parameter
+      :type parameter_name: str
+      :param parameter_value: String value of the parameter
+      :type parameter_value: str
+
+
+
+
+.. py:class:: IdqTableRow
+              IdqTableRow(arg0: list[IdqTableCell])
+              IdqTableRow(arg0: Iterable)
+
+
+   Row of IdqTableCells.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.IdqTableRow.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.IdqTableRow.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.IdqTableRow.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.IdqTableRow.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.IdqTableRow.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.IdqTableRow.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.IdqTableRow.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: IdqTableCell) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: IdqTableCell) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: list[IdqTableCell]) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: IdqTableCell) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> IdqTableCell
+                  pop(i: int) -> IdqTableCell
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: IdqTableCell) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: IdqTableRows
+              IdqTableRows(arg0: list[list[IdqTableCell]])
+              IdqTableRows(arg0: Iterable)
+
+
+   Table of IdqTableCells.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.IdqTableRows.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.IdqTableRows.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.IdqTableRows.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.IdqTableRows.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.IdqTableRows.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.IdqTableRows.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.IdqTableRows.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: list[IdqTableCell]) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: list[IdqTableCell]) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: list[list[IdqTableCell]]) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: list[IdqTableCell]) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> list[IdqTableCell]
+                  pop(i: int) -> list[IdqTableCell]
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: list[IdqTableCell]) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: Iloc
+
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: ListSweep(arg0: str, arg1: IdSmuBoardModel)
+
+
+   Class to perform a List Sweep on a idSmu module
+
+
+   ..    ..    ..    .. .. py:property:: size
+      :type: int
+
+      Returns the number of words stored in memory when the sweep is executed (the memory used by the sweep shout not exceed the memory limit of 1k words)
+
+      :rtype: bool
+
+   ..    .. .. py:property:: timecode
+      :type: numpy.ndarray[numpy.float64]
+
+      Returns the timecode of the sweep in microseconds
+
+      :returns: An array of timestamps, one entry for each measurement
+      :rtype: ndarray
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`size <aspectdeviceengine.enginecore.ListSweep.size>`
+        - Returns the number of words stored in memory when the sweep is executed (the memory used by the sweep shout not exceed the memory limit of 1k words)
+      * - :py:obj:`timecode <aspectdeviceengine.enginecore.ListSweep.timecode>`
+        - Returns the timecode of the sweep in microseconds
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`add_channel_configuration <aspectdeviceengine.enginecore.ListSweep.add_channel_configuration>`\ (channel_name, list_sweep_channel_configuration)
+        - Adds a list sweep configuration for the given channel
+      * - :py:obj:`can_run <aspectdeviceengine.enginecore.ListSweep.can_run>`\ ()
+        - Returns true if the sweep can be executed (the memory used by the sweep does not exceed the memory limit of 4k)
+      * - :py:obj:`get_measurement_result <aspectdeviceengine.enginecore.ListSweep.get_measurement_result>`\ (channel_name)
+        - Returns the measurement results of the sweep
+      * - :py:obj:`get_timecode <aspectdeviceengine.enginecore.ListSweep.get_timecode>`\ ()
+        - Returns the timecode of the sweep in microseconds
+      * - :py:obj:`run <aspectdeviceengine.enginecore.ListSweep.run>`\ ()
+        - Runs the sweep
+      * - :py:obj:`set_measurement_delay <aspectdeviceengine.enginecore.ListSweep.set_measurement_delay>`\ (measurement_delay)
+        - Sets the set to measurement delay in microseconds
+      * - :py:obj:`set_sample_count <aspectdeviceengine.enginecore.ListSweep.set_sample_count>`\ (sample_count)
+        - Sets the sample count for each measurement. The sampled values are averaged. Default is 1.
+
+
+   .. rubric:: Members
+
+   .. py:property:: size
+      :type: int
+
+      Returns the number of words stored in memory when the sweep is executed (the memory used by the sweep shout not exceed the memory limit of 1k words)
+
+      :rtype: bool
+
+   .. py:property:: timecode
+      :type: numpy.ndarray[numpy.float64]
+
+      Returns the timecode of the sweep in microseconds
+
+      :returns: An array of timestamps, one entry for each measurement
+      :rtype: ndarray
+
+
+   .. py:method:: add_channel_configuration(channel_name: str, list_sweep_channel_configuration: ListSweepChannelConfiguration) -> None
+
+      Adds a list sweep configuration for the given channel
+
+      :param channel_name: Name or Id of the channel
+      :type channel_name: str
+      :param list_sweep_channel_configuration: The channel configuration
+      :type list_sweep_channel_configuration: ListSweepChannelConfiguration
+
+
+   .. py:method:: can_run() -> bool
+
+      Returns true if the sweep can be executed (the memory used by the sweep does not exceed the memory limit of 4k)
+
+      :rtype: bool
+
+
+   .. py:method:: get_measurement_result(channel_name: str) -> numpy.ndarray[numpy.float64]
+
+      Returns the measurement results of the sweep
+
+      :returns: An array of measurement values
+      :rtype: ndarray
+
+
+   .. py:method:: get_timecode() -> numpy.ndarray[numpy.float64]
+
+      Returns the timecode of the sweep in microseconds
+
+      :returns: An array of timestamps, one entry for each measurement
+      :rtype: ndarray
+
+
+   .. py:method:: run() -> str | None
+
+      Runs the sweep
+
+      :returns: In case of an error, the error is reported as string
+      :rtype: str or None
+
+
+   .. py:method:: set_measurement_delay(measurement_delay: int) -> None
+
+      Sets the set to measurement delay in microseconds
+
+      :param measurement_delay: Time in microseconds
+      :type measurement_delay: int
+
+
+   .. py:method:: set_sample_count(sample_count: int) -> None
+
+      Sets the sample count for each measurement. The sampled values are averaged. Default is 1.
+
+      :param sample_count: Number of samples
+      :type sample_count: int
+
+
+
+
+.. py:class:: ListSweepChannelConfiguration
+
+
+   Instances of this class are needed to configure a List Sweep
+
+
+   ..    ..    ..    .. .. py:property:: force_values
+      :type: numpy.ndarray[numpy.float64]
+
+      Sets the custom sweep force values
+
+      :param force_values: The force values
+      :type force_values: ndarray
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`force_values <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.force_values>`
+        - Sets the custom sweep force values
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`change_current_range_at <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.change_current_range_at>`\ (step_index, current_range)
+        - Changes the current range at the given index within the sweep
+      * - :py:obj:`clear_current_ranges <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.clear_current_ranges>`\ ()
+        - Removes all current range changes from the configuration
+      * - :py:obj:`get_force_values <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.get_force_values>`\ ()
+        - \-
+      * - :py:obj:`set_constant_force_mode <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_constant_force_mode>`\ (number_of_steps)
+        - Sets the configuration to measurement only mode - no sweep is performerd
+      * - :py:obj:`set_disable_measurement <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_disable_measurement>`\ ()
+        - Disables the measurement for this configuration
+      * - :py:obj:`set_force_values <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_force_values>`\ (force_values)
+        - Sets the custom sweep force values
+      * - :py:obj:`set_linear_sweep <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_linear_sweep>`\ (start, end, number_of_steps)
+        - Configures a linear sweep
+      * - :py:obj:`set_number_of_steps <aspectdeviceengine.enginecore.ListSweepChannelConfiguration.set_number_of_steps>`\ (number_of_steps)
+        - Sets the number of measurement steps
+
+
+   .. rubric:: Members
+
+   .. py:property:: force_values
+      :type: numpy.ndarray[numpy.float64]
+
+      Sets the custom sweep force values
+
+      :param force_values: The force values
+      :type force_values: ndarray
+
+
+   .. py:method:: change_current_range_at(step_index: int, current_range: CurrentRange) -> None
+
+      Changes the current range at the given index within the sweep
+
+      :param step_index: The step index in the sweep at which the current range changes
+      :type step_index: int
+      :param current_range: The new current range
+      :type current_range: CurrentRange
+
+
+   .. py:method:: clear_current_ranges() -> None
+
+      Removes all current range changes from the configuration
+
+
+   .. py:method:: get_force_values() -> numpy.ndarray[numpy.float64]
+
+
+   .. py:method:: set_constant_force_mode(number_of_steps: int) -> None
+
+      Sets the configuration to measurement only mode - no sweep is performerd
+
+      :param number_of_steps: Number of  measurement steps
+      :type number_of_steps: int
+
+
+   .. py:method:: set_disable_measurement() -> None
+
+      Disables the measurement for this configuration
+
+
+   .. py:method:: set_force_values(force_values: numpy.ndarray) -> None
+
+      Sets the custom sweep force values
+
+      :param force_values: The force values
+      :type force_values: ndarray
+
+
+   .. py:method:: set_linear_sweep(start: float, end: float, number_of_steps: int) -> None
+
+      Configures a linear sweep
+
+      :param start: Start value
+      :type start: float
+      :param stop: Stop value
+      :type stop: float
+      :param number_of_steps: Number of steps
+      :type number_of_steps: int
+
+
+   .. py:method:: set_number_of_steps(number_of_steps: int) -> None
+
+      Sets the number of measurement steps
+
+      :param number_of_steps: Number of measurement steps. Only valid for measurement only mode (constant force mode)
+      :type number_of_steps: int
+
+
+
+
+.. py:class:: MapOfStringVectors
+
+
+   Map of string vectors
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`items <aspectdeviceengine.enginecore.MapOfStringVectors.items>`\ ()
+        - \-
+      * - :py:obj:`keys <aspectdeviceengine.enginecore.MapOfStringVectors.keys>`\ ()
+        - \-
+      * - :py:obj:`values <aspectdeviceengine.enginecore.MapOfStringVectors.values>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: items() -> ItemsView
+
+
+   .. py:method:: keys() -> KeysView
+
+
+   .. py:method:: values() -> ValuesView
+
+
+
+
+.. py:class:: MeasurementMode(value: int)
+
+
+   Members:
+
+     highZ
+
+     isense
+
+     vsense
+
+     tsense
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+
+   ..    .. .. py:property:: value
+      :type: int
+
+
+   ..    
+   ..    .. .. py:attribute:: highZ
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   ..    .. .. py:attribute:: isense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   ..    .. .. py:attribute:: tsense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   ..    .. .. py:attribute:: vsense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highZ <aspectdeviceengine.enginecore.MeasurementMode.highZ>`
+        - \-
+      * - :py:obj:`isense <aspectdeviceengine.enginecore.MeasurementMode.isense>`
+        - \-
+      * - :py:obj:`tsense <aspectdeviceengine.enginecore.MeasurementMode.tsense>`
+        - \-
+      * - :py:obj:`vsense <aspectdeviceengine.enginecore.MeasurementMode.vsense>`
+        - \-
+      * - :py:obj:`name <aspectdeviceengine.enginecore.MeasurementMode.name>`
+        - \-
+      * - :py:obj:`value <aspectdeviceengine.enginecore.MeasurementMode.value>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+
+   .. py:property:: value
+      :type: int
+
+
+   .. py:attribute:: highZ
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   .. py:attribute:: isense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   .. py:attribute:: tsense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+   .. py:attribute:: vsense
+      :type: ClassVar[MeasurementMode]
+
+      
+
+
+
+
+.. py:class:: ParamterChangedObserverProxy
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`register_observer <aspectdeviceengine.enginecore.ParamterChangedObserverProxy.register_observer>`\ (board_model, resource_id, python_handler)
+        - Initialize all installed idSMU devices on the board
+      * - :py:obj:`unregister_observer <aspectdeviceengine.enginecore.ParamterChangedObserverProxy.unregister_observer>`\ ()
+        - Leave context manager.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: register_observer(board_model: IdSmuBoardModel, resource_id: str, python_handler: Callable[[], None]) -> None
+
+      Initialize all installed idSMU devices on the board
+
+      :param board_model:
+      :type board_model: IdSmuBoardModel
+      :param resource_id:
+      :type resource_id: str
+      :param python_handler:
+      :type python_handler: Functional
+
+
+   .. py:method:: unregister_observer() -> None
+
+      Leave context manager.
+
+
+
+
+.. py:class:: ReadAdcCommandIdSmuResult
+
+
+   Bases: :py:obj:`Result`
+
+   ..    ..    ..    .. .. py:property:: channel_ids
+      :type: StringList
+
+      Returns the channel ids associated with the results
+
+      :returns: Channel Ids
+      :rtype: List[str]
+
+   ..    .. .. py:property:: channel_names
+      :type: StringList
+
+      Returns the channel names associated with the results
+
+      :returns: Channel names
+      :rtype: List[str]
+
+   ..    .. .. py:property:: device_id
+      :type: str
+
+      Returns the device id associated with the results
+
+      :returns: Device Id
+      :rtype: str
+
+   ..    .. .. py:property:: execution_time
+      :type: int
+
+      Gets the execution time in microseconds for the measurement command
+
+      :returns: Execution time in microseconts
+      :rtype: int
+
+   ..    .. .. py:property:: timecode
+      :type: numpy.ndarray[numpy.uint32]
+
+      Gets the timecodes for the measurement command
+
+      :returns: Array of time code values
+      :rtype: ndarray[int]
+
+   ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`channel_ids <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.channel_ids>`
+        - Returns the channel ids associated with the results
+      * - :py:obj:`channel_names <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.channel_names>`
+        - Returns the channel names associated with the results
+      * - :py:obj:`device_id <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.device_id>`
+        - Returns the device id associated with the results
+      * - :py:obj:`execution_time <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.execution_time>`
+        - Gets the execution time in microseconds for the measurement command
+      * - :py:obj:`timecode <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.timecode>`
+        - Gets the timecodes for the measurement command
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_execution_time <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_execution_time>`\ ()
+        - Gets the execution time in microseconds for the measurement command
+      * - :py:obj:`get_float_values <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_float_values>`\ (channel_name)
+        - \-
+      * - :py:obj:`get_values <aspectdeviceengine.enginecore.ReadAdcCommandIdSmuResult.get_values>`\ (channel_number)
+        - Gets the measured values for a channel name
+
+
+   .. rubric:: Members
+
+   .. py:property:: channel_ids
+      :type: StringList
+
+      Returns the channel ids associated with the results
+
+      :returns: Channel Ids
+      :rtype: List[str]
+
+   .. py:property:: channel_names
+      :type: StringList
+
+      Returns the channel names associated with the results
+
+      :returns: Channel names
+      :rtype: List[str]
+
+   .. py:property:: device_id
+      :type: str
+
+      Returns the device id associated with the results
+
+      :returns: Device Id
+      :rtype: str
+
+   .. py:property:: execution_time
+      :type: int
+
+      Gets the execution time in microseconds for the measurement command
+
+      :returns: Execution time in microseconts
+      :rtype: int
+
+   .. py:property:: timecode
+      :type: numpy.ndarray[numpy.uint32]
+
+      Gets the timecodes for the measurement command
+
+      :returns: Array of time code values
+      :rtype: ndarray[int]
+
+
+   .. py:method:: get_execution_time() -> int
+
+      Gets the execution time in microseconds for the measurement command
+
+      :returns: Execution time in microsecontd
+      :rtype: int
+
+
+   .. py:method:: get_float_values(channel_name: str) -> numpy.ndarray[numpy.float64]
+
+
+   .. py:method:: get_values(channel_number: int) -> DoubleList
+                  get_values(channel_name: str) -> DoubleList
+
+      Gets the measured values for a channel name
+
+      :param channel_name: The channel name for which the measured values should be retreived
+      :type channel_name: str
+
+      :returns: A DoubleList object
+      :rtype: DoubleList
+
+
+
+
+.. py:class:: ReadWriteFpgaIdSmuResult
+
+
+   Bases: :py:obj:`Result`
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: Result
+
+
+   Bases: :py:obj:`CommandReply`
+
+   The aspect device engine is a command driven framework.
+   This is the base class of all command replies (and results).
+   The reply can be an error or a result.
+
+
+   ..    ..    ..    
+   .. 
+
+
+   .. rubric:: Members
+
+
+
+
+.. py:class:: RowFilter
+
+
+   ..    ..    ..    
+   ..    .. .. py:attribute:: column_name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: exact_match
+      :type: bool
+
+      
+
+   ..    .. .. py:attribute:: filter_expression
+      :type: str
+
+      
+
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Attributes and Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`column_name <aspectdeviceengine.enginecore.RowFilter.column_name>`
+        - \-
+      * - :py:obj:`exact_match <aspectdeviceengine.enginecore.RowFilter.exact_match>`
+        - \-
+      * - :py:obj:`filter_expression <aspectdeviceengine.enginecore.RowFilter.filter_expression>`
+        - \-
+
+
+   .. rubric:: Members
+
+   .. py:attribute:: column_name
+      :type: str
+
+      
+
+   .. py:attribute:: exact_match
+      :type: bool
+
+      
+
+   .. py:attribute:: filter_expression
+      :type: str
+
+      
+
+
+
+
+.. py:class:: SequencingCommandResult
+
+
+   Bases: :py:obj:`Result`
+
+   The result of a sequencing command.
+
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`get_device_id <aspectdeviceengine.enginecore.SequencingCommandResult.get_device_id>`\ ()
+        - \-
+      * - :py:obj:`get_results <aspectdeviceengine.enginecore.SequencingCommandResult.get_results>`\ ()
+        - \-
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: get_device_id() -> str
+
+
+   .. py:method:: get_results() -> list[CommandReply]
+
+
+
+
+.. py:class:: SmuCurrentRange(value: int)
+
+
+   Members:
+
+     _5uA
+
+     _20uA
+
+     _200uA
+
+     _2mA
+
+     _70mA
+
+   ..    ..    ..    .. .. py:property:: name
+      :type: str
+
+
+   ..    .. .. py:property:: value
+      :type: int
+
+
+   ..    
+   .. 
+
+
+   .. rubric:: Members
+
+   .. py:property:: name
+      :type: str
+
+
+   .. py:property:: value
+      :type: int
+
+
+
+
+
+.. py:class:: StringList
+              StringList(arg0: StringList)
+              StringList(arg0: Iterable)
+
+
+   List of strings.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.StringList.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.StringList.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.StringList.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.StringList.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.StringList.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.StringList.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.StringList.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: str) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: str) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: StringList) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: str) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> str
+                  pop(i: int) -> str
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: str) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+
+.. py:class:: StringTable
+              StringTable(arg0: StringTable)
+              StringTable(arg0: Iterable)
+
+
+   Table of strings.
+
+   ..    ..    ..    
+   .. 
+
+   .. rubric:: Overview
+
+
+   ..
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`append <aspectdeviceengine.enginecore.StringTable.append>`\ (x)
+        - Add an item to the end of the list
+      * - :py:obj:`clear <aspectdeviceengine.enginecore.StringTable.clear>`\ ()
+        - Clear the contents
+      * - :py:obj:`count <aspectdeviceengine.enginecore.StringTable.count>`\ (x)
+        - Return the number of times ``x`` appears in the list
+      * - :py:obj:`extend <aspectdeviceengine.enginecore.StringTable.extend>`\ (L)
+        - Extend the list by appending all the items in the given list
+      * - :py:obj:`insert <aspectdeviceengine.enginecore.StringTable.insert>`\ (i, x)
+        - Insert an item at a given position.
+      * - :py:obj:`pop <aspectdeviceengine.enginecore.StringTable.pop>`\ ()
+        - Remove and return the item at index ``i``
+      * - :py:obj:`remove <aspectdeviceengine.enginecore.StringTable.remove>`\ (x)
+        - Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+   .. rubric:: Members
+
+
+   .. py:method:: append(x: StringList) -> None
+
+      Add an item to the end of the list
+
+
+   .. py:method:: clear() -> None
+
+      Clear the contents
+
+
+   .. py:method:: count(x: StringList) -> int
+
+      Return the number of times ``x`` appears in the list
+
+
+   .. py:method:: extend(L: StringTable) -> None
+                  extend(L: Iterable) -> None
+
+      Extend the list by appending all the items in the given list
+
+
+   .. py:method:: insert(i: int, x: StringList) -> None
+
+      Insert an item at a given position.
+
+
+   .. py:method:: pop() -> StringList
+                  pop(i: int) -> StringList
+
+      Remove and return the item at index ``i``
+
+
+   .. py:method:: remove(x: StringList) -> None
+
+      Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+
+
+.. py:function:: check_future_is_ready(arg0: CommandReplyFuture) -> bool
+
+
+.. py:function:: generate_function_generator_data(min_value: float, max_value: float, step_size: float, function_generator_type: FunctionGeneratorType) -> list[float]
+
+   Returns the force values that are used by the function_generator method
+
+   :param min_value: Minimum in generated function
+   :type min_value: float
+   :param max_value: Maximum in generated function
+   :type max_value: float
+   :param step_size: Voltage step
+   :type step_size: float
+   :param function_generator_type: The type of the function generator
+   :type function_generator_type: FunctionGeneratorType
+
+
+.. py:function:: get_build_number() -> int
+
+   Returns the build number
+
+   :rtype: int
+
+
+.. py:function:: get_git_version() -> int
+
+   Returns the git version
+
+   :rtype: int
+
+

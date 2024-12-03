@@ -80,7 +80,7 @@ Below is a list of these methods:
    print(my_board.get_all_hardware_ids())
    my_board.set_channel_name("M1.S1.C1", "my_channel")
    print(my_board.get_channel_name("M1.S1.C1"))
-
+   print(my_board.channel_information)
    # output:
    '''
    +----------+------------+-------+----------+-------------+
