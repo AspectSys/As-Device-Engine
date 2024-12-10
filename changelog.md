@@ -1,6 +1,16 @@
 # Change Log
 <br/>
 
+## [0.9.577] - 2024-11-05
+
+### Fixed
+- Fixed autoranging using sample count AND measurement count for measurements which lead to long measurement times
+
+### Added
+- Measurement count in autoranging can be changed
+- Delay after current range switching in autoranging can be adjusted
+- Added numpy as a dependency to the python wheel
+
 ## [0.9.568] - 2024-11-05
 
 ### Fixed
