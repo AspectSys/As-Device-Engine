@@ -1,6 +1,11 @@
 # Change Log
 <br/>
 
+## [0.9.581] - 2025-02-07
+
+### Fixed
+- Fixed command future was requested AFTER queueing the command which could lead to invalid future when command finished execution in its thread before the request was executed
+
 ## [0.9.577] - 2024-11-05
 
 ### Fixed
