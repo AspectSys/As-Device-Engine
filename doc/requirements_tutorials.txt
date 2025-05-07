@@ -1,4 +1,4 @@
 ipywidgets>=7.5
-notebook=7.2.2
+notebook==7.2.2
 numpy==1.26.2
 plotly==5.24.0
