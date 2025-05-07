@@ -1,6 +1,11 @@
 # Change Log
 <br/>
 
+## [0.9.583] - 2025-04-25
+
+### Fixed
+- Fixed giving the channel numbers for a multi-channel-measurement not in acending order throws an error
+
 ## [0.9.581] - 2025-02-07
 
 ### Fixed
