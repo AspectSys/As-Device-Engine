@@ -1,6 +1,11 @@
 # Change Log
 <br/>
 
+## [0.9.584] - 2025-05-12
+
+### Fixed
+- Autoranging not working when voltage or current is set through the board model
+
 ## [0.9.583] - 2025-04-25
 
 ### Fixed
