@@ -52,4 +52,7 @@ This will:
 You can verify the installed FTDI driver version by running this command in PowerShell:
 
 ```powershell
-Get-WmiObject Win32_PnPSignedDriver | Where-Object { $_.DeviceID -like "*VID_0403*" -and $_.DeviceID -like "*PID_6015*" } | Select-Object DeviceName, DriverVersion
+Get-WmiObject Win32_PnPSignedDriver | Where-Object { $_.DeviceID -like "*VID_0403*" -and $_.DeviceID -like "*PID_601*" } | Select-Object DeviceName, DriverVersion
+```
+
+Expected output should contain *FTDI FT601 USB 3.0 Bridge Device 1.3.0.10* 
