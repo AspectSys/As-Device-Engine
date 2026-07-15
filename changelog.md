@@ -1,6 +1,11 @@
 # Change Log
 <br/>
 
+## [0.9.629] - 2025-05-12
+
+### Fixed
+- Incorrect timeout calculation for function generator
+
 ## [0.9.584] - 2025-05-12
 
 ### Fixed
