@@ -1,6 +1,12 @@
 # Change Log
 <br/>
 
+## [0.9.637] - 2026-07-24
+
+### Fixed
+- Prevented autoranging while immediate mode is disabled
+- Applied enabled autoranging when setting output force values directly
+
 ## [0.9.629] - 2025-05-12
 
 ### Fixed
