@@ -1,6 +1,19 @@
 # Change Log
 <br/>
 
+
+## [0.9.647] - 2026-08-27
+
+### Fixed
+- Fixed SetClampLowValue, SetClampHighValue not notifying the observer
+  
+
+## [0.9.646] - 2026-08-26
+
+### Fixed
+- Fixed auto range oscillation when set point is close to current range
+  
+
 ## [0.9.637] - 2026-07-24
 
 ### Fixed
